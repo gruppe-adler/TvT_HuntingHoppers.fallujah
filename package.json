@@ -1,0 +1,18 @@
+{
+    "name": "tvt-huntinghoppers",
+    "description": "Gruppe Adler TvT Template",
+    "version": "1.8.1",
+    "contributors": [
+        {
+            "name": "McDiod"
+        }
+    ],
+    "dependencies": {
+        "@gruppe-adler/replay": "^1.4.0",
+        "grad-factions-tvt": "^0.5.2",
+        "grad-fortifications": "^0.9.3",
+        "grad-listbuymenu": "^0.8.1",
+        "grad-loadout": "^4.11.4",
+        "grad-tvtsettings": ">=0.0.1"
+    }
+}
