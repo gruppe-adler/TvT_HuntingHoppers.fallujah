@@ -16,7 +16,7 @@ class hoppers
            class eventListener { postInit = 1; };
            class fadeMarker;
            class findRandomPos;
-           
+
            class init { postInit = 1; };
        };
    };
