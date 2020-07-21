@@ -1,9 +1,7 @@
-#include "component.hpp"
-
 params ["_boss"];
 
 if (_boss getVariable ["hoppers_marker_running",false]) exitWith {};
-INFO_1("marker loop starting for %1.",name _boss);
+diag_log format ["marker loop starting for %1.",name _boss];
 
 private _markerInterval = [(missionConfigFile >> "cfgMission"), "markerInterval",[60,70]] call BIS_fnc_returnConfigEntry;
 private _markerFadeout = [(missionConfigFile >> "cfgMission"), "markerFadeout",60] call BIS_fnc_returnConfigEntry;
