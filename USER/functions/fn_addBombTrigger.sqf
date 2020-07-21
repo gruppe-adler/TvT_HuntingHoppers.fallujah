@@ -1,6 +1,5 @@
 params ["_object"];
 
-
 private _bombTrigger = [
     "triggerBomb",
     "Start Bomb Countdown (30s)",
@@ -11,12 +10,8 @@ private _bombTrigger = [
         [_object] remoteExec ["hoppers_fnc_bombCountDown", 2];
         };
     }, {
-        true
+        side _player == east
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
-
-{
-    [_bus, 0, ["ACE_MainActions", "ace_refuel_Refuel"], _x] call ace_interact_menu_fnc_addActionToObject;
-} forEach [_fillCargoTankAction, _returnNozzleAction, _refuelReplacementAction];
 
 [_object, 0, ["ACE_MainActions"], _bombTrigger] call ace_interact_menu_fnc_addActionToObject;

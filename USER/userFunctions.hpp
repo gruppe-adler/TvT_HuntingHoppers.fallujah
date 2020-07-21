@@ -8,10 +8,15 @@ class hoppers
        {
            file = "USER\functions";
 
+           class addBombSpot;
+           class addBombTrigger;
+           class bombCountDown;
+
            class createMarker;
            class eventListener { postInit = 1; };
            class fadeMarker;
            class findRandomPos;
-           class init;
+           
+           class init { postInit = 1; };
        };
    };
