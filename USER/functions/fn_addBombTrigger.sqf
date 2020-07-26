@@ -6,9 +6,7 @@ private _bombTrigger = [
     "",
     {
         hintSilent "Bomb Trigger Set (30s)";
-
         [_object] remoteExec ["hoppers_fnc_bombCountDown", 2];
-        };
     }, {
         side _player == east
     },{},nil,"",3,[false,false,false,false,false]

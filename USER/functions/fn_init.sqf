@@ -4,11 +4,11 @@ if (!isServer) exitWith {};
 private _bombSpots = missionNamespace getVariable ["hoppers_bombSpots", []];
 
 {
-    private _spot = _x;
+    private _bombSpot = _x;
 
-    [_spot] remoteExecCall ["hoppers_fnc_addBombTrigger", east, true];
+    [_bombSpot] remoteExecCall ["hoppers_fnc_addBombTrigger", east, true];
 
-    private _taskID = format ["Bomb %1", _forEachIndex];
+    private _taskID = format ["Hoppers_Bomb%1", _forEachIndex];
     [
       east,
       [_taskID],
@@ -21,25 +21,11 @@ private _bombSpots = missionNamespace getVariable ["hoppers_bombSpots", []];
       false
     ] call BIS_fnc_taskCreate;
 
-    _spot setVariable ["hoppers_spotNumber", _forEachIndex];
+    _bombSpot setVariable ["hoppers_spotNumber", _forEachIndex];
 } forEach _bombSpots;
 
 
-private _taskID = "Exfiltrate";
-[
-  east,
-  [_taskID],
-  ["Boss has to leave map area alive to win.",
-  "Flee",
-  ""],
-  getMarkerPos "mrk_exfiltrate",
-  false,
-  -1,
-  false
-] call BIS_fnc_taskCreate;
-
-
-private _taskID = "Eliminate Insurgent Leader";
+private _taskID = "Eliminate";
 [
   west,
   [_taskID],
@@ -47,7 +33,7 @@ private _taskID = "Eliminate Insurgent Leader";
   "Eliminate Insurgent Leader",
   ""],
   objNull,
-  false,
+  true,
   -1,
   false
 ] call BIS_fnc_taskCreate;
