@@ -3,7 +3,7 @@
 */
 
 corpseManagerMode = 1;                                                          // Leichen aufräumen (0/1)
-corpseLimit = 30;                                                               // Schwellenwert an Leichen, ab dem die corpseRemovalMinTime benutzt wird
+corpseLimit = 70;                                                               // Schwellenwert an Leichen, ab dem die corpseRemovalMinTime benutzt wird
 corpseRemovalMinTime = 300;                                                     // Mindestdauer bevor eine Leiche gelöscht wird
 corpseRemovalMaxTime = 500;                                                     // Maximaldauer nach der eine Leiche gelöscht wird
 
