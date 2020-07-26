@@ -47,6 +47,4 @@
 ["GRAD_replay_finished",
 {
   "SideScore" call BIS_fnc_endMissionServer;
-  };
-
 }] call CBA_fnc_addEventHandler;

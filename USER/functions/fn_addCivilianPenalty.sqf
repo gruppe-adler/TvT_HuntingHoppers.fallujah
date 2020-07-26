@@ -19,8 +19,8 @@ HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST = 0;
 
     if (random 1 > 1 - _civPenaltyChanceEast || 
         random 1 > 1 - _civPenaltyChanceWest) then {
+
         [_civ] call hoppers_fnc_civilianAddWeapon;
-        [_civ] call hoppers_fnc_addCivilianPenalty;
     };
 }] call CBA_fnc_addEventHandler;
 
@@ -62,3 +62,17 @@ HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST = 0;
     };
 
 }, 5, []] call CBA_fnc_addPerFrameHandler;
+
+
+["hoppers_civEnemy", {
+    params ["_side"];
+
+    {
+        if (side _x == civilian) then {
+            grad_civs_legacy_exiton = { true };
+            [_x] call grad_civs_fnc_dismissCiv;
+
+            [group _x, getPos _x, 500] call BIS_fnc_taskPatrol;
+        };
+    } forEach allUnits;
+}] call CBA_fnc_addEventHandler;
