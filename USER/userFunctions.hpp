@@ -11,6 +11,7 @@ class hoppers
            class addBombSpot;
            class addBombTrigger;
            class bombCountDown;
+           class bombSpotInit;
 
            class createMarker;
            class eventListener { postInit = 1; };
@@ -18,5 +19,10 @@ class hoppers
            class findRandomPos;
 
            class init { postInit = 1; };
+
+           class mapreplaceBuildings;
+           class mapreplacePlants;
+           class tasksInitBlufor;
+           class tasksInitOpfor;
        };
    };
