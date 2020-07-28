@@ -70,7 +70,7 @@ HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST = 0;
     {
         if (side _x == civilian) then {
             grad_civs_legacy_exiton = { true };
-            [_x] call grad_civs_fnc_dismissCiv;
+            // [_x] call grad_civs_fnc_dismissCiv;
 
             [group _x, getPos _x, 500] call BIS_fnc_taskPatrol;
         };

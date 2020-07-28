@@ -10,6 +10,8 @@ class hoppers
 
            class addBombSpot;
            class addBombTrigger;
+           class addBoss;
+           class addCivilianPenalty;
            class bombCountDown;
            class bombSpotInit;
 

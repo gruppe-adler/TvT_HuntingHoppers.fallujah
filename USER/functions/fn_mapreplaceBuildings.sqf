@@ -9,7 +9,9 @@ private _buildingReplacements = [
 ["Land_Dum_istan3_pumpa", "Land_Unfinished_Building_01_F"],
 ["Land_Dum_olez_istan2_maly2", "Land_House_C_5_V2_EP1"],
 ["Land_Dum_olez_istan2_maly", "Land_Unfinished_Building_01_F"],
-["Land_Dum_olez_istan2", "Land_House_C_4_EP1"]
+["Land_Dum_olez_istan2", "Land_House_C_4_EP1"],
+
+["Land_Dum_istan4", "jbad_dum_istan4"]
 ];
 
 private _count = 0;

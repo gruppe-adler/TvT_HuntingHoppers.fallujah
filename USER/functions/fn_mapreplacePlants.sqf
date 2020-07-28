@@ -39,8 +39,9 @@ private _time = time;
 	private _dir = getDir _tree;
 
 	{
-	   if ((getModelInfo _tree) select 0 == _tree) then {
-  			[_tree] call grad_publicTransport_fnc_hideObject;
+	   if ((getModelInfo _tree) select 0 == _x) then {
+  			_tree hideObjectGlobal true;
+        _tree enableSimulationGlobal false;
 
   			if (_simpleObject) then {
   				_replacementTree = createSimpleObject [_replacementArray select _forEachIndex, _pos];
