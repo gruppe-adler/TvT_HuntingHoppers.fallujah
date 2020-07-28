@@ -3,7 +3,7 @@ if (!isServer) exitWith {};
 params ["_position", "_size"];
 
 private _buildingReplacements = [
-["Land_Dum_mesto3_istan", "Land_House_C_10_EP1"],
+// ["Land_Dum_mesto3_istan", "Land_House_C_10_EP1"],
 ["Land_Dum_istan1","Land_Dum_olez_istan1_open2"],
 ["Land_Dum_istan2", "Land_House_C_12_EP1"],
 ["Land_Dum_istan3_pumpa", "Land_Unfinished_Building_01_F"],
@@ -11,7 +11,11 @@ private _buildingReplacements = [
 ["Land_Dum_olez_istan2_maly", "Land_Unfinished_Building_01_F"],
 ["Land_Dum_olez_istan2", "Land_House_C_4_EP1"],
 
-["Land_Dum_istan4", "jbad_dum_istan4"]
+["Land_Dum_istan4", "jbad_dum_istan4"],
+["Land_Dum_mesto3_istan", "land_ffaa_casa_urbana_1"],
+["Land_Dum_istan2_02", "land_ffaa_casa_urbana_8"],
+["Land_Dum_olez_istan2_maly", "land_ffaa_casa_urbana_8"],
+["Land_Dum_istan4_big_inverse", "land_ffaa_casa_sha_3"]
 ];
 
 private _count = 0;
