@@ -2,6 +2,8 @@
 *   Ist in CfgFunctions included.
 */
 
+#include "..\node_modules\grad-dyngroupdecals\cfgFunctions.hpp"
+
 class hoppers
    {
        class all

@@ -6,7 +6,7 @@ HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST = 0;
     params ["_civ"];
 
     _civ addEventhandler ["Killed", {
-        params ["_unit", "_killer", "_instigator", "_useEffects"]
+        params ["_unit", "_killer", "_instigator", "_useEffects"];
 
         if (side _killer == east) then {
             HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST = HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST + 0.1;
@@ -17,8 +17,8 @@ HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST = 0;
         };
     }];
 
-    if (random 1 > 1 - _civPenaltyChanceEast || 
-        random 1 > 1 - _civPenaltyChanceWest) then {
+    if ((random 1 > (1 - _civPenaltyChanceEast)) || 
+        (random 1 > (1 - _civPenaltyChanceWest))) then {
 
         [_civ] call hoppers_fnc_civilianAddWeapon;
     };
