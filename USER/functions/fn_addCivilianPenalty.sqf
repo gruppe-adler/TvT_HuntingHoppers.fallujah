@@ -17,8 +17,8 @@ HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST = 0;
         };
     }];
 
-    if ((random 1 > (1 - _civPenaltyChanceEast)) || 
-        (random 1 > (1 - _civPenaltyChanceWest))) then {
+    if ((random 1 > (1 - HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST)) || 
+        (random 1 > (1 - HOPPERS_CIVILIANS_PENALTY_CHANCE_WEST))) then {
 
         [_civ] call hoppers_fnc_civilianAddWeapon;
     };
