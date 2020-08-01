@@ -3,3 +3,4 @@
 */
 
 #include "loadoutKsk.hpp"
+#include "loadoutTalis.hpp"

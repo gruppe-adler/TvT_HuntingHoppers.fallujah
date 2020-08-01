@@ -45,7 +45,7 @@ private _arrayOfBuildings = nearestTerrainObjects [_position, ["HOUSE", "BUILDIN
 	private _model = (getModelInfo _oldBuilding) select 0;
 	private _index = _buildings find _model;
 
-	if (_index < 0) exitWith { diag_log ("skipping building" + str _model); };
+	if (_index < 0) then { diag_log ("skipping building" + str _model); } else {
 	private _replacementType = _buildingReplacements select _index;
 	private _pos = getPosATL _oldBuilding;
 	private _dir = getDir _oldBuilding;
@@ -59,11 +59,10 @@ private _arrayOfBuildings = nearestTerrainObjects [_position, ["HOUSE", "BUILDIN
   	_oldBuilding enableSimulationGlobal false;
 
 	private _newBuilding = createVehicle [_replacementType, _pos, [], 0, "NONE"];
-	// _model = getText ( configFile >> "CfgVehicles" >> _replacementType >> "Model" );
-	// _newBuilding = createSimpleObject [_model, _pos];
 	_newBuilding setDir _dir;
 	_newBuilding enableSimulationGlobal false;
 	_count = _count + 1;
+	};
 } forEach _arrayOfBuildings;
 
 

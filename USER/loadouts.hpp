@@ -16,7 +16,7 @@
 
 
 loadoutFactionBlu = "ger_ksk";
-loadoutFactionOpf = "ind_me_terrorists";
+loadoutFactionOpf = "ind_me_talis";
 loadoutFactionInd = "";
 
 
