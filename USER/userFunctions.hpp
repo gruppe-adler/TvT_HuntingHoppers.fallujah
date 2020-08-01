@@ -16,6 +16,7 @@ class hoppers
            class addCivilianPenalty;
            class bombCountDown;
            class bombSpotInit;
+           class civilianAddWeapon;
 
            class createMarker;
            class eventListener { postInit = 1; };
@@ -28,5 +29,6 @@ class hoppers
            class mapreplacePlants;
            class tasksInitBlufor;
            class tasksInitOpfor;
+           class winConditions;
        };
    };

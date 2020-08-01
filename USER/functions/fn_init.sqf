@@ -22,3 +22,4 @@ HOPPERS_REPLACE_PLANTS_RADIUS = 750;
 call hoppers_fnc_bombSpotInit;
 call hoppers_fnc_tasksInitBlufor;
 call hoppers_fnc_addCivilianPenalty;
+call hoppers_fnc_winConditions;

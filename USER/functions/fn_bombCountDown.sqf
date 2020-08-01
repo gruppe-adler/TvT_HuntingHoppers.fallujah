@@ -1,5 +1,7 @@
 params ["_object"];
 
+_object setVariable ["hoppers_countdownStarted", true, true];
+
 private _max = 30; // duration of countdown
 
 for "_i" from _max to 1 step -1 do {

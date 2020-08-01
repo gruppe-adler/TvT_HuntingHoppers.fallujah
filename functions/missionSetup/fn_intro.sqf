@@ -8,8 +8,33 @@
 if (!hasInterface) exitWith {};
 [{!isNull player}, {
     [{
+        private _display = findDisplay 46;
+        private _pic = _display ctrlCreate ["RscPictureKeepAspect", -1];
+
+        _pic ctrlSetPosition [0,0,1,1];
+        _pic ctrlSetText (getMissionPath ("USER\data\loading.paa"));
+        _pic ctrlsetFade 1;
+        _pic ctrlCommit 0;
+
+        _pic ctrlsetFade 0;
+        _pic ctrlCommit 3;
+        
+        [{  
+            params ["_pic"];
+            _pic ctrlsetFade 1;
+            _pic ctrlCommit 5;
+
+            [{  
+                params ["_pic"];
+                ctrlDelete _pic;
+            }, [_pic], 5]call CBA_fnc_waitAndExecute;
+
+        }, [_pic], 10]call CBA_fnc_waitAndExecute;
+        
+        /*
         _missionName = getMissionConfigValue ["onLoadName", "NAME NOT FOUND"];
         _text = format ["<img size= '6' style='vertical-align:middle' shadow='false' image='data\gruppe-adler.paa'/><br/><t size='.9' color='#FFFFFF'>%1</t>", _missionName];
         [_text,0,0,2,2] spawn BIS_fnc_dynamicText;
+        */
     }, [], 3] call CBA_fnc_waitAndExecute;
 }, []] call CBA_fnc_waitUntilAndExecute;

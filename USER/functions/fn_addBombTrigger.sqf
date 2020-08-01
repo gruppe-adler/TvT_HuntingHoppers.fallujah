@@ -8,7 +8,7 @@ private _bombTrigger = [
         hintSilent "Bomb Trigger Set (30s)";
         [_target] remoteExec ["hoppers_fnc_bombCountDown", 2];
     }, {
-        side _player == east
+        player getVariable ["hoppers_isBoss", false] && !(_target getVariable ["hoppers_countdownStarted", false]);
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 

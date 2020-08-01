@@ -8,7 +8,7 @@
   OPFOR_ELIMINATED = ({side _x isEqualTo east && alive _x} count _opforBosses == 0);
   BLUFOR_ELIMINATED = ({side _x isEqualTo west && alive _x} count (playableUnits + switchableUnits) == 0);
 
-  OPFOR_EXTRACTED = ({side _x isEqualTo east && alive _x && _x distance _exfilPosition < 100} count _opforBosses == count _opforBosses);
+  OPFOR_EXTRACTED = {side _x isEqualTo east && alive _x && _x distance [0,0,0] < 100} count hoppers_bosses == count hoppers_bosses;
 
   if (OPFOR_ELIMINATED) exitWith {
       [_handle] call CBA_fnc_removePerFrameHandler;
