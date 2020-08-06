@@ -15,6 +15,11 @@ class hoppers
            class addBombTrigger;
            class addBoss;
            class addCivilianPenalty;
+
+           class areaBarCreate;
+           class areaBarGetColor;
+           class areaBarShow;
+
            class bombCountDown;
            class bombSpotInit;
            class civilianAddWeapon;
@@ -28,6 +33,9 @@ class hoppers
 
            class mapreplaceBuildings;
            class mapreplacePlants;
+
+           class showTracker;
+           
            class tasksInitBlufor;
            class tasksInitOpfor;
            class winConditions;
