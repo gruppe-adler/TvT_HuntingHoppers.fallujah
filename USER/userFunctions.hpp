@@ -3,6 +3,7 @@
 */
 
 #include "..\node_modules\grad-dyngroupdecals\cfgFunctions.hpp"
+#include "..\node_modules\grad-gpsTracker\cfgFunctions.hpp"
 
 class hoppers
    {

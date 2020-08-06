@@ -1,7 +1,7 @@
-params ["_boss"];
+params ["_unit"];
 
-if (_boss getVariable ["hoppers_marker_running",false]) exitWith {};
-diag_log format ["marker loop starting for %1.",name _boss];
+if (_unit getVariable ["hoppers_marker_running",false]) exitWith {};
+diag_log format ["marker loop starting for %1.",name _unit];
 
 private _markerInterval = [(missionConfigFile >> "cfgMission"), "markerInterval",[60,70]] call BIS_fnc_returnConfigEntry;
 private _markerFadeout = [(missionConfigFile >> "cfgMission"), "markerFadeout",60] call BIS_fnc_returnConfigEntry;
@@ -17,38 +17,38 @@ private _markerVariances =
 
 private _markerIntervalMin = _markerInterval select 0;
 private _markerIntervalRandom = (_markerInterval select 1) - _markerIntervalMin;
-_boss setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (random _markerIntervalRandom)];
+_unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (random _markerIntervalRandom)];
 
 [{
     params ["_args","_handle"];
-    _args params ["_boss","_markerVariances","_markerIntervalMin","_markerIntervalRandom","_markerFadeout"];
+    _args params ["_unit","_markerVariances","_markerIntervalMin","_markerIntervalRandom","_markerFadeout"];
 
-    // if (!alive _boss || isNull _boss) exitWith {[_handle] call CBA_fnc_removePerFrameHandler};
+    // if (!alive _unit || isNull _unit) exitWith {[_handle] call CBA_fnc_removePerFrameHandler};
 
-    private _currentInterval = _boss getVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin];
+    private _currentInterval = _unit getVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin];
     private _currentFadeout = _markerFadeout;
     private _currentVariance = _markerVariances select (missionNamespace getVariable ["hoppers_missionPhase", 0]);
     private _lastPhase = missionNamespace getVariable ["hoppers_missionPhase", 0] >= count (missionNamespace getVariable ["hoppers_bombSpots", []]);
 
 
-    private _lastRun = _boss getVariable ["hoppers_lastAgentMarkerTime",0];
+    private _lastRun = _unit getVariable ["hoppers_lastAgentMarkerTime",0];
     if (!_lastPhase && CBA_missionTime - _lastRun < _currentInterval) exitWith {};
-    if (!(_boss getVariable ["hoppers_markerShown", false])) exitWith {};
-    _boss setVariable ["hoppers_lastAgentMarkerTime", CBA_missionTime];
+    if (!(_unit getVariable ["hoppers_markerShown", false])) exitWith {};
+    _unit setVariable ["hoppers_lastAgentMarkerTime", CBA_missionTime];
 
 
-    _boss setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (random _markerIntervalRandom)];
+    _unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (random _markerIntervalRandom)];
 
-    private _markerPos = [getPos _boss,[0,_currentVariance],[0,360],""] call hoppers_fnc_findRandomPos;
-    // [_markerPos] remoteExec ["hoppers_fnc_showTracker",WEST,false];
+    private _markerPos = [getPos _unit,[0,_currentVariance],[0,360],""] call hoppers_fnc_findRandomPos;
+    [_markerPos] remoteExec ["hoppers_fnc_showTracker",WEST,false];
 
-    _centerMarker = createMarker [format ["hoppers_marker_%1_center_%2",[name _boss] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
+    _centerMarker = createMarker [format ["hoppers_marker_%1_center_%2",[name _unit] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
     _centerMarker setMarkerShape "ICON";
     _centerMarker setMarkerType "hd_dot";
     _centerMarker setMarkerColor "ColorOpfor";
     _centerMarker setMarkerText (format ["%1",[daytime * 3600,"HH:MM"] call BIS_fnc_secondsToString]);
 
-    _areaMarker = createMarker [format ["hoppers_marker_%1_area_%2",[name _boss] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
+    _areaMarker = createMarker [format ["hoppers_marker_%1_area_%2",[name _unit] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
     _areaMarker setMarkerShape "ELLIPSE";
     _areaMarker setMarkerColor "ColorOpfor";
     _areaMarker setMarkerSize [_currentVariance,_currentVariance];
@@ -56,6 +56,6 @@ _boss setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (ra
 
     [[_centerMarker,_areaMarker],_currentFadeout] call hoppers_fnc_fadeMarker;
 
-} , 1, [_boss, _markerVariances,_markerIntervalMin,_markerIntervalRandom,_markerFadeout]] call CBA_fnc_addPerFrameHandler;
+} , 1, [_unit, _markerVariances,_markerIntervalMin,_markerIntervalRandom,_markerFadeout]] call CBA_fnc_addPerFrameHandler;
 
-_boss setVariable ["hoppers_marker_running",true];
+_unit setVariable ["hoppers_marker_running",true];
