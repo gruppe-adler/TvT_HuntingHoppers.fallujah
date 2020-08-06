@@ -28,3 +28,4 @@ call hoppers_fnc_bombSpotInit;
 call hoppers_fnc_tasksInitBlufor;
 call hoppers_fnc_addCivilianPenalty;
 call hoppers_fnc_winConditions;
+call hoppers_fnc_addMarkersEast;

@@ -8,7 +8,7 @@ _handle = [{
 	params ["_args", "_handle"];
 	_args params ["_minDistance", "_maxDistance", "_boss", "_progressBar"];
 
-	private _distance = player distance _area;
+	private _distance = player distance _boss;
 	private _color = [_distance] call hoppers_fnc_areaBarGetColor;
   private _progress = (linearConversion
 		[_minDistance, _maxDistance, _distance, 0, 1, true]

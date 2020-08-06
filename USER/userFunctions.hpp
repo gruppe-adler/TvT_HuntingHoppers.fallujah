@@ -15,6 +15,7 @@ class hoppers
            class addBombTrigger;
            class addBoss;
            class addCivilianPenalty;
+           class addMarkersEast;
 
            class areaBarCreate;
            class areaBarGetColor;

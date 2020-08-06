@@ -14,6 +14,6 @@ class cfgMission {
     markerVariance_4 = 150;
     markerVariance_5 = 0;
 
-    markerInterval[] = {5,10};
-    markerFadeout = 100;
+    markerInterval[] = {10,10};
+    markerFadeout = 11;
 };

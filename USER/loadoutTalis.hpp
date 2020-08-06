@@ -1,6 +1,8 @@
 class ind_me_talis: ind_eastern_nationalists {
     class AllUnits {
         uniform = "LOP_U_AM_Fatigue_01_3";
+        nvgoggles = "";
+        headgear = "LOP_H_Pakol";
     };
 
     class Type {
@@ -16,7 +18,7 @@ class ind_me_talis: ind_eastern_nationalists {
         //autorifleman
         class Soldier_AR_F: Soldier_F {
             uniform = "LOP_U_AM_Fatigue_02_5";
-            headgear = "LOP_H_Shemag_TAN";
+            headgear = "LOP_H_Pakol";
         };
 
         //light AT

@@ -3,6 +3,8 @@ class ger_ksk: ger_heer_d {
         uniform = "SMM_Uniform_BW_TT";
         vest = "SMM_Vest_BW_TT";
         headgear = "SMM_Helmet_A_BW_TT";
+        nvgoggles = "";
+        goggles[] = {"G_Bandanna_tan", "rhsusf_shemagh2_grn", "rhsusf_shemagh2_od", "rhsusf_shemagh2_tan"};
     };
 
     class Type: Type {
@@ -48,6 +50,7 @@ class ger_ksk: ger_heer_d {
             headgear = "gm_ge_headgear_sph4_oli";
             vest = "gm_pl_army_vest_80_crew_gry";
             backpack = "";
+            goggles[] = {"rhsusf_shemagh2_gogg_grn", "rhsusf_shemagh2_gogg_od", "rhsusf_shemagh2_gogg_tan"};
         };
     };
 

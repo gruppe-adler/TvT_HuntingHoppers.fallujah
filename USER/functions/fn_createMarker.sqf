@@ -30,6 +30,7 @@ _unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (ra
     private _currentVariance = _markerVariances select (missionNamespace getVariable ["hoppers_missionPhase", 0]);
     private _lastPhase = missionNamespace getVariable ["hoppers_missionPhase", 0] >= count (missionNamespace getVariable ["hoppers_bombSpots", []]);
 
+    private _size = if (_unit getVariable ["hoppers_isBoss", false]) then { _currentVariance } else { _currentVariance/4 };
 
     private _lastRun = _unit getVariable ["hoppers_lastAgentMarkerTime",0];
     if (!_lastPhase && CBA_missionTime - _lastRun < _currentInterval) exitWith {};
@@ -39,22 +40,23 @@ _unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (ra
 
     _unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (random _markerIntervalRandom)];
 
-    private _markerPos = [getPos _unit,[0,_currentVariance],[0,360],""] call hoppers_fnc_findRandomPos;
+    private _markerPos = [getPos _unit,[0,_size],[0,360],""] call hoppers_fnc_findRandomPos;
 
-    if (!_lastPhase) then {
+    if (!_lastPhase && _unit getVariable ["hoppers_isBoss", false]) then {
         [_markerPos] remoteExec ["hoppers_fnc_showTracker",WEST,false];
     };
 
+    private _color = if (_unit getVariable ["hoppers_isBoss", false]) then { "ColorOpfor" } else { "ColorIndependent" };
     private _centerMarker = createMarker [format ["hoppers_marker_%1_center_%2",[name _unit] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
     _centerMarker setMarkerShape "ICON";
     _centerMarker setMarkerType "hd_dot";
-    _centerMarker setMarkerColor "ColorOpfor";
+    _centerMarker setMarkerColor _color;
     _centerMarker setMarkerText (format ["%1",[daytime * 3600,"HH:MM"] call BIS_fnc_secondsToString]);
 
     private _areaMarker = createMarker [format ["hoppers_marker_%1_area_%2",[name _unit] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
     _areaMarker setMarkerShape "ELLIPSE";
-    _areaMarker setMarkerColor "ColorOpfor";
-    _areaMarker setMarkerSize [_currentVariance,_currentVariance];
+    _areaMarker setMarkerColor _color;
+    _areaMarker setMarkerSize [_size,_size];
     _areaMarker setMarkerBrush "Border";
 
     [[_centerMarker,_areaMarker],_currentFadeout] call hoppers_fnc_fadeMarker;

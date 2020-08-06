@@ -1,0 +1,45 @@
+<match>
+  <company side="blufor" natosymbol="inf" callsign="KSK" vehicletype="">
+    <slot shortcode="SQL" description="Squad Leader"/>
+    <slot shortcode="SQA" description="Assistant Squad Leader"/>
+    <slot shortcode="SQM" description="Squad Medic"/>
+    <slot shortcode="P" description="Pilot"/>
+    <squad side="" natosymbol="inf" callsign="Alpha" vehicletype="">
+      <slot shortcode="TL" description="Teamleader"/>
+      <slot shortcode="LMG" description="MG Gunner"/>
+      <slot shortcode="MGA" description="MG Assistant"/>
+      <slot shortcode="R" description="Rifleman"/>
+      <slot shortcode="P" description="Pilot"/>
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Bravo" vehicletype="">
+      <slot shortcode="TL" description="Teamleader"/>
+      <slot shortcode="R" description="Light AT"/>
+      <slot shortcode="R" description="Grenadier"/>
+      <slot shortcode="R" description="Rifleman"/>
+      <slot shortcode="P" description="Pilot"/>
+    </squad>
+  </company>
+  <company side="opfor" natosymbol="inf" callsign="Taliban" vehicletype="">
+    <slot shortcode="SQL" description="Squad Leader"/>
+    <slot shortcode="SQA" description="Assistant Squad Leader"/>
+    <slot shortcode="SQM" description="Squad Medic"/>
+    <squad side="" natosymbol="inf" callsign="Alpha" vehicletype="">
+      <slot shortcode="TL" description="Teamleader"/>
+      <slot shortcode="LMG" description="MG Gunner"/>
+      <slot shortcode="MGA" description="MG Assistant"/>
+      <slot shortcode="R" description="Rifleman"/>
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Bravo" vehicletype="">
+      <slot shortcode="TL" description="Teamleader"/>
+     <slot shortcode="R" description="Rifleman"/>
+     <slot shortcode="R" description="Rifleman"/>
+      <slot shortcode="R" description="Rifleman"/>
+    </squad>
+    <squad side="" natosymbol="inf" callsign="Charlie" vehicletype="">
+      <slot shortcode="TL" description="Teamleader"/>
+      <slot shortcode="R" description="Rifleman"/>
+      <slot shortcode="R" description="Rifleman"/>
+      <slot shortcode="R" description="Rifleman"/>
+    </squad>
+  </company>
+</match>
