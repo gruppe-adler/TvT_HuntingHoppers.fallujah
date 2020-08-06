@@ -40,15 +40,18 @@ _unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (ra
     _unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (random _markerIntervalRandom)];
 
     private _markerPos = [getPos _unit,[0,_currentVariance],[0,360],""] call hoppers_fnc_findRandomPos;
-    [_markerPos] remoteExec ["hoppers_fnc_showTracker",WEST,false];
 
-    _centerMarker = createMarker [format ["hoppers_marker_%1_center_%2",[name _unit] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
+    if (!_lastPhase) then {
+        [_markerPos] remoteExec ["hoppers_fnc_showTracker",WEST,false];
+    };
+
+    private _centerMarker = createMarker [format ["hoppers_marker_%1_center_%2",[name _unit] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
     _centerMarker setMarkerShape "ICON";
     _centerMarker setMarkerType "hd_dot";
     _centerMarker setMarkerColor "ColorOpfor";
     _centerMarker setMarkerText (format ["%1",[daytime * 3600,"HH:MM"] call BIS_fnc_secondsToString]);
 
-    _areaMarker = createMarker [format ["hoppers_marker_%1_area_%2",[name _unit] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
+    private _areaMarker = createMarker [format ["hoppers_marker_%1_area_%2",[name _unit] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
     _areaMarker setMarkerShape "ELLIPSE";
     _areaMarker setMarkerColor "ColorOpfor";
     _areaMarker setMarkerSize [_currentVariance,_currentVariance];
