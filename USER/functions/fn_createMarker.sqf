@@ -30,9 +30,10 @@ _boss setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (ra
     private _currentVariance = _markerVariances select (missionNamespace getVariable ["hoppers_missionPhase", 0]);
     private _lastPhase = missionNamespace getVariable ["hoppers_missionPhase", 0] >= count (missionNamespace getVariable ["hoppers_bombSpots", []]);
 
-    
+
     private _lastRun = _boss getVariable ["hoppers_lastAgentMarkerTime",0];
     if (!_lastPhase && CBA_missionTime - _lastRun < _currentInterval) exitWith {};
+    if (!(_boss getVariable ["hoppers_markerShown", false])) exitWith {};
     _boss setVariable ["hoppers_lastAgentMarkerTime", CBA_missionTime];
 
 

@@ -17,5 +17,6 @@ _bosses pushBackUnique _unit;
 missionNamespace setVariable ["hoppers_bosses", _bosses, true];
 
 _unit setVariable ["hoppers_isBoss", true, true];
+_unit setVariable ["hoppers_markerShown",true, true];
 
 [_unit] call hoppers_fnc_createMarker;

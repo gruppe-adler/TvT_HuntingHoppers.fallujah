@@ -12,6 +12,11 @@ if (hasInterface) then {
         ] spawn BIS_fnc_WLSmoothText; // no sounds, letters appear in a smooth transition
       };
   }] call CBA_fnc_addEventHandler;
+
+  if (side player == east) then {
+    private _boss = (missionNamespace getVariable ["hoppers_bosses", []]) select 0; // todo make failproof
+    [_boss] call hoppers_fnc_areaBarShow;
+  };
 };
 
 if (!isServer) exitWith {};
