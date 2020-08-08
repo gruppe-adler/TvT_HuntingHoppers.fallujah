@@ -6,6 +6,7 @@ private _playerSide = [player, true] call BIS_fnc_objectSide; // JIP/init proof 
 [_oldUnit,_playerSide] remoteExec [QFUNC(removeFromWave),2,false];
 [_oldUnit,_playerSide,false] remoteExec [QFUNC(addToWaiting),2,false];
 
+[false] call ace_spectator_fnc_setSpectator; // safecheck
 setPlayerRespawnTime 99999;
 
 hint "";

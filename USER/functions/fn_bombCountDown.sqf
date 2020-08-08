@@ -1,3 +1,5 @@
+// E: Server
+
 params ["_object"];
 
 _object setVariable ["hoppers_countdownStarted", true, true];
@@ -24,6 +26,9 @@ for "_i" from _max to 1 step -1 do {
     private _phase = missionNamespace getVariable ["hoppers_missionPhase", 0];
     _phase = _phase + 1;
     missionNamespace setVariable ["hoppers_missionPhase", _phase, true];
+
+    remoteExecCall ["grad_waverespawn_fnc_respawnManual", west];
+    remoteExecCall ["grad_waverespawn_fnc_respawnManual", east];
 
     // [getPos _object, 10] call RHS_fnc_ss21_nuke; // param 1 is payload
 

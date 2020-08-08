@@ -19,7 +19,13 @@ if (isNil "_status") then {
     };
 };
 
-private _status = parseText format ["<t align='center' size='1.4'>%1</t>",_status];
+
+
+private _status = if (GVAR(WAVERESPAWNMANUAL)) then {
+    parseText format ["<t align='center' size='1.4'>---</t>"];
+} else {
+    parseText format ["<t align='center' size='1.4'>%1</t>",_status];
+};
 
 private _playerTimeLeft = player getVariable "wr_playerRespawnTimeLeft";
 private _playerTimeLeftStr = if (GVAR(WAVERESPAWNMANUAL)) then {
@@ -33,7 +39,7 @@ private _timeLeftStr = [_waveTimeLeft, "MM:SS"] call BIS_fnc_secondsToString;
 private _playersLeft = call (player getVariable "wr_playersLeft");
 private _waveSize = call (player getVariable "wr_waveSize");
 private _waveLeftStr = if (GVAR(WAVERESPAWNMANUAL)) then {
-    parseText format ["<t align='center' size='1.4'>Es warten noch %1 andere Spieler deiner Seite.</t>", _playersLeft];
+    parseText format ["<t align='center' size='1.4'>---</t>"];
 } else {
     parseText format ["<t align='center' size='1.4'>Wave: <t color='%3'>%1/%2</t> - <t color ='%4'>%5</t></t>", _waveSize - _playersLeft, _waveSize, if (_playersLeft > 0) then {'#ffff00'} else {'#00ff00'},if (_waveTimeLeft > 0) then {'#ffff00'} else {'#00ff00'}, _timeLeftStr];
 };
@@ -44,6 +50,7 @@ private _maxTime = if (GVAR(WAVERESPAWNMANUAL)) then {
     parseText format ["<t align ='center' size='0.7'>Skipping waiting time in: %1.</t>", [GVAR(MAXRESPAWNTIME) - (time - (player getVariable ["wr_timeOfDeath",time])),"MM:SS"] call BIS_fnc_secondsToString];
 };
 
+systemChat "respawnhint running";
 
 private _hintArray = [
     _rule,

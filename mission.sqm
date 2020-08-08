@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=147;
+		nextID=152;
 	};
 	class Camera
 	{
-		pos[]={8064.063,62.114361,1894.9163};
-		dir[]={-0.90319699,-0.36028063,0.23337922};
-		up[]={-0.34884134,0.93283701,0.090138398};
-		aside[]={0.25017804,5.1833922e-007,0.96821362};
+		pos[]={2529.5479,40.634468,4924.4736};
+		dir[]={-0.69284892,-0.54344469,-0.47396469};
+		up[]={-0.44854063,0.83944422,-0.30683807};
+		aside[]={-0.56461668,8.1927283e-008,0.82536304};
 	};
 };
 binarizationWanted=0;
@@ -4406,20 +4406,20 @@ class Mission
 				class Item0
 				{
 					dataType="Marker";
-					position[]={3301.3047,5,1996.6152};
+					position[]={7943,5.0100098,1884};
 					name="respawn_west";
 					type="Empty";
 					id=2;
-					atlOffset=-1.9900079;
+					atlOffset=-1.9899902;
 				};
 				class Item1
 				{
 					dataType="Marker";
-					position[]={3301.3052,5,1594.2529};
+					position[]={2503,4.9899902,4909};
 					name="respawn_east";
 					type="Empty";
 					id=3;
-					atlOffset=-1.9900079;
+					atlOffset=-1.9900246;
 				};
 				class Item2
 				{

@@ -23,8 +23,6 @@ GVAR(WAVERESPAWNSTATUSOPF) = "";
 GVAR(WAVERESPAWNSTATUSIND) = "";
 GVAR(WAVERESPAWNSTATUSCIV) = "";
 
-GVAR(WAVERESPAWNMANUAL) = [missionConfigFile >> "missionsettings","waverespawnmanual",false] call BIS_fnc_returnConfigEntry;
-
 publicVariable QGVAR(WAVERESPAWNTIMEPLAYER);
 publicVariable QGVAR(WAVERESPAWNTIMEBLU);
 publicVariable QGVAR(WAVERESPAWNTIMEOPF);
@@ -46,4 +44,6 @@ publicVariable QGVAR(WAVERESPAWNSTATUSOPF);
 publicVariable QGVAR(WAVERESPAWNSTATUSIND);
 publicVariable QGVAR(WAVERESPAWNSTATUSCIV);
 
-publicVariable GVAR(WAVERESPAWNMANUAL);
+GVAR(WAVERESPAWNMANUAL) = ([missionConfigFile >> "missionsettings","waverespawnmanual",0] call BIS_fnc_returnConfigEntry == 1);
+publicVariable QGVAR(WAVERESPAWNMANUAL);
+

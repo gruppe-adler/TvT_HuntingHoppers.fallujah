@@ -26,4 +26,6 @@ if (_add) then {
     };
 };
 
-[_deadPlayerSide] call FUNC(checkEnoughForWave);
+ if (!(GVAR(WAVERESPAWNMANUAL))) then {
+    [_deadPlayerSide] call FUNC(checkEnoughForWave);
+};

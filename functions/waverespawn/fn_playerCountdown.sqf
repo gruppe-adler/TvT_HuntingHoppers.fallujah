@@ -1,11 +1,9 @@
 #include "component.hpp"
 
-params ["_timeOfDeath"];
-
 INFO("Starting player countdown...");
 
 [{
-    _timeOfDeath = (_this select 0) select 0;
+    private _timeOfDeath = player getVariable ["wr_timeOfDeath",-1];
 
     private _playerSide = [player, true] call BIS_fnc_objectSide; // JIP/init proof alternative to playerSide
 
@@ -37,4 +35,6 @@ INFO("Starting player countdown...");
         [_this select 1] call CBA_fnc_removePerFrameHandler;
         player setVariable ["wr_playerCountdownDone", true];
     };
-}, 1, [_timeOfDeath]] call CBA_fnc_addPerFrameHandler;
+
+    systemChat "player countdown running";
+}, 1, []] call CBA_fnc_addPerFrameHandler;

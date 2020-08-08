@@ -17,7 +17,9 @@ GVAR(newCivSpawns) = [];
 
 if (isServer) then {
     [] call FUNC(setWaveSize);
-    [] call FUNC(startWaveLoops);
+    if (!(GVAR(WAVERESPAWNMANUAL))) then {
+        [] call FUNC(startWaveLoops);
+    };
     addMissionEventHandler ["HandleDisconnect", {
         params [["_unit",objNull]];
         private _unitSide = [_unit, true] call BIS_fnc_objectSide; // JIP/init proof alternative to playerSide

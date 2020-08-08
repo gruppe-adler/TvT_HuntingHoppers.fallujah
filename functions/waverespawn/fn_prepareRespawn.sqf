@@ -27,5 +27,7 @@ if (player getVariable ["wr_interrupted", false]) exitWith {
 };
 */
 
+if (player getVariable ["hoppers_isBoss", false]) exitWith {};
+
 setPlayerRespawnTime 5;
 forceRespawn player;

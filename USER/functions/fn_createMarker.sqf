@@ -1,7 +1,7 @@
 params ["_unit"];
 
 if (_unit getVariable ["hoppers_marker_running",false]) exitWith {};
-diag_log format ["marker loop starting for %1.",name _unit];
+diag_log format ["marker loop starting for %1.",_unit getVariable ["ACE_Name", "unknown"]];
 
 private _markerInterval = [(missionConfigFile >> "cfgMission"), "markerInterval",[60,70]] call BIS_fnc_returnConfigEntry;
 private _markerFadeout = [(missionConfigFile >> "cfgMission"), "markerFadeout",60] call BIS_fnc_returnConfigEntry;
@@ -47,13 +47,13 @@ _unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (ra
     };
 
     private _color = if (_unit getVariable ["hoppers_isBoss", false]) then { "ColorOpfor" } else { "ColorIndependent" };
-    private _centerMarker = createMarker [format ["hoppers_marker_%1_center_%2",[name _unit] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
+    private _centerMarker = createMarker [format ["hoppers_marker_%1_center_%2",[_unit getVariable ["ACE_Name", "unknown"]] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
     _centerMarker setMarkerShape "ICON";
     _centerMarker setMarkerType "hd_dot";
     _centerMarker setMarkerColor _color;
     _centerMarker setMarkerText (format ["%1",[daytime * 3600,"HH:MM"] call BIS_fnc_secondsToString]);
 
-    private _areaMarker = createMarker [format ["hoppers_marker_%1_area_%2",[name _unit] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
+    private _areaMarker = createMarker [format ["hoppers_marker_%1_area_%2",[_unit getVariable ["ACE_Name", "unknown"]] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
     _areaMarker setMarkerShape "ELLIPSE";
     _areaMarker setMarkerColor _color;
     _areaMarker setMarkerSize [_size,_size];

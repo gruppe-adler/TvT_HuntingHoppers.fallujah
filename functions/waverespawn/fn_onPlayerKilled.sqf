@@ -49,6 +49,11 @@ player setVariable ["wr_respawnCount",(player getVariable ["wr_respawnCount",0])
 setPlayerRespawnTime 99999;
 
 //do the steps
-[CBA_missionTime] call FUNC(playerCountdown);
+if (!(GVAR(WAVERESPAWNMANUAL))) then {
+    [] call FUNC(playerCountdown);
+} else {
+    player setVariable ["wr_playerCountdownDone", true]; // skip directly to wavecountdown
+};
+
 [{player getVariable "wr_playerCountdownDone"}, {_this call FUNC(waveCountdown)}, [CBA_missionTime]] call CBA_fnc_waitUntilAndExecute;
 [{player getVariable "wr_waveCountdownDone"}, {[] call FUNC(prepareRespawn)}, []] call CBA_fnc_waitUntilAndExecute;
