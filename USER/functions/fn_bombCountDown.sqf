@@ -1,8 +1,8 @@
 // E: Server
 
-params ["_object"];
+params ["_boss"];
 
-_object setVariable ["hoppers_countdownStarted", true, true];
+_boss setVariable ["hoppers_countdownStarted", true, true];
 
 private _max = 30; // duration of countdown
 
@@ -17,12 +17,12 @@ for "_i" from _max to 1 step -1 do {
 };
 
 [{
-    params ["_object"];
+    params ["_boss"];
 
-    
-    private _explosion = "RHS_9M79_1_K" createVehicle (position _object);
+    private _position = getPos _boss;
+    private _explosion = "RHS_9M79_1_K" createVehicle _position;
     _explosion setDamage 1;
-    
+
     private _phase = missionNamespace getVariable ["hoppers_missionPhase", 0];
     _phase = _phase + 1;
     missionNamespace setVariable ["hoppers_missionPhase", _phase, true];
@@ -30,8 +30,16 @@ for "_i" from _max to 1 step -1 do {
     remoteExecCall ["grad_waverespawn_fnc_respawnManual", west];
     remoteExecCall ["grad_waverespawn_fnc_respawnManual", east];
 
-    // [getPos _object, 10] call RHS_fnc_ss21_nuke; // param 1 is payload
+    _boss setVariable ["hoppers_countdownStarted", false, true];
 
-    ["hoppers_phaseChange", [_phase, _object]] call CBA_fnc_globalEvent;
+    // create ruins
+    private _housesNearBy = nearObjects [_position, ["HOUSE", "BUILDING"], 50];
+    {
+        _x setDamage [1, false];
+    } forEach _housesNearBy;
 
-}, [_object], _max] call CBA_fnc_waitAndExecute;
+    [_position, _phase] call hoppers_fnc_createBombMarker;
+
+    ["hoppers_phaseChange", [_phase, _boss]] call CBA_fnc_globalEvent;
+
+}, [_boss], _max] call CBA_fnc_waitAndExecute;

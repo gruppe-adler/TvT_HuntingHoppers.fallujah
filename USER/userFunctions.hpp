@@ -23,8 +23,10 @@ class hoppers
 
            class bombCountDown;
            class bombSpotInit;
+           class canLayBomb;
            class civilianAddWeapon;
 
+           class createBombMarker;
            class createMarker;
            class eventListener { postInit = 1; };
            class fadeMarker;
@@ -36,7 +38,7 @@ class hoppers
            class mapreplacePlants;
 
            class showTracker;
-           
+
            class tasksInitBlufor;
            class tasksInitOpfor;
            class winConditions;
