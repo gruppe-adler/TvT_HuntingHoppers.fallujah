@@ -17,10 +17,9 @@ for "_i" from _max to 1 step -1 do {
 };
 
 [{
-    params ["_boss"];
+    params ["_boss", "_position"];
 
-    private _position = getPos _boss;
-    private _explosion = "RHS_9M79_1_K" createVehicle _position;
+    private _explosion = "Bo_GBU12_LGB" createVehicle _position;
     _explosion setDamage 1;
 
     private _phase = missionNamespace getVariable ["hoppers_missionPhase", 0];
@@ -48,4 +47,4 @@ for "_i" from _max to 1 step -1 do {
 
     ["hoppers_phaseChange", [_phase, _boss]] call CBA_fnc_globalEvent;
 
-}, [_boss], _max] call CBA_fnc_waitAndExecute;
+}, [_boss, getPos _boss], _max] call CBA_fnc_waitAndExecute;

@@ -1,6 +1,7 @@
 if (!isServer) exitWith {};
 
 params ["_position", "_size"];
+_size params ["_sizeA", "_sizeB"];
 
 private _typeArray =
 ["palm_01.p3d",
@@ -25,7 +26,7 @@ private _simpleObject = true;
  DO NOT EDIT BELOW
 */
 
-private _trees = nearestTerrainObjects [_position, ["TREE", "SMALL TREE"], _size];
+private _trees = nearestTerrainObjects [_position, ["TREE", "SMALL TREE"], _sizeA];
 
 
 

@@ -31,10 +31,10 @@ class hoppers
            class findRandomPos;
 
            class init { postInit = 1; };
-
+           
            class mapreplaceBuildings;
            class mapreplacePlants;
-           class replacementInit;
+           class replacementInit { postInit = 1; };
 
            class showTracker;
 

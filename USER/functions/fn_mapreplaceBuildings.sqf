@@ -1,6 +1,7 @@
 if (!isServer) exitWith {};
 
 params ["_position", "_size"];
+_size params ["_sizeA", "_sizeB"];
 
 private _buildings = [
 	"dum_olez_istan2_maly2.p3d",
@@ -38,7 +39,7 @@ private _count = 0;
 private _time = time;
 
 
-private _arrayOfBuildings = nearestTerrainObjects [_position, ["HOUSE", "BUILDING"], _size];
+private _arrayOfBuildings = nearestTerrainObjects [_position, ["HOUSE", "BUILDING"], _sizeA];
 
 {
 	private _oldBuilding = _x;

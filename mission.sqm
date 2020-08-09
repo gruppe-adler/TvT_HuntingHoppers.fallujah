@@ -12157,7 +12157,7 @@ class Mission
 			fillName="FDiagonal";
 			a=2000;
 			b=2000;
-			angle=169.44298;
+			angle=169.44295;
 			id=681;
 			atlOffset=0.00026941299;
 		};

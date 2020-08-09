@@ -23,11 +23,8 @@ if (!isServer) exitWith {};
 
 [0] call hoppers_fnc_tasksInitOpfor;
 
-HOPPERS_REPLACE_BUILDINGS_RADIUS = 500;
-HOPPERS_REPLACE_PLANTS_RADIUS = 750;
 HOPPERS_BOMB_MIN_DISTANCE = 750;
 
-call hoppers_fnc_bombSpotInit;
 call hoppers_fnc_tasksInitBlufor;
 call hoppers_fnc_addCivilianPenalty;
 call hoppers_fnc_winConditions;
