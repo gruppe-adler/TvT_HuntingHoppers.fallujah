@@ -27,18 +27,24 @@ for "_i" from _max to 1 step -1 do {
     _phase = _phase + 1;
     missionNamespace setVariable ["hoppers_missionPhase", _phase, true];
 
+    [_phase] call hoppers_fnc_tasksInitOpfor;
+
     remoteExecCall ["grad_waverespawn_fnc_respawnManual", west];
     remoteExecCall ["grad_waverespawn_fnc_respawnManual", east];
 
     _boss setVariable ["hoppers_countdownStarted", false, true];
 
     // create ruins
-    private _housesNearBy = nearObjects [_position, ["HOUSE", "BUILDING"], 50];
+    private _housesNearBy = ((_position nearObjects ["House", 50]) + (_position nearObjects ["BUILDING", 50]));
     {
         _x setDamage [1, false];
     } forEach _housesNearBy;
 
     [_position, _phase] call hoppers_fnc_createBombMarker;
+
+    missionNamespace setVariable ["hoppers_lastPhaseTime", CBA_missionTime, true];
+
+    diag_log format ["resetting lastPhaseTime %1", CBA_missionTime];
 
     ["hoppers_phaseChange", [_phase, _boss]] call CBA_fnc_globalEvent;
 

@@ -11,7 +11,6 @@ class hoppers
        {
            file = "USER\functions";
 
-           class addBombSpot;
            class addBombTrigger;
            class addBoss;
            class addCivilianPenalty;
@@ -22,7 +21,6 @@ class hoppers
            class areaBarShow;
 
            class bombCountDown;
-           class bombSpotInit;
            class canLayBomb;
            class civilianAddWeapon;
 
@@ -36,6 +34,7 @@ class hoppers
 
            class mapreplaceBuildings;
            class mapreplacePlants;
+           class replacementInit;
 
            class showTracker;
 
