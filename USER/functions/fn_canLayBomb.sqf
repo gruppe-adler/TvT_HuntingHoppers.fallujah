@@ -11,4 +11,8 @@ if (player getVariable ["hoppers_countdownStarted", false]) then {
     _canLay = false;
 };
 
+if (missionNamespace getVariable ["hoppers_missionPhase", 0] > 9998) then {
+    _canLay = false;
+};
+
 _canLay

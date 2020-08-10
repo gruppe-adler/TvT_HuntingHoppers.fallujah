@@ -20,15 +20,19 @@ _unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (ra
 
     private _currentInterval = _unit getVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin];
     private _currentFadeout = _markerFadeout;
-    private _lastPhase = missionNamespace getVariable ["hoppers_missionPhase", 0] >= count (missionNamespace getVariable ["hoppers_bombSpots", []]);
+    private _lastPhase = missionNamespace getVariable ["hoppers_missionPhase", 0] >= 9998;
     private _lastRun = _unit getVariable ["hoppers_lastAgentMarkerTime",0];
     private _lastPhaseTime = missionNamespace getVariable ["hoppers_lastPhaseTime", CBA_missionTime];
 
 
 
-    private _size = _markerSize - (_markerSize * (linearConversion [0, (60 * 15), (CBA_missionTime - _lastPhaseTime), 0, 1, true]));
+    private _size = if (_lastPhase) then {
+        1 
+    } else {
+        (_markerSize - (_markerSize * (linearConversion [0, (60 * 15), (CBA_missionTime - _lastPhaseTime), 0, 1, true])) + 1)
+    };
 
-    diag_log format ["creating Marker in Size %1 for lastPhaseTime %2", _size, _lastPhaseTime];
+    // diag_log format ["creating Marker in Size %1 for lastPhaseTime %2", _size, _lastPhaseTime];
     
     if (!(_unit getVariable ["hoppers_isBoss", false])) then {
         _size = _size/4 
@@ -48,13 +52,18 @@ _unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (ra
     };
 
     private _color = if (_unit getVariable ["hoppers_isBoss", false]) then { "ColorOpfor" } else { "ColorIndependent" };
-    private _centerMarker = createMarker [format ["hoppers_marker_%1_center_%2",[_unit getVariable ["ACE_Name", "unknown"]] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
+
+    private _centerMarkerName = format ["hoppers_marker_%1_center_%2",_unit getVariable ["ACE_Name", "unknown"],CBA_missionTime * 1000];
+    private _centerMarker = createMarker [_centerMarkerName, _markerPos];
     _centerMarker setMarkerShape "ICON";
     _centerMarker setMarkerType "hd_dot";
     _centerMarker setMarkerColor _color;
     _centerMarker setMarkerText (format ["%1",[daytime * 3600,"HH:MM"] call BIS_fnc_secondsToString]);
 
-    private _areaMarker = createMarker [format ["hoppers_marker_%1_area_%2",[_unit getVariable ["ACE_Name", "unknown"]] call BIS_fnc_filterString,CBA_missionTime * 1000],_markerPos];
+    diag_log format ["_centerMarkerName: %1", _centerMarkerName];
+
+    private _areaMarkerName = format ["hoppers_marker_%1_area_%2",_unit getVariable ["ACE_Name", "unknown"],CBA_missionTime * 1000];
+    private _areaMarker = createMarker [_areaMarkerName, _markerPos];
     _areaMarker setMarkerShape "ELLIPSE";
     _areaMarker setMarkerColor _color;
     _areaMarker setMarkerSize [_size,_size];

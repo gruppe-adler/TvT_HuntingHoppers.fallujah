@@ -4,6 +4,8 @@ params ["_boss"];
 
 _boss setVariable ["hoppers_countdownStarted", true, true];
 
+private _bomb = "IEDLandBig_F" createVehicle (getPos _boss);
+
 private _max = 30; // duration of countdown
 
 for "_i" from _max to 1 step -1 do {
@@ -17,10 +19,11 @@ for "_i" from _max to 1 step -1 do {
 };
 
 [{
-    params ["_boss", "_position"];
+    params ["_bomb", "_boss", "_position"];
 
     private _explosion = "Bo_GBU12_LGB" createVehicle _position;
     _explosion setDamage 1;
+    deleteVehicle _bomb;
 
     private _phase = missionNamespace getVariable ["hoppers_missionPhase", 0];
     _phase = _phase + 1;
@@ -45,6 +48,6 @@ for "_i" from _max to 1 step -1 do {
 
     diag_log format ["resetting lastPhaseTime %1", CBA_missionTime];
 
-    ["hoppers_phaseChange", [_phase, _boss]] call CBA_fnc_globalEvent;
+    ["hoppers_phaseChange", [_phase]] call CBA_fnc_globalEvent;
 
-}, [_boss, getPos _boss], _max] call CBA_fnc_waitAndExecute;
+}, [_bomb, _boss, getPos _boss], _max] call CBA_fnc_waitAndExecute;

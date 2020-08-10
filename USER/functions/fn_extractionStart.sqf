@@ -28,3 +28,7 @@ missionNamespace setVariable ["hoppers_exfilPositions", _exfilPositions, true];
 private _phase = missionNamespace getVariable ["hoppers_missionPhase", 0];
 private _taskID = format ["Hoppers_Bomb%1", _phase];
 [_taskID, "CANCELED"] call BIS_fnc_taskSetState;
+
+["hoppers_phaseChange", [9999]] call CBA_fnc_globalEvent;
+
+missionNamespace setVariable ["hoppers_missionPhase", 9999, true];

@@ -1,13 +1,13 @@
 
 
 ["hoppers_phaseChange", {
-  params ["_newPhase", "_bombSpot"];
+  params ["_newPhase"];
 
   if (hasInterface) then {
-    private _string = "Bomb attack " + (str _newPhase) + " detected! Intel for Blufor improved.";
+    private _string = "Bomb attack " + (str _newPhase) + " detected! Position marked on map. Intel Marker Size reset.";
 
-    if (_lastPhase) then {
-      _string = "Bomb attack " + (str _newPhase) + " detected! Tracking on Boss established. Opfor needs to flee.";
+    if (_newPhase == 9999) then {
+      _string = "Constant tracking on Boss established. Opfor is fleeing.";
     };
 
     [
@@ -20,7 +20,7 @@
 
   };
 
-  if (isServer) then {
+  if (isServer && _newPhase < 9999) then {
 
       private _spotNumber = _newPhase - 1;
       private _lastSpot = format ["Hoppers_Bomb%1", _spotNumber];

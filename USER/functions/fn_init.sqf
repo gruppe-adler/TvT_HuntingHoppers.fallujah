@@ -13,7 +13,7 @@ if (hasInterface) then {
       };
   }] call CBA_fnc_addEventHandler;
 
-  if (side player == east) then {
+  if (side player == east && !(player getVariable ["hoppers_isBoss", false])) then {
     private _boss = (missionNamespace getVariable ["hoppers_bosses", []]) select 0; // todo make failproof
     [_boss] call hoppers_fnc_areaBarShow;
   };
