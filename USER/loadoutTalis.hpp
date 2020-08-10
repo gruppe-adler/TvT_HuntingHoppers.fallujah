@@ -1,5 +1,7 @@
 class ind_me_talis: ind_eastern_nationalists {
     class AllUnits {
+        primaryWeapon = "rhs_weap_ak74m";
+        primaryWeaponMagazine = "rhs_30Rnd_545x39_AK";
         uniform = "LOP_U_AM_Fatigue_01_3";
         nvgoggles = "";
         headgear = "LOP_H_Pakol";
@@ -9,7 +11,7 @@ class ind_me_talis: ind_eastern_nationalists {
         //rifleman
         class Soldier_F {
             addItemsToUniform[] = {
-                LIST_10("rhsgref_5Rnd_762x54_m38"),
+                LIST_10("rhs_30Rnd_545x39_AK"),
                 "rhs_mag_rgo",
                 "rhs_mag_rdg2_white"
             };
