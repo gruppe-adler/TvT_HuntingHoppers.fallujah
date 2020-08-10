@@ -15,6 +15,7 @@
         "grad-gpstracker": "^0.2.0",
         "grad-listbuymenu": "^0.8.1",
         "grad-loadout": "^4.11.4",
-        "grad-tvtsettings": "0.0.3"
+        "grad-tvtsettings": "0.0.3",
+        "grad-vehiclerespawn": "0.0.1"
     }
 }

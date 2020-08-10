@@ -4,6 +4,8 @@
 
 #include "..\node_modules\grad-dyngroupdecals\cfgFunctions.hpp"
 #include "..\node_modules\grad-gpsTracker\cfgFunctions.hpp"
+#include "..\node_modules\grad-vehicleRespawn\cfgFunctions.hpp"
+
 
 class hoppers
    {
@@ -27,11 +29,12 @@ class hoppers
            class createBombMarker;
            class createMarker;
            class eventListener { postInit = 1; };
+           class extractionStart;
            class fadeMarker;
            class findRandomPos;
 
            class init { postInit = 1; };
-           
+
            class mapreplaceBuildings;
            class mapreplacePlants;
            class replacementInit { postInit = 1; };

@@ -18,3 +18,20 @@ private _bombTrigger = [
 ] call ace_interact_menu_fnc_createAction;
 
 [_boss, 1, ["ACE_SelfActions"], _bombTrigger] call ace_interact_menu_fnc_addActionToObject;
+
+private _extractionStart = [
+    "extractionStart",
+    "Start Extraction (cancel bomb tasks)",
+    "",
+    {
+        hintSilent "Possible extraction points marked on map. Boss is marked for Blufor now.";
+
+        if (position player inArea "mrk_bombArea") then {
+            [player] remoteExec ["hoppers_fnc_extractionStart", 2];
+        };
+    }, {
+          call hoppers_fnc_canLayBomb
+    },{},nil,"",3,[false,false,false,false,false]
+] call ace_interact_menu_fnc_createAction;
+
+[_boss, 1, ["ACE_SelfActions"], _extractionStart] call ace_interact_menu_fnc_addActionToObject;

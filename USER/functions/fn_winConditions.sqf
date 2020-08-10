@@ -2,20 +2,34 @@
   params ["_args", "_handle"];
 
   private _opforBosses = missionNamespace getVariable ["hoppers_bosses", []];
-  private _exfilPosition = missionNamespace getVariable ["hoppers_exfilPosition", [-9999,-9999,0]];
+  private _exfilPositions = missionNamespace getVariable ["hoppers_exfilPositions", [[-9999,-9999,0]]];
 
   // east eliminated
   OPFOR_ELIMINATED = ({side _x isEqualTo east && alive _x} count _opforBosses == 0);
   BLUFOR_ELIMINATED = ({side _x isEqualTo west && alive _x} count (playableUnits + switchableUnits) == 0);
 
-  OPFOR_EXTRACTED = {side _x isEqualTo east && alive _x && _x distance _exfilPosition < 100} count hoppers_bosses == count hoppers_bosses;
+  OPFOR_EXTRACTED = false;
+  {
+      private _exfilPosition = _x;
+      {
+        private _boss = _x;
+        if (alive _boss && _boss distance _exfilPosition < 100) then {
+            OPFOR_EXTRACTED = true;
+        };
+      } forEach _opforBosses
+  } forEach _exfilPositions;
 
   if (OPFOR_ELIMINATED) exitWith {
       [_handle] call CBA_fnc_removePerFrameHandler;
       call GRAD_replay_fnc_stopRecord;
 
       ["Eliminate", "SUCCEEDED"] call BIS_fnc_taskSetState;
-      ["Exfiltrate", "FAILED"] call BIS_fnc_taskSetState;
+      {
+          private _exfilPosition = _x;
+          private _taskID = format ["Exfiltrate_%1", _exfilPosition];
+          [_taskID, "FAILED"] call BIS_fnc_taskSetState;
+      } forEach _exfilPositions;
+
 
       west addScoreSide 1337;
   };
@@ -25,7 +39,11 @@
       call GRAD_replay_fnc_stopRecord;
 
       ["Eliminate", "FAILED"] call BIS_fnc_taskSetState;
-      ["Exfiltrate", "SUCCEEDED"] call BIS_fnc_taskSetState;
+      {
+          private _exfilPosition = _x;
+          private _taskID = format ["Exfiltrate_%1", _exfilPosition];
+          [_taskID, "SUCCEEDED"] call BIS_fnc_taskSetState;
+      } forEach _exfilPositions;
 
       east addScoreSide 1337;
   };
@@ -35,7 +53,11 @@
     call GRAD_replay_fnc_stopRecord;
 
     ["Eliminate", "FAILED"] call BIS_fnc_taskSetState;
-    ["Exfiltrate", "SUCCEEDED"] call BIS_fnc_taskSetState;
+    {
+        private _exfilPosition = _x;
+        private _taskID = format ["Exfiltrate_%1", _exfilPosition];
+        [_taskID, "SUCCEEDED"] call BIS_fnc_taskSetState;
+    } forEach _exfilPositions;
 
     east addScoreSide 1337;
   };
