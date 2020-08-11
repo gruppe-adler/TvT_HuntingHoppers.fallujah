@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=162;
+		nextID=167;
 	};
 	class Camera
 	{
 		pos[]={2534.4573,25.563019,4898.9229};
-		dir[]={-0.80471647,-0.56094396,0.19435821};
-		up[]={-0.54526693,0.82785362,0.13169479};
-		aside[]={0.23477358,8.7311491e-008,0.9720515};
+		dir[]={0.87495369,-0.151812,-0.45981058};
+		up[]={0.13439,0.98840994,-0.070625216};
+		aside[]={-0.46520296,2.8463546e-008,-0.88521379};
 	};
 };
 binarizationWanted=0;
@@ -7689,7 +7689,7 @@ class Mission
 				};
 			};
 			id=205;
-			atlOffset=-0.015539646;
+			atlOffset=-6.9853516;
 		};
 		class Item3
 		{
@@ -10418,7 +10418,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2486,8.1591911,4926};
-				angles[]={-0,0.98020279,0};
+				angles[]={0,0.98020279,0};
 			};
 			side="Empty";
 			flags=4;
@@ -10554,7 +10554,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2499,8.4925613,4913};
-				angles[]={-0,1.0836159,0};
+				angles[]={0,1.0836159,0};
 			};
 			side="Empty";
 			flags=4;
@@ -10572,7 +10572,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2497,8.4925613,4917};
-				angles[]={-0,0.86576784,0};
+				angles[]={0,0.86576784,0};
 			};
 			side="Empty";
 			flags=4;
@@ -10590,7 +10590,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2495,8.4750652,4920};
-				angles[]={-0,0.80257267,0};
+				angles[]={0,0.80257267,0};
 			};
 			side="Empty";
 			flags=4;
@@ -10607,7 +10607,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2501,8.4750652,4908};
-				angles[]={-0,0.98057747,0};
+				angles[]={0,0.98057747,0};
 			};
 			side="Empty";
 			flags=4;
@@ -10624,7 +10624,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2489,8.1591911,4922};
-				angles[]={-0,0.87721425,0};
+				angles[]={0,0.87721425,0};
 			};
 			side="Empty";
 			flags=4;

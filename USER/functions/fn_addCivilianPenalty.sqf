@@ -2,20 +2,16 @@ HOPPERS_CIVILIANS_PENALTY_CHANCE_WEST = 0;
 HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST = 0;
 
 // add civilian penalty system
-["grad_civs_civ_added", {
-    params ["_civ"];
+["grad_civs_civKilled", {
+    params ["_position", "_killer"];
 
-    _civ addEventhandler ["Killed", {
-        params ["_unit", "_killer", "_instigator", "_useEffects"];
+    if (side _killer == east) then {
+        HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST = HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST + 0.1;
+    };
 
-        if (side _killer == east) then {
-            HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST = HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST + 0.1;
-        };
-
-        if (side _killer == west) then {
-            HOPPERS_CIVILIANS_PENALTY_CHANCE_WEST = HOPPERS_CIVILIANS_PENALTY_CHANCE_WEST + 0.1;
-        };
-    }];
+    if (side _killer == west) then {
+        HOPPERS_CIVILIANS_PENALTY_CHANCE_WEST = HOPPERS_CIVILIANS_PENALTY_CHANCE_WEST + 0.1;
+    };
 
     /*
     if ((random 1 > HOPPERS_CIVILIANS_PENALTY_CHANCE_EAST) || 
