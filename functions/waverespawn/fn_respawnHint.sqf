@@ -50,7 +50,7 @@ private _maxTime = if (GVAR(WAVERESPAWNMANUAL)) then {
     parseText format ["<t align ='center' size='0.7'>Skipping waiting time in: %1.</t>", [GVAR(MAXRESPAWNTIME) - (time - (player getVariable ["wr_timeOfDeath",time])),"MM:SS"] call BIS_fnc_secondsToString];
 };
 
-systemChat "respawnhint running";
+// systemChat "respawnhint running";
 
 private _hintArray = [
     _rule,

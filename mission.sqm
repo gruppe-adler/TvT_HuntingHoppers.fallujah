@@ -8,7 +8,7 @@ class EditorData
 	toggles=5;
 	class ItemIDProvider
 	{
-		nextID=733;
+		nextID=741;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=167;
+		nextID=172;
 	};
 	class Camera
 	{
-		pos[]={2534.4573,25.563019,4898.9229};
-		dir[]={0.87495369,-0.151812,-0.45981058};
-		up[]={0.13439,0.98840994,-0.070625216};
-		aside[]={-0.46520296,2.8463546e-008,-0.88521379};
+		pos[]={5962.397,240.5808,9910.5586};
+		dir[]={-0.073862836,-0.60265076,0.79458106};
+		up[]={-0.055780966,0.79800475,0.60006535};
+		aside[]={0.99570829,6.5483619e-010,0.0925593};
 	};
 };
 binarizationWanted=0;
@@ -42,13 +42,14 @@ addons[]=
 	"grad_civs_common",
 	"ffaa_casas_af",
 	"rhsgref_c_vehicles_ret",
-	"rds_A2_Civilians"
+	"rds_A2_Civilians",
+	"grad_civs_transit"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=13;
+		items=14;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -134,6 +135,12 @@ class AddonsMetaData
 			name="RDS Civilian Pack Cars";
 			author="reyhard";
 			url="https://forums.bistudio.com/topic/170165-rds-a2-civilian-pack/";
+		};
+		class Item13
+		{
+			className="grad_civs_transit";
+			name="transit";
+			author="AUTHOR";
 		};
 	};
 };
@@ -4132,7 +4139,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=61;
+		items=69;
 		class Item0
 		{
 			dataType="Layer";
@@ -7689,7 +7696,7 @@ class Mission
 				};
 			};
 			id=205;
-			atlOffset=-6.9853516;
+			atlOffset=-0.015539646;
 		};
 		class Item3
 		{
@@ -10915,16 +10922,262 @@ class Mission
 			id=689;
 			type="RDS_Gaz24_Civ_03";
 		};
+		class Item61
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5940,7,10202};
+			};
+			id=733;
+			type="grad_civs_transit_transitSink";
+		};
+		class Item62
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={5932,7,10206};
+			};
+			id=734;
+			type="grad_civs_transit_transitSource";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="grad_civs_transit_transitSource_interval";
+					expression="_this setVariable ['Interval',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=60;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="grad_civs_transit_transitSource_vehicles";
+					expression="_this setVariable ['Vehicles',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"ARRAY"
+								};
+							};
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item63
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6344,1587,14};
+			};
+			id=735;
+			type="grad_civs_transit_transitSink";
+			atlOffset=1580.02;
+		};
+		class Item64
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6348,1587,9};
+			};
+			id=736;
+			type="grad_civs_transit_transitSource";
+			atlOffset=1580.02;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="grad_civs_transit_transitSource_interval";
+					expression="_this setVariable ['Interval',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=60;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="grad_civs_transit_transitSource_vehicles";
+					expression="_this setVariable ['Vehicles',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"ARRAY"
+								};
+							};
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item65
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={35,6.9900079,2765};
+			};
+			id=737;
+			type="grad_civs_transit_transitSink";
+		};
+		class Item66
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={37,6.9900079,2746};
+			};
+			id=738;
+			type="grad_civs_transit_transitSource";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="grad_civs_transit_transitSource_interval";
+					expression="_this setVariable ['Interval',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=60;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="grad_civs_transit_transitSource_vehicles";
+					expression="_this setVariable ['Vehicles',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"ARRAY"
+								};
+							};
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item67
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={10227,7,5250};
+			};
+			id=739;
+			type="grad_civs_transit_transitSink";
+		};
+		class Item68
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={10225,7,5270};
+			};
+			id=740;
+			type="grad_civs_transit_transitSource";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="grad_civs_transit_transitSource_interval";
+					expression="_this setVariable ['Interval',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=60;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="grad_civs_transit_transitSource_vehicles";
+					expression="_this setVariable ['Vehicles',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"ARRAY"
+								};
+							};
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=9;
+			nextID=13;
 		};
 		class Links
 		{
-			items=9;
+			items=13;
 			class Item0
 			{
 				linkID=0;
@@ -11010,6 +11263,46 @@ class Mission
 				linkID=8;
 				item0=525;
 				item1=523;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item9
+			{
+				linkID=9;
+				item0=736;
+				item1=733;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item10
+			{
+				linkID=10;
+				item0=735;
+				item1=734;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item11
+			{
+				linkID=11;
+				item0=738;
+				item1=739;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item12
+			{
+				linkID=12;
+				item0=737;
+				item1=740;
 				class CustomData
 				{
 					type="Sync";
