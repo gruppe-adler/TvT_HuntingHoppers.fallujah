@@ -8,5 +8,8 @@
     "mrk_replacement_2",
     "mrk_replacement_3",
     "mrk_replacement_4",
-    "mrk_replacement_5"
+    "mrk_replacement_5",
+    "mrk_replacement_6",
+    "mrk_replacement_7",
+    "mrk_replacement_8"
 ];

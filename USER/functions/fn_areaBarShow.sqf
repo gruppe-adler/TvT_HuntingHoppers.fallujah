@@ -2,7 +2,7 @@ params ["_boss"];
 
 private _progressBar = call hoppers_fnc_areaBarCreate;
 private _minDistance = 0;
-private _maxDistance = 200;
+private _maxDistance = ["HOPPERS_MAX_DISTANCE_BOSS", 200] call BIS_fnc_getParamValue;
 
 _handle = [{
 	params ["_args", "_handle"];

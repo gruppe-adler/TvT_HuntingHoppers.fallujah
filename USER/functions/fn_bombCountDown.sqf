@@ -19,6 +19,10 @@ for "_i" from _max to 1 step -1 do {
 };
 
 [{
+    [""] remoteExec ["hintSilent", east];
+}, [], _max + 1] call CBA_fnc_waitAndExecute;
+
+[{
     params ["_bomb", "_boss", "_position"];
 
     private _explosion = "Bo_GBU12_LGB" createVehicle _position;

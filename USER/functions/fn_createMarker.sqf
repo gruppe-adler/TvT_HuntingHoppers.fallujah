@@ -58,9 +58,13 @@ _unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (ra
     _centerMarker setMarkerShape "ICON";
     _centerMarker setMarkerType "hd_dot";
     _centerMarker setMarkerColor _color;
-    _centerMarker setMarkerText (format ["%1",[daytime * 3600,"HH:MM"] call BIS_fnc_secondsToString]);
+    if (!_lastPhase) then {
+        _centerMarker setMarkerText (format ["%1",[daytime * 3600,"HH:MM"] call BIS_fnc_secondsToString]);
+    } else {
+        _centerMarker setMarkerText "";
+    };
 
-    diag_log format ["_centerMarkerName: %1", _centerMarkerName];
+    // diag_log format ["_centerMarkerName: %1", _centerMarkerName];
 
     private _areaMarkerName = format ["hoppers_marker_%1_area_%2",_unit getVariable ["ACE_Name", "unknown"],CBA_missionTime * 1000];
     private _areaMarker = createMarker [_areaMarkerName, _markerPos];

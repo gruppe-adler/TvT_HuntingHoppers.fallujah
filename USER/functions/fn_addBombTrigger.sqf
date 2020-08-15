@@ -8,7 +8,13 @@ private _bombTrigger = [
         hintSilent "Bomb Trigger Set (30s)";
 
         if (position player inArea "mrk_bombArea") then {
-            [player] remoteExec ["hoppers_fnc_bombCountDown", 2];
+            player playMoveNow "Acts_carFixingWheel";
+            [30, [], {
+                [player] remoteExec ["hoppers_fnc_bombCountDown", 2];
+            }, {
+                hint "Aborted Bomb Laying!"
+            }, "Wiring Bomb..."] call ace_common_fnc_progressBar
+            
         } else {
             hintSilent "must be in bomb area marker";
         };
@@ -30,7 +36,9 @@ private _extractionStart = [
         [player] remoteExec ["hoppers_fnc_extractionStart", 2];
         
     }, {
-          !(player getVariable ["hoppers_countdownStarted", false]) && missionNamespace getVariable ["hoppers_missionPhase", 0] > 0 && missionNamespace getVariable ["hoppers_missionPhase", 0] < 9999
+          !(player getVariable ["hoppers_countdownStarted", false]) && 
+          missionNamespace getVariable ["hoppers_missionPhase", 0] > HOPPERS_BOMBS_MIN_PLACED && 
+          missionNamespace getVariable ["hoppers_missionPhase", 0] < 9999
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 

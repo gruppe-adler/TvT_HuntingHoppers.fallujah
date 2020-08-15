@@ -1,6 +1,6 @@
 params ["_markerPos", "_index"];
 
-private _color = "colorRed";
+private _color = "colorBlack";
 
 private _centerMarker = createMarker [format ["hoppers_bombmarker_center_%1_%2",_markerPos,CBA_missionTime * 1000],_markerPos];
 _centerMarker setMarkerShape "ICON";
@@ -11,7 +11,7 @@ _centerMarker setMarkerText (format ["%1 | %2", _index, [daytime * 3600,"HH:MM"]
 private _bombMarker = createMarker [format ["hoppers_bombmarker_%1_%2",_markerPos,CBA_missionTime * 1000],_markerPos];
 _bombMarker setMarkerShape "ELLIPSE";
 _bombMarker setMarkerColor _color;
-_bombMarker setMarkerSize [HOPPERS_BOMB_MIN_DISTANCE,HOPPERS_BOMB_MIN_DISTANCE];
+_bombMarker setMarkerSize [HOPPERS_BOMBS_MIN_DISTANCE,HOPPERS_BOMBS_MIN_DISTANCE];
 _bombMarker setMarkerBrush "Border";
 
 private _existingBombMarkers = missionNamespace getVariable ["hoppers_bombmarker", []];

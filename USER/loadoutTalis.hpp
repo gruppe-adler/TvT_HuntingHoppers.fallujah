@@ -5,12 +5,28 @@ class ind_me_talis: ind_eastern_nationalists {
         uniform = "LOP_U_AM_Fatigue_01_3";
         nvgoggles = "";
         headgear = "LOP_H_Pakol";
+        radio = "TFAR_fadak";
+        gps = "itemGPS";
+        addItemsToUniform[] = {
+            LIST_6("ACE_fieldDressing"),
+            LIST_2("ACE_morphine"),
+            LIST_2("ACE_Chemlight_HiWhite"),
+            "ACE_epinephrine",
+            "ACE_Flashlight_MX991",
+            "ACE_MapTools"
+        };
     };
 
     class Type {
         //rifleman
         class Soldier_F {
             addItemsToUniform[] = {
+                LIST_6("ACE_fieldDressing"),
+                LIST_2("ACE_morphine"),
+                LIST_2("ACE_Chemlight_HiWhite"),
+                "ACE_epinephrine",
+                "ACE_Flashlight_MX991",
+                "ACE_MapTools",
                 LIST_10("rhs_30Rnd_545x39_AK"),
                 "rhs_mag_rgo",
                 "rhs_mag_rdg2_white"
@@ -19,8 +35,26 @@ class ind_me_talis: ind_eastern_nationalists {
 
         //autorifleman
         class Soldier_AR_F: Soldier_F {
+            addItemsToUniform[] = {
+                LIST_6("ACE_fieldDressing"),
+                LIST_2("ACE_morphine"),
+                LIST_2("ACE_Chemlight_HiWhite"),
+                "ACE_epinephrine",
+                "ACE_Flashlight_MX991",
+                "ACE_MapTools"
+            };
+            primaryWeapon = "rhs_weap_pkm";
             uniform = "LOP_U_AM_Fatigue_02_5";
             headgear = "LOP_H_Pakol";
+            addItemsToVest[] = {
+                "rhs_100Rnd_762x54mmR_green",
+                "rhs_mag_f1"
+            };
+            addItemsToBackpack[] = {
+                "rhs_100Rnd_762x54mmR",
+                "rhs_100Rnd_762x54mmR_green"
+            };
+            backpack = "B_AssaultPack_blk";
         };
 
         //light AT

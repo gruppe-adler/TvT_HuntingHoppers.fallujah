@@ -8,7 +8,7 @@ class EditorData
 	toggles=5;
 	class ItemIDProvider
 	{
-		nextID=741;
+		nextID=754;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=172;
+		nextID=177;
 	};
 	class Camera
 	{
-		pos[]={5962.397,240.5808,9910.5586};
-		dir[]={-0.073862836,-0.60265076,0.79458106};
-		up[]={-0.055780966,0.79800475,0.60006535};
-		aside[]={0.99570829,6.5483619e-010,0.0925593};
+		pos[]={7967.2212,37.224678,1861.8049};
+		dir[]={-0.41746354,-0.56955951,0.70805007};
+		up[]={-0.28927529,0.82194656,0.49063507};
+		aside[]={0.86142701,-1.1257362e-007,0.50789291};
 	};
 };
 binarizationWanted=0;
@@ -41,15 +41,18 @@ addons[]=
 	"gm_vehicles_air_helicopters_bo105_ge_army_bo105",
 	"grad_civs_common",
 	"ffaa_casas_af",
-	"rhsgref_c_vehicles_ret",
 	"rds_A2_Civilians",
-	"grad_civs_transit"
+	"grad_civs_transit",
+	"A3_Soft_F_Orange_Van_02",
+	"A3_Soft_F_Offroad_01",
+	"A3_Soft_F_Gamma_Van_01",
+	"A3_Soft_F_Exp_Offroad_02"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=14;
+		items=17;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -124,23 +127,44 @@ class AddonsMetaData
 		};
 		class Item11
 		{
-			className="rhsgref_c_vehicles_ret";
-			name="GREF Vehicle Retextures";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
-		};
-		class Item12
-		{
 			className="rds_A2_Civilians";
 			name="RDS Civilian Pack Cars";
 			author="reyhard";
 			url="https://forums.bistudio.com/topic/170165-rds-a2-civilian-pack/";
 		};
-		class Item13
+		class Item12
 		{
 			className="grad_civs_transit";
 			name="transit";
 			author="AUTHOR";
+		};
+		class Item13
+		{
+			className="A3_Soft_F_Orange";
+			name="Arma 3 Orange - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item14
+		{
+			className="A3_Soft_F";
+			name="Arma 3 Alpha - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item15
+		{
+			className="A3_Soft_F_Gamma";
+			name="Arma 3 - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item16
+		{
+			className="A3_Soft_F_Exp";
+			name="Arma 3 Apex - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -4139,7 +4163,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=69;
+		items=72;
 		class Item0
 		{
 			dataType="Layer";
@@ -7094,7 +7118,7 @@ class Mission
 							flags=7;
 							class Attributes
 							{
-								description="Driver@Dshkm";
+								description="Driver@JeepFFV";
 								isPlayable=1;
 							};
 							id=725;
@@ -7166,17 +7190,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2501.063,6.9814539,4922.5308};
+								position[]={2500.1011,6.9814539,4924.312};
 							};
 							side="East";
 							flags=5;
 							class Attributes
 							{
-								description="Gunner";
+								description="Schütze LMG";
 								isPlayable=1;
 							};
-							id=726;
-							type="O_Soldier_F";
+							id=751;
+							type="O_Soldier_AR_F";
 							class CustomAttributes
 							{
 								class Attribute0
@@ -7213,7 +7237,7 @@ class Mission
 													"STRING"
 												};
 											};
-											value="Male01ENG";
+											value="Male09ENG";
 										};
 									};
 								};
@@ -7232,7 +7256,7 @@ class Mission
 													"SCALAR"
 												};
 											};
-											value=1.05;
+											value=0.98000002;
 										};
 									};
 								};
@@ -8381,7 +8405,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add;}";
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhssaf_30rnd_556x45_EPR_G36', 20]; this addMagazineCargoGlobal ['rhs_200rnd_556x45_T_SAW', 20];};}";
 				textures="gm_ge_oli";
 			};
 			id=472;
@@ -8766,7 +8790,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add;}";
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhssaf_30rnd_556x45_EPR_G36', 20]; this addMagazineCargoGlobal ['rhs_200rnd_556x45_T_SAW', 20];};}";
 				textures="gm_ge_oli";
 			};
 			id=473;
@@ -9151,7 +9175,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add;}";
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhssaf_30rnd_556x45_EPR_G36', 20]; this addMagazineCargoGlobal ['rhs_200rnd_556x45_T_SAW', 20];};}";
 				textures="gm_ge_oli";
 			};
 			id=474;
@@ -9536,7 +9560,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add;}";
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhssaf_30rnd_556x45_EPR_G36', 20]; this addMagazineCargoGlobal ['rhs_200rnd_556x45_T_SAW', 20];};}";
 				textures="gm_ge_oli";
 			};
 			id=475;
@@ -10424,348 +10448,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2486,8.1591911,4926};
-				angles[]={0,0.98020279,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{if (isServer) then { this setObjectTextureGlobal [0,""rhsafrf\addons\rhs_a2port_car\uaz\data\uaz_main_civil_co.paa""]; [this, false, 5] call GRAD_vehiclerespawn_fnc_add; };}";
-			};
-			id=625;
-			type="rhsgref_ins_uaz_dshkm";
-			atlOffset=4.7683716e-007;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="rhs_decalArmy_type";
-					expression="_this setVariable ['rhs_decalArmy_type', _value];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Army";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalNumber_type";
-					expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cDecals4CarsNumberPlaces, _value]]] call rhs_fnc_decalsInit";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Default";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="rhs_decalArmy";
-					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="rhs_decalPlatoon_type";
-					expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Army";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="rhs_decalPlatoon";
-					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=6;
-			};
-		};
-		class Item43
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2499,8.4925613,4913};
-				angles[]={0,1.0836159,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{[this, false, 5] call GRAD_vehiclerespawn_fnc_add;}";
-			};
-			id=627;
-			type="RDS_Lada_Civ_04";
-			atlOffset=4.7683716e-007;
-		};
-		class Item44
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2497,8.4925613,4917};
-				angles[]={0,0.86576784,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add;}";
-			};
-			id=628;
-			type="RDS_Lada_Civ_03";
-			atlOffset=4.7683716e-007;
-		};
-		class Item45
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2495,8.4750652,4920};
-				angles[]={0,0.80257267,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add;}";
-			};
-			id=629;
-			type="RDS_Gaz24_Civ_01";
-		};
-		class Item46
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2501,8.4750652,4908};
-				angles[]={0,0.98057747,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add;}";
-			};
-			id=630;
-			type="RDS_Gaz24_Civ_02";
-		};
-		class Item47
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2489,8.1591911,4922};
-				angles[]={0,0.87721425,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{if (isServer) then { this setObjectTextureGlobal [0,""rhsafrf\addons\rhs_a2port_car\uaz\data\uaz_main_civil_co.paa""]; [this, false, 5] call GRAD_vehiclerespawn_fnc_add; };}";
-			};
-			id=631;
-			type="rhsgref_ins_uaz_dshkm";
-			atlOffset=4.7683716e-007;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="rhs_decalArmy_type";
-					expression="_this setVariable ['rhs_decalArmy_type', _value];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Army";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalNumber_type";
-					expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cDecals4CarsNumberPlaces, _value]]] call rhs_fnc_decalsInit";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Default";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="rhs_decalArmy";
-					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="rhs_decalPlatoon_type";
-					expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Army";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="rhs_decalPlatoon";
-					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="-1";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=6;
-			};
-		};
-		class Item48
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={2487.0173,7.9202504,4915};
 			};
 			side="Empty";
@@ -10777,7 +10459,7 @@ class Mission
 			id=632;
 			type="RDS_Old_bike_Civ_01";
 		};
-		class Item49
+		class Item43
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10793,7 +10475,7 @@ class Mission
 			id=633;
 			type="RDS_Old_bike_Civ_01";
 		};
-		class Item50
+		class Item44
 		{
 			dataType="Marker";
 			position[]={5919,7,10202};
@@ -10801,7 +10483,7 @@ class Mission
 			type="Empty";
 			id=636;
 		};
-		class Item51
+		class Item45
 		{
 			dataType="Marker";
 			position[]={10219.901,7,5264.1167};
@@ -10809,7 +10491,7 @@ class Mission
 			type="Empty";
 			id=637;
 		};
-		class Item52
+		class Item46
 		{
 			dataType="Marker";
 			position[]={6362.7822,7.956954,25.31189};
@@ -10817,7 +10499,7 @@ class Mission
 			type="Empty";
 			id=638;
 		};
-		class Item53
+		class Item47
 		{
 			dataType="Marker";
 			position[]={10.212948,6.9900079,2766.27};
@@ -10825,22 +10507,23 @@ class Mission
 			type="Empty";
 			id=639;
 		};
-		class Item54
+		class Item48
 		{
 			dataType="Marker";
 			position[]={4949,6.9910002,4848};
 			name="mrk_bombArea";
 			markerType="RECTANGLE";
 			type="ellipse";
-			colorName="ColorPink";
-			fillName="FDiagonal";
+			colorName="ColorRed";
+			fillName="Border";
 			a=2000;
 			b=2000;
 			angle=169.44295;
+			drawBorder=1;
 			id=681;
 			atlOffset=0.00026941299;
 		};
-		class Item55
+		class Item49
 		{
 			dataType="Marker";
 			position[]={4062,6.9900088,5290};
@@ -10853,7 +10536,7 @@ class Mission
 			b=400;
 			id=682;
 		};
-		class Item56
+		class Item50
 		{
 			dataType="Marker";
 			position[]={5479.3364,7,6197.1387};
@@ -10866,20 +10549,20 @@ class Mission
 			b=400;
 			id=683;
 		};
-		class Item57
+		class Item51
 		{
 			dataType="Marker";
-			position[]={5100.7856,6.9907308,4888.667};
+			position[]={5315,7,4959};
 			name="mrk_replacement_3";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorRed";
 			fillName="Vertical";
-			a=400;
-			b=400;
+			a=800;
+			b=800;
 			id=684;
 		};
-		class Item58
+		class Item52
 		{
 			dataType="Marker";
 			position[]={3944.8352,6.9907308,4410.9399};
@@ -10892,7 +10575,7 @@ class Mission
 			b=400;
 			id=685;
 		};
-		class Item59
+		class Item53
 		{
 			dataType="Marker";
 			position[]={4237,6.9900088,6408};
@@ -10905,24 +10588,7 @@ class Mission
 			b=400;
 			id=686;
 		};
-		class Item60
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2504,8.4750652,4904};
-				angles[]={0,0.9805783,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add;}";
-			};
-			id=689;
-			type="RDS_Gaz24_Civ_03";
-		};
-		class Item61
+		class Item54
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -10932,7 +10598,7 @@ class Mission
 			id=733;
 			type="grad_civs_transit_transitSink";
 		};
-		class Item62
+		class Item55
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -10983,7 +10649,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item63
+		class Item56
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -10994,7 +10660,7 @@ class Mission
 			type="grad_civs_transit_transitSink";
 			atlOffset=1580.02;
 		};
-		class Item64
+		class Item57
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -11046,7 +10712,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item65
+		class Item58
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -11056,7 +10722,7 @@ class Mission
 			id=737;
 			type="grad_civs_transit_transitSink";
 		};
-		class Item66
+		class Item59
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -11107,7 +10773,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item67
+		class Item60
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -11117,7 +10783,7 @@ class Mission
 			id=739;
 			type="grad_civs_transit_transitSink";
 		};
-		class Item68
+		class Item61
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -11166,6 +10832,325 @@ class Mission
 					};
 				};
 				nAttributes=2;
+			};
+		};
+		class Item62
+		{
+			dataType="Marker";
+			position[]={3213,6.9900088,5983};
+			name="mrk_replacement_6";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Vertical";
+			a=400;
+			b=400;
+			id=741;
+		};
+		class Item63
+		{
+			dataType="Marker";
+			position[]={6730,7,5743};
+			name="mrk_replacement_7";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Vertical";
+			a=400;
+			b=400;
+			id=742;
+		};
+		class Item64
+		{
+			dataType="Marker";
+			position[]={5040.1621,6.9907308,3802.2808};
+			name="mrk_replacement_8";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Vertical";
+			a=400;
+			b=400;
+			id=743;
+		};
+		class Item65
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2496,8.7119761,4915};
+				angles[]={0,1.0566049,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+			};
+			id=744;
+			type="C_Van_02_transport_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item66
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2495,8.5915174,4920.0308};
+				angles[]={0,1.1351621,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+			};
+			id=745;
+			type="C_Offroad_01_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item67
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2490,8.8515215,4928.022};
+				angles[]={0,1.2351871,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+			};
+			id=747;
+			type="C_Van_01_transport_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[2]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item68
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2486.76,8.8515215,4931.3721};
+				angles[]={-0,1.2351871,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+			};
+			id=748;
+			type="C_Van_01_transport_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[2]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item69
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2500,8.5496111,4911};
+				angles[]={0,0.88928014,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+			};
+			id=749;
+			type="C_Offroad_02_unarmed_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item70
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2492,8.5915174,4924.0308};
+				angles[]={-0,1.1351621,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+			};
+			id=752;
+			type="C_Offroad_01_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item71
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2502.4773,8.5496111,4907.604};
+				angles[]={-0,0.88928014,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+			};
+			id=753;
+			type="C_Offroad_02_unarmed_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
 			};
 		};
 	};

@@ -5,12 +5,28 @@ class ger_ksk: ger_heer_d {
         headgear = "SMM_Helmet_A_BW_TT";
         nvgoggles = "";
         goggles[] = {"G_Bandanna_tan", "rhsusf_shemagh2_grn", "rhsusf_shemagh2_od", "rhsusf_shemagh2_tan"};
+        gps = "itemGPS";
+        addItemsToUniform[] = {
+            LIST_6("ACE_fieldDressing"),
+            LIST_2("ACE_morphine"),
+            LIST_2("ACE_Chemlight_HiWhite"),
+            "ACE_epinephrine",
+            "ACE_Flashlight_MX991",
+            "ACE_MapTools"
+        };
     };
 
     class Type: Type {
         //rifleman
         class Soldier_F: Soldier_F {
-
+            addItemsToUniform[] = {
+                LIST_6("ACE_fieldDressing"),
+                LIST_2("ACE_morphine"),
+                LIST_2("ACE_Chemlight_HiWhite"),
+                "ACE_epinephrine",
+                "ACE_Flashlight_MX991",
+                "ACE_MapTools"
+            };
         };
 
         //autorifleman
@@ -37,7 +53,10 @@ class ger_ksk: ger_heer_d {
 
         //squad leader
         class Soldier_SL_F: Soldier_SL_F {
-
+            primaryWeapon = "rhs_weap_g36kv";
+            addItemsToBackpack[] = {
+                LIST_10("ACE_fieldDressing")
+            };
         };
 
         //team leader
