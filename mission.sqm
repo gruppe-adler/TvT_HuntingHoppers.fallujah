@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7997.9546,109.93739,1923.8616};
-		dir[]={-0.53828871,-0.77842391,-0.32299864};
-		up[]={-0.66748178,0.62772781,-0.40051958};
-		aside[]={-0.51453137,2.5541522e-007,0.85748637};
+		pos[]={2474.7366,29.193037,4955.5425};
+		dir[]={0.27325824,-0.57856208,-0.76858276};
+		up[]={0.19381352,0.81563115,-0.54513264};
+		aside[]={-0.94226915,5.0851668e-007,-0.33500838};
 	};
 };
 binarizationWanted=0;
@@ -40,7 +40,6 @@ addons[]=
 	"A3_Data_F_Exp_A_Virtual",
 	"gm_vehicles_air_helicopters_bo105_ge_army_bo105",
 	"grad_civs_common",
-	"ffaa_casas_af",
 	"rds_A2_Civilians",
 	"grad_civs_transit",
 	"A3_Soft_F_Orange_Van_02",
@@ -52,7 +51,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=17;
+		items=16;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -122,44 +121,39 @@ class AddonsMetaData
 		};
 		class Item10
 		{
-			className="ffaa_casas_af";
-			name="ffaa_casas_af";
-		};
-		class Item11
-		{
 			className="rds_A2_Civilians";
 			name="RDS Civilian Pack Cars";
 			author="reyhard";
 			url="https://forums.bistudio.com/topic/170165-rds-a2-civilian-pack/";
 		};
-		class Item12
+		class Item11
 		{
 			className="grad_civs_transit";
 			name="transit";
 			author="AUTHOR";
 		};
-		class Item13
+		class Item12
 		{
 			className="A3_Soft_F_Orange";
 			name="Arma 3 Orange - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item13
 		{
 			className="A3_Soft_F";
 			name="Arma 3 Alpha - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item14
 		{
 			className="A3_Soft_F_Gamma";
 			name="Arma 3 - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item15
 		{
 			className="A3_Soft_F_Exp";
 			name="Arma 3 Apex - Unarmored Land Vehicles";
@@ -3741,7 +3735,7 @@ class CustomAttributes
 																"STRING"
 															};
 														};
-														value="""LOP_TAK_Civ_UAZ_Open"",  ""LOP_TAK_Civ_Landrover"",  ""gm_ge_civ_typ1200"",  ""RDS_Gaz24_Civ_03"",  ""RDS_Gaz24_Civ_01"",  ""RDS_Gaz24_Civ_02"",  ""RDS_JAWA353_Civ_01"",  ""RDS_Lada_Civ_04"",  ""RDS_Lada_Civ_03"",  ""RDS_Lada_Civ_02"",  ""gm_ge_pol_bicycle_01_grn""";
+														value="""C_Van_02_transport_F"",  ""C_Offroad_01_F"",  ""C_Van_01_transport_F"",  ""C_Van_01_transport_F"",  ""C_Offroad_02_unarmed_F"",  ""C_Offroad_01_F"",  ""C_Offroad_02_unarmed_F""";
 													};
 												};
 												class Item1
@@ -4163,7 +4157,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=72;
+		items=43;
 		class Item0
 		{
 			dataType="Layer";
@@ -10004,450 +9998,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3043.3438,8.67274,6637.2847};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=558;
-			type="land_ffaa_casa_barrancon_1";
-			atlOffset=4.7683716e-007;
-		};
-		class Item14
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3074,8.6728153,6636};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=559;
-			type="land_ffaa_casa_barracon_2";
-			atlOffset=4.7683716e-007;
-		};
-		class Item15
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3094,8.6728153,6636};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=560;
-			type="land_ffaa_casa_caseta_peq";
-			atlOffset=4.7683716e-007;
-		};
-		class Item16
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3105,6.9900088,6634};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=561;
-			type="land_ffaa_casa_acc_1";
-		};
-		class Item17
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3122,9.2462234,6635};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=562;
-			type="land_ffaa_casa_hangar_2";
-			atlOffset=4.7683716e-007;
-		};
-		class Item18
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3145.968,10.593623,6634.6519};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=563;
-			type="land_ffaa_casa_af_1";
-			atlOffset=-4.7683716e-007;
-		};
-		class Item19
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3160,6.9900088,6632};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=564;
-			type="land_ffaa_casa_af_10";
-		};
-		class Item20
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3176.0854,6.9900088,6634.0156};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=565;
-			type="land_ffaa_casa_af_10A";
-		};
-		class Item21
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3187,6.9900088,6630};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=566;
-			type="land_ffaa_casa_af_11";
-		};
-		class Item22
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3198.2092,8.7205515,6630.8721};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=567;
-			type="land_ffaa_casa_af_2";
-		};
-		class Item23
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3213.2944,8.7205515,6629.0029};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=568;
-			type="land_ffaa_casa_af_3";
-		};
-		class Item24
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3229,9.7484293,6627};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=569;
-			type="land_ffaa_casa_af_4";
-			atlOffset=4.7683716e-007;
-		};
-		class Item25
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3224,9.3965206,6613};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=570;
-			type="land_ffaa_casa_af_4A";
-			atlOffset=4.7683716e-007;
-		};
-		class Item26
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3203,6.9900088,6612};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=571;
-			type="land_ffaa_casa_af_5";
-		};
-		class Item27
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3184,6.9900088,6611};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=572;
-			type="land_ffaa_casa_af_6";
-		};
-		class Item28
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3169.0886,8.6484823,6611.5708};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=573;
-			type="land_ffaa_casa_af_7";
-			atlOffset=4.7683716e-007;
-		};
-		class Item29
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3109,6.9900088,6680};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=574;
-			type="land_ffaa_casa_af_8";
-		};
-		class Item30
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3149,6.9900088,6611};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=575;
-			type="land_ffaa_casa_af_9";
-		};
-		class Item31
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3123.3906,6.9900088,6608.3574};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=576;
-			type="land_ffaa_casa_urbana_1";
-		};
-		class Item32
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3118,6.9900088,6597};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=577;
-			type="land_ffaa_casa_urbana_2";
-		};
-		class Item33
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3131,9.1461496,6592};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=578;
-			type="land_ffaa_casa_urbana_3";
-		};
-		class Item34
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3095,6.9900088,6594};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=579;
-			type="land_ffaa_casa_urbana_4";
-		};
-		class Item35
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3145,6.9900088,6588};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=580;
-			type="land_ffaa_casa_urbana_5";
-		};
-		class Item36
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3061,6.9900088,6590};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=581;
-			type="land_ffaa_casa_urbana_6";
-		};
-		class Item37
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3094,11.222458,6573};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=582;
-			type="land_ffaa_casa_urbana_7";
-		};
-		class Item38
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3017,16.443298,6591};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=583;
-			type="land_ffaa_casa_urbana_8";
-			atlOffset=4.7683716e-007;
-		};
-		class Item39
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3117,6.9900088,6576};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=584;
-			type="land_ffaa_casa_sha_1";
-		};
-		class Item40
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3113,6.9900088,6560};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=585;
-			type="land_ffaa_casa_sha_2";
-		};
-		class Item41
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3136,6.9900088,6568};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=586;
-			type="land_ffaa_casa_sha_3";
-		};
-		class Item42
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={2487.0173,7.9202504,4915};
 			};
 			side="Empty";
@@ -10459,7 +10009,7 @@ class Mission
 			id=632;
 			type="RDS_Old_bike_Civ_01";
 		};
-		class Item43
+		class Item14
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10475,7 +10025,7 @@ class Mission
 			id=633;
 			type="RDS_Old_bike_Civ_01";
 		};
-		class Item44
+		class Item15
 		{
 			dataType="Marker";
 			position[]={5919,7,10202};
@@ -10483,7 +10033,7 @@ class Mission
 			type="Empty";
 			id=636;
 		};
-		class Item45
+		class Item16
 		{
 			dataType="Marker";
 			position[]={10219.901,7,5264.1167};
@@ -10491,7 +10041,7 @@ class Mission
 			type="Empty";
 			id=637;
 		};
-		class Item46
+		class Item17
 		{
 			dataType="Marker";
 			position[]={6362.7822,7.956954,25.31189};
@@ -10499,7 +10049,7 @@ class Mission
 			type="Empty";
 			id=638;
 		};
-		class Item47
+		class Item18
 		{
 			dataType="Marker";
 			position[]={10.212948,6.9900079,2766.27};
@@ -10507,7 +10057,7 @@ class Mission
 			type="Empty";
 			id=639;
 		};
-		class Item48
+		class Item19
 		{
 			dataType="Marker";
 			position[]={4949,6.9910002,4848};
@@ -10523,7 +10073,7 @@ class Mission
 			id=681;
 			atlOffset=0.00026941299;
 		};
-		class Item49
+		class Item20
 		{
 			dataType="Marker";
 			position[]={4912,6.9907308,4798};
@@ -10534,10 +10084,10 @@ class Mission
 			fillName="Vertical";
 			a=2500;
 			b=2500;
-			angle=168.12476;
+			angle=168.12473;
 			id=682;
 		};
-		class Item50
+		class Item21
 		{
 			dataType="Marker";
 			position[]={8235,26.876465,7853};
@@ -10551,7 +10101,7 @@ class Mission
 			id=683;
 			atlOffset=-6.0050735;
 		};
-		class Item51
+		class Item22
 		{
 			dataType="Marker";
 			position[]={8069,15.983759,7510};
@@ -10564,7 +10114,7 @@ class Mission
 			b=10;
 			id=684;
 		};
-		class Item52
+		class Item23
 		{
 			dataType="Marker";
 			position[]={7909,8.4921103,7462};
@@ -10577,7 +10127,7 @@ class Mission
 			b=10;
 			id=685;
 		};
-		class Item53
+		class Item24
 		{
 			dataType="Marker";
 			position[]={8065,28.030884,7789};
@@ -10591,7 +10141,7 @@ class Mission
 			id=686;
 			atlOffset=-9.269062;
 		};
-		class Item54
+		class Item25
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -10601,7 +10151,7 @@ class Mission
 			id=733;
 			type="grad_civs_transit_transitSink";
 		};
-		class Item55
+		class Item26
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -10652,7 +10202,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item56
+		class Item27
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -10663,7 +10213,7 @@ class Mission
 			type="grad_civs_transit_transitSink";
 			atlOffset=1580.02;
 		};
-		class Item57
+		class Item28
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -10715,7 +10265,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item58
+		class Item29
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -10725,7 +10275,7 @@ class Mission
 			id=737;
 			type="grad_civs_transit_transitSink";
 		};
-		class Item59
+		class Item30
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -10776,7 +10326,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item60
+		class Item31
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -10786,7 +10336,7 @@ class Mission
 			id=739;
 			type="grad_civs_transit_transitSink";
 		};
-		class Item61
+		class Item32
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -10837,7 +10387,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item62
+		class Item33
 		{
 			dataType="Marker";
 			position[]={7911,30.980078,7750};
@@ -10850,7 +10400,7 @@ class Mission
 			b=10;
 			id=741;
 		};
-		class Item63
+		class Item34
 		{
 			dataType="Marker";
 			position[]={8354,30.324097,7667};
@@ -10864,7 +10414,7 @@ class Mission
 			id=742;
 			atlOffset=-8.5818634;
 		};
-		class Item64
+		class Item35
 		{
 			dataType="Marker";
 			position[]={8301,27.205023,7433};
@@ -10877,7 +10427,7 @@ class Mission
 			b=10;
 			id=743;
 		};
-		class Item65
+		class Item36
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10917,7 +10467,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item66
+		class Item37
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10957,7 +10507,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item67
+		class Item38
 		{
 			dataType="Object";
 			class PositionInfo
@@ -10997,7 +10547,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item68
+		class Item39
 		{
 			dataType="Object";
 			class PositionInfo
@@ -11037,7 +10587,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item69
+		class Item40
 		{
 			dataType="Object";
 			class PositionInfo
@@ -11077,7 +10627,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item70
+		class Item41
 		{
 			dataType="Object";
 			class PositionInfo
@@ -11117,7 +10667,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item71
+		class Item42
 		{
 			dataType="Object";
 			class PositionInfo
