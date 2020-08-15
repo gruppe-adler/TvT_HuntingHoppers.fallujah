@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=177;
+		nextID=182;
 	};
 	class Camera
 	{
-		pos[]={7967.2212,37.224678,1861.8049};
-		dir[]={-0.41746354,-0.56955951,0.70805007};
-		up[]={-0.28927529,0.82194656,0.49063507};
-		aside[]={0.86142701,-1.1257362e-007,0.50789291};
+		pos[]={7997.9546,109.93739,1923.8616};
+		dir[]={-0.53828871,-0.77842391,-0.32299864};
+		up[]={-0.66748178,0.62772781,-0.40051958};
+		aside[]={-0.51453137,2.5541522e-007,0.85748637};
 	};
 };
 binarizationWanted=0;
@@ -10526,67 +10526,70 @@ class Mission
 		class Item49
 		{
 			dataType="Marker";
-			position[]={4062,6.9900088,5290};
+			position[]={4912,6.9907308,4798};
 			name="mrk_replacement_1";
-			markerType="ELLIPSE";
+			markerType="RECTANGLE";
 			type="ellipse";
 			colorName="ColorRed";
 			fillName="Vertical";
-			a=400;
-			b=400;
+			a=2500;
+			b=2500;
+			angle=168.12476;
 			id=682;
 		};
 		class Item50
 		{
 			dataType="Marker";
-			position[]={5479.3364,7,6197.1387};
+			position[]={8235,26.876465,7853};
 			name="mrk_replacement_2";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorRed";
 			fillName="Vertical";
-			a=400;
-			b=400;
+			a=10;
+			b=10;
 			id=683;
+			atlOffset=-6.0050735;
 		};
 		class Item51
 		{
 			dataType="Marker";
-			position[]={5315,7,4959};
+			position[]={8069,15.983759,7510};
 			name="mrk_replacement_3";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorRed";
 			fillName="Vertical";
-			a=800;
-			b=800;
+			a=10;
+			b=10;
 			id=684;
 		};
 		class Item52
 		{
 			dataType="Marker";
-			position[]={3944.8352,6.9907308,4410.9399};
+			position[]={7909,8.4921103,7462};
 			name="mrk_replacement_4";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorRed";
 			fillName="Vertical";
-			a=400;
-			b=400;
+			a=10;
+			b=10;
 			id=685;
 		};
 		class Item53
 		{
 			dataType="Marker";
-			position[]={4237,6.9900088,6408};
+			position[]={8065,28.030884,7789};
 			name="mrk_replacement_5";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorRed";
 			fillName="Vertical";
-			a=400;
-			b=400;
+			a=10;
+			b=10;
 			id=686;
+			atlOffset=-9.269062;
 		};
 		class Item54
 		{
@@ -10837,40 +10840,41 @@ class Mission
 		class Item62
 		{
 			dataType="Marker";
-			position[]={3213,6.9900088,5983};
+			position[]={7911,30.980078,7750};
 			name="mrk_replacement_6";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorRed";
 			fillName="Vertical";
-			a=400;
-			b=400;
+			a=10;
+			b=10;
 			id=741;
 		};
 		class Item63
 		{
 			dataType="Marker";
-			position[]={6730,7,5743};
+			position[]={8354,30.324097,7667};
 			name="mrk_replacement_7";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorRed";
 			fillName="Vertical";
-			a=400;
-			b=400;
+			a=10;
+			b=10;
 			id=742;
+			atlOffset=-8.5818634;
 		};
 		class Item64
 		{
 			dataType="Marker";
-			position[]={5040.1621,6.9907308,3802.2808};
+			position[]={8301,27.205023,7433};
 			name="mrk_replacement_8";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorRed";
 			fillName="Vertical";
-			a=400;
-			b=400;
+			a=10;
+			b=10;
 			id=743;
 		};
 		class Item65
@@ -10999,7 +11003,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2486.76,8.8515215,4931.3721};
-				angles[]={-0,1.2351871,0};
+				angles[]={0,1.2351871,0};
 			};
 			side="Empty";
 			flags=4;
@@ -11079,7 +11083,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2492,8.5915174,4924.0308};
-				angles[]={-0,1.1351621,0};
+				angles[]={0,1.1351621,0};
 			};
 			side="Empty";
 			flags=4;
@@ -11119,7 +11123,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2502.4773,8.5496111,4907.604};
-				angles[]={-0,0.88928014,0};
+				angles[]={0,0.88928014,0};
 			};
 			side="Empty";
 			flags=4;
