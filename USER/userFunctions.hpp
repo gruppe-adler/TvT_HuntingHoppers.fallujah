@@ -37,6 +37,11 @@ class hoppers
 
            class mapreplaceBuildings;
            class mapreplacePlants;
+
+           class melbScan;
+           class melbScanMan;
+           class melbMarkBoss;
+
            class replacementInit { postInit = 1; };
 
            class showTracker;

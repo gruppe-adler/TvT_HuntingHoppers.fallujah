@@ -24,7 +24,7 @@ _unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (ra
     private _lastRun = _unit getVariable ["hoppers_lastAgentMarkerTime",0];
     private _lastPhaseTime = missionNamespace getVariable ["hoppers_lastPhaseTime", CBA_missionTime];
 
-
+    if (_lastPhase && !(_unit getVariable ["hoppers_isBoss", false])) exitWith {};
 
     private _size = if (_lastPhase) then {
         1 
