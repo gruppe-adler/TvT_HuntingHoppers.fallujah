@@ -27,18 +27,18 @@ _unit setVariable ["hoppers_currentAgentMarkerInterval",_markerIntervalMin + (ra
     if (_lastPhase && !(_unit getVariable ["hoppers_isBoss", false])) exitWith {};
 
     private _size = if (_lastPhase) then {
-        1 
+        1
     } else {
         (_markerSize - (_markerSize * (linearConversion [0, (60 * 15), (CBA_missionTime - _lastPhaseTime), 0, 1, true])) + 1)
     };
 
     // diag_log format ["creating Marker in Size %1 for lastPhaseTime %2", _size, _lastPhaseTime];
-    
+
     if (!(_unit getVariable ["hoppers_isBoss", false])) then {
-        _size = _size/4 
+        _size = _size/4
     };
 
-    
+
     if (!_lastPhase && CBA_missionTime - _lastRun < _currentInterval) exitWith {};
     if (!(_unit getVariable ["hoppers_markerShown", false])) exitWith {};
     _unit setVariable ["hoppers_lastAgentMarkerTime", CBA_missionTime];

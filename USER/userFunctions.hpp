@@ -13,7 +13,7 @@ class hoppers
        {
            file = "USER\functions";
 
-           class addBombTrigger;
+
            class addBoss;
            class addCivilianPenalty;
            class addMarkersEast;
@@ -22,11 +22,8 @@ class hoppers
            class areaBarGetColor;
            class areaBarShow;
 
-           class bombCountDown;
-           class canLayBomb;
            class civilianAddWeapon;
 
-           class createBombMarker;
            class createMarker;
            class eventListener { postInit = 1; };
            class extractionStart;
@@ -35,19 +32,37 @@ class hoppers
 
            class init { postInit = 1; };
 
-           class mapreplaceBuildings;
-           class mapreplacePlants;
-
-           class melbScan;
-           class melbScanMan;
-           class melbMarkBoss;
-
-           class replacementInit { postInit = 1; };
-
            class showTracker;
 
            class tasksInitBlufor;
            class tasksInitOpfor;
            class winConditions;
+       };
+
+       class bombs {
+            file = "USER\functions\bombs";
+
+            class addBombTrigger;
+            class bombCountDown;
+            class canLayBomb;
+            class createBombMarker;
+       };
+
+       class melbScan {
+            file = "USER\functions\melbScan";
+
+            class melbFadeMarker;
+            class melbScan;
+            class melbScanMan;
+            class melbMarkBoss;
+            class melbMarkLocal;
+       };
+
+       class mapReplacements {
+            file = "USER\functions\mapReplacements";
+
+            class mapreplaceBuildings;
+            class mapreplacePlants;
+            class replacementInit { postInit = 1; };
        };
    };

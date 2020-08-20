@@ -1,13 +1,11 @@
 params ["_unit"];
 
 player setVariable ["hoppers_lastPing", CBA_missionTime];
+_unit setVariable ["hoppers_bossMarked", true]; // cant mark twice
 
-_unit setVariable ["hoppers_bossMarked", true];
-
+// add to 3d handler list
 private _nearEntities = player getVariable ["hoppers_drawEntities", []];
-
 _nearEntities pushBackUnique _unit;
-
 player setVariable ["hoppers_drawEntities", _nearEntities];
 
 
@@ -19,4 +17,7 @@ player setVariable ["hoppers_drawEntities", _nearEntities];
     player setVariable ["hoppers_drawEntities", _nearEntities];
     _unit setVariable ["hoppers_bossMarked", false];
 
-}, [_unit], 20] call CBA_fnc_waitAndExecute;
+}, [_unit], HOPPERS_BOSS_MARKING_FADEOUT] call CBA_fnc_waitAndExecute;
+
+
+[_unit, east, HOPPERS_BOSS_MARKING_FADEOUT] remoteExec ["hoppers_fnc_melbMarkLocal", east];
