@@ -6,23 +6,33 @@
 
 params ["_vehicle"];
 
-HOPPERS_LASERBATTERY_FILL_RATE = 0.001;
-HOPPERS_LASERBATTERY_DRAIN_RATE = 0.002;
+HOPPERS_LASERBATTERY_FILL_RATE = 0.01;
+HOPPERS_LASERBATTERY_DRAIN_RATE = 0.02;
 HOPPERS_BOSS_MARKING_FADEOUT = 20; // time 3d marker and map markers are shown
 
 hoppers_fnc_createCoolDownBar = {
 
     private _text = (uiNamespace getVariable "MELB_FLIRCtrl") ctrlCreate ["RscText", -1];
     _text ctrlSetPosition [
-        3*   (0.01875 * SafezoneH),
-        14.1 *   (0.025 * SafezoneH),
+        (SafezoneX + ((SafezoneW - SafezoneH) / 2)) + 3*   (0.01875 * SafezoneH),
+        safeZoneY + (14.1 *   (0.025 * SafezoneH)),
         13 *   (0.01875 * SafezoneH),
         2 *   (0.025 * SafezoneH)
     ];
     _text ctrlSetText "....................";
-
+    _text ctrlCommit 0;
     _text
 };
+
+/*
+
+safeZoneX + SafeZoneW + (3*   (0.01875 * SafezoneH)), 
+        safeZoneY + (14.1 *   (0.025 * SafezoneH)), 
+        13 *   (0.01875 * SafezoneH), 
+        2 *   (0.025 * SafezoneH) 
+    ]; _text ctrlCommit 0;
+
+*/
 
 private _coolDownBar = call hoppers_fnc_createCoolDownBar;
 
@@ -76,8 +86,9 @@ private _coolDownBar = call hoppers_fnc_createCoolDownBar;
     (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlsetText _string;
     (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlSetTextColor _color;
 
-    _coolDownBar ctrlsetText _string;
+    _coolDownBar ctrlsetText _stringCoolDown;
     _coolDownBar ctrlSetTextColor _color;
+    _coolDownBar ctrlCommit 0;
 
     _vehicle setVariable ["hoppers_laserBattery", _laserBatteryStatus];
 

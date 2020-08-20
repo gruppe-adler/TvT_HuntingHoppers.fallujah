@@ -26,7 +26,6 @@ if (!isServer) exitWith {};
 call hoppers_fnc_tasksInitBlufor;
 call hoppers_fnc_addCivilianPenalty;
 call hoppers_fnc_winConditions;
-call hoppers_fnc_addMarkersEast;
 
 
 HOPPERS_BOMBS_CLACKERRANGE = ["HOPPERS_BOMBS_CLACKERRANGE", 750] call BIS_fnc_getParamValue;

@@ -16,4 +16,4 @@ private _defuseBomb = [
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
-[_bomb, 1, ["ACE_SelfActions"], _defuseBomb] call ace_interact_menu_fnc_addActionToObject;
+[_bomb, 0, ["ACE_MainActions"], _defuseBomb] call ace_interact_menu_fnc_addActionToObject;

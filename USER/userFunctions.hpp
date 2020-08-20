@@ -16,7 +16,6 @@ class hoppers
 
            class addBoss;
            class addCivilianPenalty;
-           class addMarkersEast;
 
            class areaBarCreate;
            class areaBarGetColor;
@@ -42,8 +41,10 @@ class hoppers
        class bombs {
             file = "USER\functions\bombs";
 
+            class addBombDefuseACtion;
             class addBombTrigger;
             class bombCountDown;
+            class bombDefuse;
             class canLayBomb;
             class createBombMarker;
             class selectBombSpots { preInit = 1; };

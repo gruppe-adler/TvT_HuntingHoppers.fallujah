@@ -10,6 +10,7 @@ for "_i" from 1 to _bombSpotPreparedCount do {
 
     private _string = format ["mrk_bombspot_%1", _i];
     _arraySelectFrom pushBackUnique _string;
+    _string setMarkerAlpha 0;
 };
 
 
@@ -24,6 +25,5 @@ for "_i" from 1 to _bombSpotSelectedCount do {
     private _bombspot = _x;
     private _position = getMarkerPos _bombspot;
 
-    _bombspot setMarkerAlpha 0;
     [_position, _forEachIndex] call hoppers_fnc_tasksInitOpfor;
 } forEach HOPPERS_BOMBS_BOMBSPOTS;

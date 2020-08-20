@@ -11,6 +11,6 @@ private _boss = objNull;
 } forEach _targets;
 
 
-if (!isNull _boss && {!(_boss getVariable ["hoppers_bossMarked", false]})) then {
+if (!isNull _boss && !(_boss getVariable ["hoppers_bossMarked", false])) then {
     [_boss] call hoppers_fnc_melbMarkBoss;
 };
