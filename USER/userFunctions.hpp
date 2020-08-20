@@ -46,6 +46,7 @@ class hoppers
             class bombCountDown;
             class canLayBomb;
             class createBombMarker;
+            class selectBombSpots { preInit = 1; };
        };
 
        class melbScan {

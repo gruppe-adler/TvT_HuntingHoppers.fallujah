@@ -1,11 +1,10 @@
-private _existingBombMarkers = missionNamespace getVariable ["hoppers_bombmarker", []];
 private _canLay = true;
 
 {
-    if (player inArea _x) then {
+    if (player distance (getMarkerPos _x) > HOPPERS_BOMBS_CLACKERRANGE) then {
         _canLay = false;
     };
-} forEach _existingBombMarkers;
+} forEach HOPPERS_BOMBS_BOMBSPOTS;
 
 if (player getVariable ["hoppers_countdownStarted", false]) then {
     _canLay = false;

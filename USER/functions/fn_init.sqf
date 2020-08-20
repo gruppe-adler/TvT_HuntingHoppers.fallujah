@@ -23,18 +23,14 @@ if (hasInterface) then {
 
 if (!isServer) exitWith {};
 
-[0] call hoppers_fnc_tasksInitOpfor;
-
-
-
 call hoppers_fnc_tasksInitBlufor;
 call hoppers_fnc_addCivilianPenalty;
 call hoppers_fnc_winConditions;
 call hoppers_fnc_addMarkersEast;
 
 
-HOPPERS_BOMBS_MIN_DISTANCE = ["HOPPERS_BOMBS_MIN_DISTANCE", 750] call BIS_fnc_getParamValue;
-publicVariable "HOPPERS_BOMBS_MIN_DISTANCE";
+HOPPERS_BOMBS_CLACKERRANGE = ["HOPPERS_BOMBS_CLACKERRANGE", 750] call BIS_fnc_getParamValue;
+publicVariable "HOPPERS_BOMBS_CLACKERRANGE";
 
 HOPPERS_BOMBS_MIN_PLACED = ["HOPPERS_BOMBS_MIN_PLACED", 0] call BIS_fnc_getParamValue;
 publicVariable "HOPPERS_BOMBS_MIN_PLACED";

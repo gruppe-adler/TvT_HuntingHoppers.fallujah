@@ -23,7 +23,7 @@
   if (isServer && _newPhase < 9999) then {
 
       private _spotNumber = _newPhase - 1;
-      private _lastSpot = format ["Hoppers_Bomb%1", _spotNumber];
+      private _lastSpot = format ["Hoppers_Bombspot_%1", _spotNumber];
 
       [_lastSpot,"SUCCEEDED"] call BIS_fnc_taskSetState;
 

@@ -2,11 +2,18 @@
 *   Ist in missionConfig >> Params included.
 */
 
-class HOPPERS_BOMBS_MIN_DISTANCE {
-    title = "Minimum distance between bombs layed";
-    values[] = {250,500,750,1000,1250,1500,2000,3000};
-    texts[] = {"0.25km", "0.5km", "0.75km", "1km", "1.25km", "1.5km", "2km", "3km"};
-    default = 750;
+class HOPPERS_BOMBS_CLACKERRANGE {
+    title = "Maximum distance of scripted bomb clacker";
+    values[] = {60,80,100,150,200,250,300,350};
+    texts[] = {"60m", "80m", "100m", "150m", "200m", "250m", "300m", "350m"};
+    default = 100;
+};
+
+class HOPPERS_BOMBS_TIME_TO_EXPLOSION {
+    title = "Countdown time of bomb";
+    values[] = {30,60,120,180,240,300,360,420,480,540,600,900};
+    texts[] = {"30s", "60s", "2min", "3min", "4min", "5min", "6min", "7min", "8min", "9min", "10min", "15min"};
+    default = 30; // todo debug
 };
 
 class HOPPERS_BOMBS_MIN_PLACED

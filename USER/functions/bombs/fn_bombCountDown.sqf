@@ -2,32 +2,39 @@
 
 params ["_boss"];
 
-_boss setVariable ["hoppers_countdownStarted", true, true];
-
 private _bomb = "IEDLandBig_F" createVehicle (getPos _boss);
+_boss setVariable ["hoppers_countdownStarted", true, true];
+_bomb setVariable ["hoppers_countdownStarted", true, true];
+_bomb setVariable ["hoppers_countdownBoss", _boss, true];
 
-private _max = 30; // duration of countdown
-
-for "_i" from _max to 1 step -1 do {
+for "_i" from HOPPERS_BOMBS_TIME_TO_EXPLOSION to 1 step -1 do {
     [{
-      params ["_i"];
+      params ["_i", "_bomb"];
 
-      private _string = "Bomb exploding in " + str _i + " s";
-      [_string] remoteExec ["hintSilent", east];
+      // likely defused or exploded
+      if (isNull _bomb) exitWith {
+            [""] remoteExec ["hintSilent", east];
+      };
+      private _bombActive = _bomb getVariable ["hoppers_countdownStarted", false];
 
-    }, [_max - _i], _i] call CBA_fnc_waitAndExecute;
+      if (_bombActive) then {
+        private _string = "Bomb exploding in " + str _i + " s";
+        [_string] remoteExec ["hintSilent", east];
+      };
+
+    }, [(HOPPERS_BOMBS_TIME_TO_EXPLOSION + 1) - _i, _bomb], _i] call CBA_fnc_waitAndExecute;
 };
-
-[{
-    [""] remoteExec ["hintSilent", east];
-}, [], _max + 1] call CBA_fnc_waitAndExecute;
 
 [{
     params ["_bomb", "_boss", "_position"];
 
+    if (!(_boss getVariable ["hoppers_countdownStarted", false])) exitWith {
+        diag_log "bomb has been defused";
+    };
+
     private _explosion = "Bo_GBU12_LGB" createVehicle _position;
     _explosion setDamage 1;
-    deleteVehicle _bomb;
+    
 
     private _phase = missionNamespace getVariable ["hoppers_missionPhase", 0];
     _phase = _phase + 1;
@@ -39,6 +46,7 @@ for "_i" from _max to 1 step -1 do {
     remoteExecCall ["grad_waverespawn_fnc_respawnManual", east];
 
     _boss setVariable ["hoppers_countdownStarted", false, true];
+    _bomb setVariable ["hoppers_countdownStarted", false, true];
 
     // create ruins
     private _housesNearBy = ((_position nearObjects ["House", 50]) + (_position nearObjects ["BUILDING", 50]));
@@ -54,4 +62,6 @@ for "_i" from _max to 1 step -1 do {
 
     ["hoppers_phaseChange", [_phase]] call CBA_fnc_globalEvent;
 
-}, [_bomb, _boss, getPos _boss], _max] call CBA_fnc_waitAndExecute;
+    deleteVehicle _bomb;
+
+}, [_bomb, _boss, getPos _boss], HOPPERS_BOMBS_TIME_TO_EXPLOSION] call CBA_fnc_waitAndExecute;
