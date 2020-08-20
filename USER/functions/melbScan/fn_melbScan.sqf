@@ -19,6 +19,7 @@ hoppers_fnc_createCoolDownBar = {
         13 *   (0.01875 * SafezoneH),
         2 *   (0.025 * SafezoneH)
     ];
+    _text ctrlSetFontHeight (0.0255*SafezoneH);
     _text ctrlSetText "....................";
     _text ctrlCommit 0;
     _text
@@ -42,6 +43,7 @@ private _coolDownBar = call hoppers_fnc_createCoolDownBar;
     _args params ["_vehicle", "_coolDownBar"];
 
     private _laserBatteryStatus = _vehicle getVariable ["hoppers_laserBattery", 1];
+    private _overheated = _vehicle getVariable ["hoppers_laserOverheated", false];
     private _color = if (_laserBatteryStatus > 0.5) then {
         "colorGreen"
     } else {
@@ -58,11 +60,11 @@ private _coolDownBar = call hoppers_fnc_createCoolDownBar;
 
     private _characterAmount = linearConversion [1, 0, _laserBatteryStatus, 0, 20, true];
     private _string = ["||||||||||||||||||||", 0, _characterAmount] call BIS_fnc_trimString;
-    private _stringCoolDown = ["....................", 0, _characterAmount] call BIS_fnc_trimString;
+    private _stringCoolDown = ["||||||||||||||||||||", 0, _characterAmount] call BIS_fnc_trimString;
 
     _color = (configfile >> "CfgMarkerColors" >> _color >> "color") call BIS_fnc_colorConfigToRGBA;
 
-    if (isLaserOn _vehicle) then {
+    if (isLaserOn _vehicle && !(_vehicle getVariable ["hoppers_laserOverheated", false])) then {
         if (_laserBatteryStatus > 0) then {
             _laserBatteryStatus = _laserBatteryStatus - HOPPERS_LASERBATTERY_DRAIN_RATE;
             playSound "ZoomIn";
@@ -73,10 +75,16 @@ private _coolDownBar = call hoppers_fnc_createCoolDownBar;
             _coolDownBar ctrlShow false;
         };
 
-        [cursorTarget] call hoppers_fnc_melbScanMan;
+        if (_laserBatteryStatus > 0) then {
+            [cursorTarget] call hoppers_fnc_melbScanMan;
+        } else {
+            _vehicle setVariable ["hoppers_laserOverheated", true];
+        };
     } else {
         if (_laserBatteryStatus < 1) then {
             _laserBatteryStatus = _laserBatteryStatus + HOPPERS_LASERBATTERY_FILL_RATE;
+        } else { 
+            _vehicle setVariable ["hoppers_laserOverheated", false];
         };
         if (!(ctrlShown _coolDownBar)) then {
             _coolDownBar ctrlShow true;
@@ -104,10 +112,12 @@ private _drawEH = addMissionEventHandler ["Draw3D", {
         private _position = ASLToAGL getPosASL _x;
         _position params ["_xPos", "_yPos", "_zPos"];
 
-        private _color = 1;
+        private _colorR = 1;
+        private _colorG = .2;
+        private _colorB = .2;
         private _alpha = 0;
 
-        drawIcon3D [getMissionPath "USER\data\flare.paa", [_color, _color, _color, linearConversion [0, HOPPERS_BOSS_MARKING_FADEOUT, CBA_missionTime - _lastPing, 1, 0, true]], [_xPos, _yPos, _zPos + 1] , 2, 2, 0, "", 0, 0.05, "TahomaB", "center", true];
+        drawIcon3D [getMissionPath "USER\data\flare.paa", [_colorR, _colorG, _colorB, linearConversion [0, HOPPERS_BOSS_MARKING_FADEOUT, CBA_missionTime - _lastPing, 1, 0, true]], [_xPos, _yPos, _zPos + 1] , 2, 2, 0, "", 0, 0.05, "TahomaB", "center", true];
     } forEach _nearEntities;
 
 }];
