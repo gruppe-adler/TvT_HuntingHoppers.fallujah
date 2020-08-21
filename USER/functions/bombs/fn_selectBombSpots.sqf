@@ -25,5 +25,6 @@ for "_i" from 1 to _bombSpotSelectedCount do {
     private _bombspot = _x;
     private _position = getMarkerPos _bombspot;
 
-    [_position, _forEachIndex] call hoppers_fnc_tasksInitOpfor;
+    private _bombSpot = format ["%1_%2", east, _bombSpot];
+    [_position, _bombspot] call hoppers_fnc_tasksInitOpfor;
 } forEach HOPPERS_BOMBS_BOMBSPOTS;

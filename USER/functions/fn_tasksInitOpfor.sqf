@@ -1,9 +1,8 @@
-params ["_position", "_index"];
+params ["_position", "_bombspot"];
 
-private _taskID = format ["Hoppers_Bombspot_%1", _index];
 [
   east,
-  [_taskID],
+  [_bombspot],
   ["Trigger bomb in bomb area and get out of its explosion radius. This will reset the marker size.",
   "Detonate Bomb",
   ""],

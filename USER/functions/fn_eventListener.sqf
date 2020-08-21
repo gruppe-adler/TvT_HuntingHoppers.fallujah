@@ -4,7 +4,7 @@
   params ["_newPhase"];
 
   if (hasInterface) then {
-    private _string = "Bomb attack " + (str _newPhase) + " detected! Position marked on map. Intel Marker Size reset.";
+    private _string = "Bomb attack " + (str _newPhase) + " detected!";
 
     if (_newPhase == 9999) then {
       _string = "Constant tracking on Boss established. Opfor is fleeing.";

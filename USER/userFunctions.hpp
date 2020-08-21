@@ -3,7 +3,6 @@
 */
 
 #include "..\node_modules\grad-dyngroupdecals\cfgFunctions.hpp"
-#include "..\node_modules\grad-gpsTracker\cfgFunctions.hpp"
 #include "..\node_modules\grad-vehicleRespawn\cfgFunctions.hpp"
 
 
@@ -23,15 +22,11 @@ class hoppers
 
            class civilianAddWeapon;
 
-           class createMarker;
            class eventListener { postInit = 1; };
            class extractionStart;
            class fadeMarker;
-           class findRandomPos;
 
            class init { postInit = 1; };
-
-           class showTracker;
 
            class tasksInitBlufor;
            class tasksInitOpfor;
@@ -41,13 +36,17 @@ class hoppers
        class bombs {
             file = "USER\functions\bombs";
 
-            class addBombDefuseACtion;
+            class addBombDefuseAction;
             class addBombTrigger;
             class bombCountDown;
             class bombDefuse;
+            class bombDetonate;
+            class bombDetonateAction;
+            class bombTaskDefuse;
+            class bombTaskSetState;
             class canLayBomb;
             class createBombMarker;
-            class selectBombSpots { preInit = 1; };
+            class selectBombSpots;
        };
 
        class melbScan {

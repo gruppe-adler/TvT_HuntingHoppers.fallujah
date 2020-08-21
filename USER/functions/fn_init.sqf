@@ -26,10 +26,17 @@ if (!isServer) exitWith {};
 call hoppers_fnc_tasksInitBlufor;
 call hoppers_fnc_addCivilianPenalty;
 call hoppers_fnc_winConditions;
+call hoppers_fnc_selectBombSpots;
 
 
-HOPPERS_BOMBS_CLACKERRANGE = ["HOPPERS_BOMBS_CLACKERRANGE", 750] call BIS_fnc_getParamValue;
+HOPPERS_BOMBS_CLACKERRANGE = ["HOPPERS_BOMBS_CLACKERRANGE", 150] call BIS_fnc_getParamValue;
 publicVariable "HOPPERS_BOMBS_CLACKERRANGE";
+
+HOPPERS_BOMBS_LAYDISTANCE = ["HOPPERS_BOMBS_LAYDISTANCE", 10] call BIS_fnc_getParamValue;
+publicVariable "HOPPERS_BOMBS_LAYDISTANCE";
+
+HOPPERS_BOMBS_TIME_TO_EXPLOSION = ["HOPPERS_BOMBS_TIME_TO_EXPLOSION", 30] call BIS_fnc_getParamValue;
+publicVariable "HOPPERS_BOMBS_TIME_TO_EXPLOSION";
 
 HOPPERS_BOMBS_MIN_PLACED = ["HOPPERS_BOMBS_MIN_PLACED", 0] call BIS_fnc_getParamValue;
 publicVariable "HOPPERS_BOMBS_MIN_PLACED";

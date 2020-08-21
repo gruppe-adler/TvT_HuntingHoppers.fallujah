@@ -1,11 +1,34 @@
 // E: Server
 
 params ["_boss"];
-
-private _bomb = "IEDLandBig_F" createVehicle (getPos _boss);
+private _position = getPos _boss;
+private _bomb = "IEDLandBig_F" createVehicle _position;
 _boss setVariable ["hoppers_countdownStarted", true, true];
 _bomb setVariable ["hoppers_countdownStarted", true, true];
 _bomb setVariable ["hoppers_countdownBoss", _boss, true];
+
+[_bomb] remoteExecCall ["hoppers_fnc_bombDetonateAction", _boss];
+
+private _bombSpot = "";
+{
+    if (_boss distance (getMarkerPos _x) < HOPPERS_BOMBS_LAYDISTANCE) then {
+        _bombSpot = _x;
+    };
+} forEach HOPPERS_BOMBS_BOMBSPOTS;
+
+_bomb setVariable ["hoppers_bombBombspot", _bombSpot, true];
+
+[_bombspot, east, "ASSIGNED"] call hoppers_fnc_bombTaskSetState;
+[getPos _bomb, west, _bombspot] remoteExec ["hoppers_fnc_bombTaskDefuse", 2];
+
+
+private _phase = missionNamespace getVariable ["hoppers_missionPhase", 0];
+_phase = _phase + 1;
+missionNamespace setVariable ["hoppers_missionPhase", _phase, true];
+private _markers = [_position, _phase] call hoppers_fnc_createBombMarker;
+["hoppers_phaseChange", [_phase]] call CBA_fnc_globalEvent;
+
+_bomb setVariable ["hoppers_bombMarkers", _markers, true];
 
 for "_i" from HOPPERS_BOMBS_TIME_TO_EXPLOSION to 1 step -1 do {
     [{
@@ -18,7 +41,7 @@ for "_i" from HOPPERS_BOMBS_TIME_TO_EXPLOSION to 1 step -1 do {
       private _bombActive = _bomb getVariable ["hoppers_countdownStarted", false];
 
       if (_bombActive) then {
-        private _string = "Bomb exploding in " + str _i + " s";
+        private _string = "Bomb can be detonated in " + str _i + " s";
         [_string] remoteExec ["hintSilent", east];
       };
 
@@ -26,42 +49,15 @@ for "_i" from HOPPERS_BOMBS_TIME_TO_EXPLOSION to 1 step -1 do {
 };
 
 [{
-    params ["_bomb", "_boss", "_position"];
+    params ["_bomb"];
 
-    if (!(_boss getVariable ["hoppers_countdownStarted", false])) exitWith {
-        diag_log "bomb has been defused";
-    };
+    if (isNull _bomb) exitWith { diag_log "bomb defused, cant be activated"; };
 
-    private _explosion = "Bo_GBU12_LGB" createVehicle _position;
-    _explosion setDamage 1;
-    
-
-    private _phase = missionNamespace getVariable ["hoppers_missionPhase", 0];
-    _phase = _phase + 1;
-    missionNamespace setVariable ["hoppers_missionPhase", _phase, true];
-
-    [_phase] call hoppers_fnc_tasksInitOpfor;
-
-    remoteExecCall ["grad_waverespawn_fnc_respawnManual", west];
-    remoteExecCall ["grad_waverespawn_fnc_respawnManual", east];
-
-    _boss setVariable ["hoppers_countdownStarted", false, true];
-    _bomb setVariable ["hoppers_countdownStarted", false, true];
-
-    // create ruins
-    private _housesNearBy = ((_position nearObjects ["House", 50]) + (_position nearObjects ["BUILDING", 50]));
+    private _markers = _bomb getVariable ["hoppers_bombMarkers", []];
     {
-        _x setDamage [1, false];
-    } forEach _housesNearBy;
+        _x setMarkerColor "ColorGreen";
+    } forEach _markers;
 
-    [_position, _phase] call hoppers_fnc_createBombMarker;
+    _bomb setVariable ["hoppers_bombReadyToDetonate", true, true];
 
-    missionNamespace setVariable ["hoppers_lastPhaseTime", CBA_missionTime, true];
-
-    diag_log format ["resetting lastPhaseTime %1", CBA_missionTime];
-
-    ["hoppers_phaseChange", [_phase]] call CBA_fnc_globalEvent;
-
-    deleteVehicle _bomb;
-
-}, [_bomb, _boss, getPos _boss], HOPPERS_BOMBS_TIME_TO_EXPLOSION] call CBA_fnc_waitAndExecute;
+}, [_bomb], HOPPERS_BOMBS_TIME_TO_EXPLOSION] call CBA_fnc_waitAndExecute;

@@ -15,7 +15,7 @@ hoppers_fnc_createCoolDownBar = {
     private _text = (uiNamespace getVariable "MELB_FLIRCtrl") ctrlCreate ["RscText", -1];
     _text ctrlSetPosition [
         (SafezoneX + ((SafezoneW - SafezoneH) / 2)) + 3*   (0.01875 * SafezoneH),
-        safeZoneY + (14.1 *   (0.025 * SafezoneH)),
+        safeZoneY + (14.3 *   (0.025 * SafezoneH)),
         13 *   (0.01875 * SafezoneH),
         2 *   (0.025 * SafezoneH)
     ];
@@ -72,7 +72,7 @@ private _coolDownBar = call hoppers_fnc_createCoolDownBar;
             playSound "Beep_Target";
         };
         if (ctrlShown _coolDownBar) then {
-            _coolDownBar ctrlShow false;
+            // _coolDownBar ctrlShow false;
         };
 
         if (_laserBatteryStatus > 0) then {
@@ -83,16 +83,17 @@ private _coolDownBar = call hoppers_fnc_createCoolDownBar;
     } else {
         if (_laserBatteryStatus < 1) then {
             _laserBatteryStatus = _laserBatteryStatus + HOPPERS_LASERBATTERY_FILL_RATE;
+            playSound "ZoomOut";
         } else { 
             _vehicle setVariable ["hoppers_laserOverheated", false];
         };
         if (!(ctrlShown _coolDownBar)) then {
-            _coolDownBar ctrlShow true;
+            // _coolDownBar ctrlShow true;
         };
     };
 
-    (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlsetText _string;
-    (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlSetTextColor _color;
+    // (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlsetText _string;
+    // (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlSetTextColor _color;
 
     _coolDownBar ctrlsetText _stringCoolDown;
     _coolDownBar ctrlSetTextColor _color;

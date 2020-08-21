@@ -11,11 +11,11 @@ _centerMarker setMarkerText (format ["%1 | %2", _index, [daytime * 3600,"HH:MM"]
 private _bombMarker = createMarker [format ["hoppers_bombmarker_%1_%2",_markerPos,CBA_missionTime * 1000],_markerPos];
 _bombMarker setMarkerShape "ELLIPSE";
 _bombMarker setMarkerColor _color;
-_bombMarker setMarkerSize [HOPPERS_BOMBS_MIN_DISTANCE,HOPPERS_BOMBS_MIN_DISTANCE];
+_bombMarker setMarkerSize [HOPPERS_BOMBS_CLACKERRANGE,HOPPERS_BOMBS_CLACKERRANGE];
 _bombMarker setMarkerBrush "Border";
 
 private _existingBombMarkers = missionNamespace getVariable ["hoppers_bombmarker", []];
 _existingBombMarkers pushBack _bombMarker;
 missionNamespace setVariable ["hoppers_bombmarker", _existingBombMarkers, true];
 
-_bombMarker
+[_centerMarker, _bombMarker]

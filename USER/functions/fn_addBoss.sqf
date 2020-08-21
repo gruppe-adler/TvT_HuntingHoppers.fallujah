@@ -18,5 +18,5 @@ missionNamespace setVariable ["hoppers_bosses", _bosses, true];
 
 _unit setVariable ["hoppers_isBoss", true, true];
 
-[_unit] call hoppers_fnc_createMarker;
+// [_unit] call hoppers_fnc_createMarker;
 [_unit] remoteExecCall ["hoppers_fnc_addBombTrigger", _unit, true];

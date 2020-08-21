@@ -1,7 +1,7 @@
 params ["_boss"];
 
-private _bombTrigger = [
-    "triggerBomb",
+private _layBomb = [
+    "layBomb",
     "Lay Bomb (Countdown 30s)",
     "",
     {
@@ -9,7 +9,7 @@ private _bombTrigger = [
 
         if (position player inArea "mrk_bombArea") then {
             player playMoveNow "Acts_carFixingWheel";
-            [30, [], {
+            [10, [], {
                 [player] remoteExec ["hoppers_fnc_bombCountDown", 2];
             }, {
                 hint "Aborted Bomb Laying!"
@@ -23,7 +23,8 @@ private _bombTrigger = [
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 
-[_boss, 1, ["ACE_SelfActions"], _bombTrigger] call ace_interact_menu_fnc_addActionToObject;
+[_boss, 1, ["ACE_SelfActions"], _layBomb] call ace_interact_menu_fnc_addActionToObject;
+
 
 private _extractionStart = [
     "extractionStart",
