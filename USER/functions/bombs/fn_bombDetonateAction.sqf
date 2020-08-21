@@ -10,12 +10,12 @@ private _bombTrigger = [
 
         if (!(_bomb getVariable ["hoppers_bombReadyToDetonate", false])) then {
             hintSilent "Not ready to detonate yet!";
-        };
-
-        if (_player distance _bomb < HOPPERS_BOMBS_CLACKERRANGE) then {
-           [_bomb] remoteExec ["hoppers_fnc_bombDetonate", 2];
         } else {
-            hintSilent "Out of range!";
+            if (_player distance _bomb < HOPPERS_BOMBS_CLACKERRANGE) then {
+               [_bomb] remoteExec ["hoppers_fnc_bombDetonate", 2];
+            } else {
+                hintSilent "Out of range!";
+            };
         };
     }, {
           true

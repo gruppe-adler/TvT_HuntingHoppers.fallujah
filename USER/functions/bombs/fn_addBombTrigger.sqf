@@ -2,10 +2,10 @@ params ["_boss"];
 
 private _layBomb = [
     "layBomb",
-    "Lay Bomb (Countdown 30s)",
+    "Lay Bomb",
     "",
     {
-        hintSilent "Bomb Trigger Set (30s)";
+        // hintSilent "Bomb Trigger Set";
 
         if (position player inArea "mrk_bombArea") then {
             player playMoveNow "Acts_carFixingWheel";

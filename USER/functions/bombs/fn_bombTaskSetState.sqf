@@ -1,4 +1,4 @@
-params ["_side", "_bombspot", "_state"];
+params ["_bombspot", "_side", "_state"];
 
 private _bombSpot = format ["%1_%2", _side, _bombSpot];
 

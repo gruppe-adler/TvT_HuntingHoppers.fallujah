@@ -6,7 +6,7 @@ private _position = getPos _bomb;
 private _boss = _bomb getVariable ["hoppers_countdownBoss", objNull];
 
 _markers params ["_centerMarker", "_bombMarker"];
-_centerMarker setMarkerColor "ColorGrey";
+_centerMarker setMarkerColor "ColorBlack";
 deleteMarker _bombMarker;
 
 [_bombspot, west, "FAILED"] call hoppers_fnc_bombTaskSetState;
@@ -14,6 +14,8 @@ deleteMarker _bombMarker;
 
 private _explosion = "Bo_GBU12_LGB" createVehicle _position;
 _explosion setDamage 1;
+
+// systemChat ("_bombspot : " + str _bombspot);
 
 remoteExecCall ["grad_waverespawn_fnc_respawnManual", west];
 remoteExecCall ["grad_waverespawn_fnc_respawnManual", east];

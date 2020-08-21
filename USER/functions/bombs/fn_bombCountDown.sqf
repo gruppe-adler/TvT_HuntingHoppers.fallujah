@@ -30,13 +30,13 @@ private _markers = [_position, _phase] call hoppers_fnc_createBombMarker;
 
 _bomb setVariable ["hoppers_bombMarkers", _markers, true];
 
-for "_i" from HOPPERS_BOMBS_TIME_TO_EXPLOSION to 1 step -1 do {
+for "_i" from (HOPPERS_BOMBS_TIME_TO_EXPLOSION + 1) to 1 step -1 do {
     [{
       params ["_i", "_bomb"];
 
       // likely defused or exploded
       if (isNull _bomb) exitWith {
-            [""] remoteExec ["hintSilent", east];
+            ["Bomb can be detonated now"] remoteExec ["hintSilent", east];
       };
       private _bombActive = _bomb getVariable ["hoppers_countdownStarted", false];
 
@@ -45,7 +45,7 @@ for "_i" from HOPPERS_BOMBS_TIME_TO_EXPLOSION to 1 step -1 do {
         [_string] remoteExec ["hintSilent", east];
       };
 
-    }, [(HOPPERS_BOMBS_TIME_TO_EXPLOSION + 1) - _i, _bomb], _i] call CBA_fnc_waitAndExecute;
+    }, [HOPPERS_BOMBS_TIME_TO_EXPLOSION - _i, _bomb], _i] call CBA_fnc_waitAndExecute;
 };
 
 [{

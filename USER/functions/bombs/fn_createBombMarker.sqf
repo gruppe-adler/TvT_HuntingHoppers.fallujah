@@ -1,6 +1,6 @@
 params ["_markerPos", "_index"];
 
-private _color = "colorBlack";
+private _color = "ColorRed";
 
 private _centerMarker = createMarker [format ["hoppers_bombmarker_center_%1_%2",_markerPos,CBA_missionTime * 1000],_markerPos];
 _centerMarker setMarkerShape "ICON";

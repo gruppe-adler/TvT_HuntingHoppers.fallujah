@@ -2,7 +2,7 @@ private _taskID = "Eliminate";
 
 [
   west,
-  [_taskID],
+  _taskID,
   ["Eliminate Insurgent Leader who triggers the bombs. You will get intel about his position on the map.",
   "Eliminate Insurgent Leader",
   ""],

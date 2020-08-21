@@ -2,8 +2,8 @@ params ["_position", "_bombspot"];
 
 [
   east,
-  [_bombspot],
-  ["Trigger bomb in bomb area and get out of its explosion radius. This will reset the marker size.",
+  _bombspot,
+  ["Trigger bomb in bomb area and get out of its explosion radius.",
   "Detonate Bomb",
   ""],
   _position,

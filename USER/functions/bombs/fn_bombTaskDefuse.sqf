@@ -4,7 +4,7 @@ private _bombSpot = format ["%1_%2", _side, _bombSpot];
 
 [
   _side,
-  [_bombspot],
+  _bombspot,
   [("Defuse the bomb before it detonates in " + (str HOPPERS_BOMBS_TIME_TO_EXPLOSION) + " s"),
   "Defuse Bomb",
   ""],
