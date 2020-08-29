@@ -2,5 +2,5 @@
 *   Anleitung im Wiki
 */
 
-#include "loadoutKsk.hpp"
+#include "loadoutSpecOps.hpp"
 #include "loadoutTalis.hpp"

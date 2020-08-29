@@ -15,7 +15,7 @@
 */
 
 
-loadoutFactionBlu = "ger_ksk";
+loadoutFactionBlu = "specOps";
 loadoutFactionOpf = "ind_me_talis";
 loadoutFactionInd = "";
 

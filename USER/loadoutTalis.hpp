@@ -1,7 +1,8 @@
 class ind_me_talis: ind_eastern_nationalists {
     class AllUnits {
-        primaryWeapon = "rhs_weap_ak74m";
-        primaryWeaponMagazine = "rhs_30Rnd_545x39_AK";
+        primaryWeapon = "rhs_weap_akm";
+        primaryWeaponMagazine = "rhs_30Rnd_762x39mm_bakelite_tracer";
+        primaryWeaponMuzzle = "rhs_acc_dtkakm";
         uniform = "LOP_U_AM_Fatigue_01_3";
         nvgoggles = "";
         headgear = "LOP_H_Pakol";
@@ -27,7 +28,7 @@ class ind_me_talis: ind_eastern_nationalists {
                 "ACE_epinephrine",
                 "ACE_Flashlight_MX991",
                 "ACE_MapTools",
-                LIST_10("rhs_30Rnd_545x39_AK"),
+                LIST_10("rhs_30Rnd_762x39mm_bakelite_tracer"),
                 "rhs_mag_rgo",
                 "rhs_mag_rdg2_white"
             };
