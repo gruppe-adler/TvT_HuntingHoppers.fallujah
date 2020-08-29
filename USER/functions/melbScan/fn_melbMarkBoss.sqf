@@ -1,22 +1,24 @@
 params ["_unit"];
 
 _unit setVariable ["hoppers_lastPing", CBA_missionTime];
+private _timeStamp = CBA_missionTime;
+
+private _boss = missionNamespace getVariable ["hoppers_boss", objNull];
+
+// dont draw if unit is close to boss (nestschutz)
+if (_unit != _boss && _unit distance _boss < HOPPERS_MAX_DISTANCE_BOSS) exitWith {};
 
 // add to 3d handler list
 private _nearEntities = player getVariable ["hoppers_drawEntities", []];
 _nearEntities pushBackUnique _unit;
 player setVariable ["hoppers_drawEntities", _nearEntities];
 
-playSound "Hint3";
-
-private _timeStamp = CBA_missionTime;
-player setVariable ["hoppers_fadeMarkerStart", _timeStamp];
-
+// delete 3d icon if not another scan followed up after fade out time
 [{
     params ["_unit", "_timeStamp"];
 
-    if (player getVariable ["hoppers_fadeMarkerStart", 0] > _timeStamp) then {
-        diag_log format ["removing already running 3d icon for new one"];
+    if (_unit getVariable ["hoppers_lastPing", -1] > _timeStamp) then {
+        // do not delete
     } else {
         private _nearEntities = player getVariable ["hoppers_drawEntities", []];
         _nearEntities deleteAt (_nearEntities find _unit);
@@ -24,6 +26,7 @@ player setVariable ["hoppers_fadeMarkerStart", _timeStamp];
     };
 
 }, [_unit, _timeStamp], HOPPERS_BOSS_MARKING_FADEOUT] call CBA_fnc_waitAndExecute;
+
 
 if (_unit == missionNamespace getVariable ["hoppers_boss", objNull]) then {
     [_unit,0.5,1,0,0,{

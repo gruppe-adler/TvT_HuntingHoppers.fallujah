@@ -36,15 +36,21 @@ safeZoneX + SafeZoneW + (3*   (0.01875 * SafezoneH)),
 */
 
 private _coolDownBar = call hoppers_fnc_createCoolDownBar;
-_coolDownBar ctrlShow true;
+ uiNamespace setVariable ["hoppers_coolDownBar", _coolDownBar];
 
 private _handle = [{
     params ["_args", "_handle"];
-    _args params ["_vehicle", "_coolDownBar"];
+    _args params ["_vehicle"];
+
+    private _coolDownBar = uiNamespace getVariable ["hoppers_coolDownBar", controlNull];
+    if (isNull _coolDownBar) then {
+        _coolDownBar = call hoppers_fnc_createCoolDownBar;
+        uiNamespace setVariable ["hoppers_coolDownBar", _coolDownBar];
+    };
 
     private _laserBatteryStatus = _vehicle getVariable ["hoppers_laserBattery", 1];
     private _overheated = _vehicle getVariable ["hoppers_laserOverheated", false];
-    private _color = if (_laserBatteryStatus > 0.5) then {
+    private _armaColor = if (_laserBatteryStatus > 0.5) then {
         "colorGreen"
     } else {
         if (_laserBatteryStatus > 0.25) then {
@@ -61,29 +67,25 @@ private _handle = [{
     private _characterAmount = linearConversion [1, 0, _laserBatteryStatus, 0, 20, true];
     private _stringCoolDown = ["||||||||||||||||||||", 0, _characterAmount] call BIS_fnc_trimString;
 
-    systemChat str _characterAmount;
+    // systemChat str _coolDownBar;
 
-    _color = (configfile >> "CfgMarkerColors" >> _color >> "color") call BIS_fnc_colorConfigToRGBA;
+    private _color = (configfile >> "CfgMarkerColors" >> _armaColor >> "color") call BIS_fnc_colorConfigToRGBA;
 
     if (isLaserOn _vehicle && !(_vehicle getVariable ["hoppers_laserOverheated", false])) then {
-        if (_laserBatteryStatus > 0) then {
-            _laserBatteryStatus = _laserBatteryStatus - HOPPERS_LASERBATTERY_DRAIN_RATE;
-            playSound "ZoomIn";
-        } else {
-            playSound "Beep_Target";
-        };
 
         if (_laserBatteryStatus > 0) then {
+            _laserBatteryStatus = _laserBatteryStatus - HOPPERS_LASERBATTERY_DRAIN_RATE;
             [cursorTarget] call hoppers_fnc_melbScanMan;
             (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlsetText "SCANNING...";
         } else {
+            playSound "rhs_aps_warning";
             _vehicle setVariable ["hoppers_laserOverheated", true];
             (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlsetText "COOLDOWN";
         };
     } else {
         if (_laserBatteryStatus < 1) then {
             _laserBatteryStatus = _laserBatteryStatus + HOPPERS_LASERBATTERY_FILL_RATE;
-            playSound "ZoomOut";
+            playSound "zoom_fail";
         } else { 
             _vehicle setVariable ["hoppers_laserOverheated", false];
             (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlsetText "READY";
@@ -96,11 +98,10 @@ private _handle = [{
     _coolDownBar ctrlsetText _stringCoolDown;
     _coolDownBar ctrlSetTextColor _color;
     _coolDownBar ctrlCommit 0;
-    _coolDownBar ctrlShow true;
 
     _vehicle setVariable ["hoppers_laserBattery", _laserBatteryStatus];
 
-}, 0.1, [_vehicle, _coolDownBar]] call CBA_fnc_addPerFrameHandler;
+}, 0.1, [_vehicle]] call CBA_fnc_addPerFrameHandler;
 
 
 private _drawEH = addMissionEventHandler ["Draw3D", {
@@ -112,7 +113,7 @@ private _drawEH = addMissionEventHandler ["Draw3D", {
         private _lastPing = _x getVariable ["hoppers_lastPing", 0];
         private _boss = missionNamespace getVariable ["hoppers_boss", objNull];
         private _isBoss = _boss == _x;
-        private _isDrawn = _x distance _boss < HOPPERS_MAX_DISTANCE_BOSS;
+        private _isDrawn = if (_isBoss) then { true } else { (_x distance _boss) > HOPPERS_MAX_DISTANCE_BOSS };
 
         if (_isDrawn) then {
             _position params ["_xPos", "_yPos", "_zPos"];

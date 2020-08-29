@@ -52,7 +52,6 @@ class hoppers
        class melbScan {
             file = "USER\functions\melbScan";
 
-            class melbFadeMarker;
             class melbScan;
             class melbScanMan;
             class melbMarkBoss;
