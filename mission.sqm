@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7990.7837,32.683048,1878.4939};
-		dir[]={-0.75399798,-0.48012528,-0.44840443};
-		up[]={-0.4126913,0.87718409,-0.24542861};
-		aside[]={-0.51117629,1.6082777e-007,0.85953885};
+		pos[]={7973.3022,32,1884.5023};
+		dir[]={0.12915821,-0.62985659,-0.76590788};
+		up[]={0.10473754,0.77670735,-0.62109274};
+		aside[]={-0.98608643,1.8984065e-007,-0.16628928};
 	};
 };
 binarizationWanted=0;
@@ -9709,7 +9709,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this setvariable [""hoppers_isBoss"", true];}";
+						init="call{missionNamespace setVariable [""hoppers_boss"", this]; this setVariable [""hoppers_isBoss"", true, true];}";
 					};
 					id=828;
 					type="O_Survivor_F";

@@ -11,7 +11,7 @@ params ["_unit"];
 
 if (!isServer) exitWith {};
 
-missionNamespace setVariable ["hoppers_boss", _unit, true];
+// missionNamespace setVariable ["hoppers_boss", _unit, true];
 
 _unit setVariable ["hoppers_isBoss", true, true];
 
