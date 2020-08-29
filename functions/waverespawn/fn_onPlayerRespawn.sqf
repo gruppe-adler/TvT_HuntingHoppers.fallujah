@@ -27,3 +27,10 @@ if (_pos isEqualTo []) then {_pos = getMarkerPos _respawnMarker};
 [player,_pos] call EFUNC(common,teleport);
 
 diag_log format ["onPlayerRespawn: teleporting to %1 as playerSide is %2", _respawnMarker, _playerSide];
+
+if (side player == east && !(player getVariable ["hoppers_isBoss", false])) then {
+    [{
+      private _boss = (missionNamespace getVariable ["hoppers_bosses", []]) select 0; // todo make failproof
+      [_boss] call hoppers_fnc_areaBarShow;
+    }, [], 10] call CBA_fnc_waitAndExecute;
+  };

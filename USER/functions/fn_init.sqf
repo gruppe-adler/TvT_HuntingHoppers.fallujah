@@ -1,4 +1,7 @@
 if (hasInterface) then {
+
+  call linearSD_fnc_transferRadiosAcrossRespawn;
+
   ["hoppers_civEnemy", {
       params ["_side"];
 
