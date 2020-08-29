@@ -4,7 +4,7 @@
 
 #include "..\node_modules\grad-dyngroupdecals\cfgFunctions.hpp"
 #include "..\node_modules\grad-vehicleRespawn\cfgFunctions.hpp"
-
+#include "..\node_modules\grad-gpsTracker\cfgFunctions.hpp"
 
 class hoppers
    {
@@ -56,7 +56,7 @@ class hoppers
             class melbScan;
             class melbScanMan;
             class melbMarkBoss;
-            class melbMarkLocal;
+            class melbInit { postInit = 1; };
        };
 
        class mapReplacements {

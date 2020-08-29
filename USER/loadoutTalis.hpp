@@ -99,6 +99,15 @@ class ind_me_talis: ind_eastern_nationalists {
             headgear = "LOP_H_Pakol";
             goggles = "rhs_scarf";
         };
+
+        class survivor_F: Soldier_F {
+            primaryWeapon = "";
+            primaryWeaponMagazine = "";
+            primaryWeaponMuzzle = "";
+            vest = "";
+            backpack = "";
+            addItemsToUniform[] = {};
+        };
     };
 
     class Rank {

@@ -57,3 +57,13 @@ if (!(GVAR(WAVERESPAWNMANUAL))) then {
 
 [{player getVariable "wr_playerCountdownDone"}, {_this call FUNC(waveCountdown)}, [CBA_missionTime]] call CBA_fnc_waitUntilAndExecute;
 [{player getVariable "wr_waveCountdownDone"}, {[] call FUNC(prepareRespawn)}, []] call CBA_fnc_waitUntilAndExecute;
+
+private _3dhandle = player getVariable ["hoppers_3ddrawHandler", -1];
+private _uihandle = player getVariable ["hoppers_uidrawHandler", -1];
+
+if (_3dhandle > -1) then {
+    removeMissionEventHandler ["Draw3D", _3dhandle];
+};
+if (_uihandle > -1) then {
+    [_uihandle] call CBA_fnc_removePerFrameHandler;
+};

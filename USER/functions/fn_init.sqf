@@ -18,7 +18,7 @@ if (hasInterface) then {
 
   if (side player == east && !(player getVariable ["hoppers_isBoss", false])) then {
     [{
-      private _boss = (missionNamespace getVariable ["hoppers_bosses", []]) select 0; // todo make failproof
+      private _boss = missionNamespace getVariable ["hoppers_boss", objNull];
       [_boss] call hoppers_fnc_areaBarShow;
     }, [], 10] call CBA_fnc_waitAndExecute;
   };

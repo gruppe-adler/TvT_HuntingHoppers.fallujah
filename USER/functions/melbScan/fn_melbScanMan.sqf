@@ -2,15 +2,8 @@ params ["_position"];
 
 private _targets = nearestObjects [_position, ["Man", "Car"], 200];
 
-private _boss = objNull;
-
 {
-  if (_x getVariable ["hoppers_isBoss", false]) then {
-        _boss = _x;
-  };
+    if (side _x == east) then {
+        [_x, false] call hoppers_fnc_melbMarkBoss;
+    };
 } forEach _targets;
-
-
-if (!isNull _boss) then {
-    [_boss] call hoppers_fnc_melbMarkBoss;
-};

@@ -11,10 +11,7 @@ params ["_unit"];
 
 if (!isServer) exitWith {};
 
-private _bosses = missionNamespace getVariable ["hoppers_bosses", []];
-
-_bosses pushBackUnique _unit;
-missionNamespace setVariable ["hoppers_bosses", _bosses, true];
+missionNamespace setVariable ["hoppers_boss", _unit, true];
 
 _unit setVariable ["hoppers_isBoss", true, true];
 

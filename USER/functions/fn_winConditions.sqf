@@ -1,11 +1,11 @@
 [{
   params ["_args", "_handle"];
 
-  private _opforBosses = missionNamespace getVariable ["hoppers_bosses", []];
+  private _opforBoss = missionNamespace getVariable ["hoppers_boss", objNull];
   private _exfilPositions = missionNamespace getVariable ["hoppers_exfilPositions", [[-9999,-9999,0]]];
 
   // east eliminated
-  OPFOR_ELIMINATED = ({side _x isEqualTo east && alive _x} count _opforBosses == 0);
+  OPFOR_ELIMINATED = !alive _opforBoss;
   BLUFOR_ELIMINATED = ({side _x isEqualTo west && alive _x} count (playableUnits + switchableUnits) == 0);
 
   OPFOR_EXTRACTED = false;

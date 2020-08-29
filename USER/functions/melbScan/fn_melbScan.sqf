@@ -15,7 +15,7 @@ hoppers_fnc_createCoolDownBar = {
     private _text = (uiNamespace getVariable "MELB_FLIRCtrl") ctrlCreate ["RscText", -1];
     _text ctrlSetPosition [
         (SafezoneX + ((SafezoneW - SafezoneH) / 2)) + 3*   (0.01875 * SafezoneH),
-        safeZoneY + (14.3 *   (0.025 * SafezoneH)),
+        safeZoneY + (15.3 *   (0.025 * SafezoneH)),
         13 *   (0.01875 * SafezoneH),
         2 *   (0.025 * SafezoneH)
     ];
@@ -36,9 +36,9 @@ safeZoneX + SafeZoneW + (3*   (0.01875 * SafezoneH)),
 */
 
 private _coolDownBar = call hoppers_fnc_createCoolDownBar;
+_coolDownBar ctrlShow true;
 
-
-[{
+private _handle = [{
     params ["_args", "_handle"];
     _args params ["_vehicle", "_coolDownBar"];
 
@@ -59,8 +59,9 @@ private _coolDownBar = call hoppers_fnc_createCoolDownBar;
     };
 
     private _characterAmount = linearConversion [1, 0, _laserBatteryStatus, 0, 20, true];
-    private _string = ["||||||||||||||||||||", 0, _characterAmount] call BIS_fnc_trimString;
     private _stringCoolDown = ["||||||||||||||||||||", 0, _characterAmount] call BIS_fnc_trimString;
+
+    systemChat str _characterAmount;
 
     _color = (configfile >> "CfgMarkerColors" >> _color >> "color") call BIS_fnc_colorConfigToRGBA;
 
@@ -71,14 +72,13 @@ private _coolDownBar = call hoppers_fnc_createCoolDownBar;
         } else {
             playSound "Beep_Target";
         };
-        if (ctrlShown _coolDownBar) then {
-            // _coolDownBar ctrlShow false;
-        };
 
         if (_laserBatteryStatus > 0) then {
             [cursorTarget] call hoppers_fnc_melbScanMan;
+            (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlsetText "SCANNING...";
         } else {
             _vehicle setVariable ["hoppers_laserOverheated", true];
+            (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlsetText "COOLDOWN";
         };
     } else {
         if (_laserBatteryStatus < 1) then {
@@ -86,18 +86,17 @@ private _coolDownBar = call hoppers_fnc_createCoolDownBar;
             playSound "ZoomOut";
         } else { 
             _vehicle setVariable ["hoppers_laserOverheated", false];
-        };
-        if (!(ctrlShown _coolDownBar)) then {
-            // _coolDownBar ctrlShow true;
+            (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlsetText "READY";
         };
     };
 
-    // (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlsetText _string;
+    
     // (uiNamespace getVariable "MELB_FLIRCtrl" displayCtrl 158) ctrlSetTextColor _color;
 
     _coolDownBar ctrlsetText _stringCoolDown;
     _coolDownBar ctrlSetTextColor _color;
     _coolDownBar ctrlCommit 0;
+    _coolDownBar ctrlShow true;
 
     _vehicle setVariable ["hoppers_laserBattery", _laserBatteryStatus];
 
@@ -107,18 +106,30 @@ private _coolDownBar = call hoppers_fnc_createCoolDownBar;
 private _drawEH = addMissionEventHandler ["Draw3D", {
 
     private _nearEntities = player getVariable ["hoppers_drawEntities", []];
-    private _lastPing = player getVariable ["hoppers_lastPing", 0];
 
     {
         private _position = ASLToAGL getPosASL _x;
-        _position params ["_xPos", "_yPos", "_zPos"];
+        private _lastPing = _x getVariable ["hoppers_lastPing", 0];
+        private _boss = missionNamespace getVariable ["hoppers_boss", objNull];
+        private _isBoss = _boss == _x;
+        private _isDrawn = _x distance _boss < HOPPERS_MAX_DISTANCE_BOSS;
 
-        private _colorR = 1;
-        private _colorG = .2;
-        private _colorB = .2;
-        private _alpha = 0;
+        if (_isDrawn) then {
+            _position params ["_xPos", "_yPos", "_zPos"];
 
-        drawIcon3D [getMissionPath "USER\data\flare.paa", [_colorR, _colorG, _colorB, linearConversion [0, HOPPERS_BOSS_MARKING_FADEOUT, CBA_missionTime - _lastPing, 1, 0, true]], [_xPos, _yPos, _zPos + 1] , 2, 2, 0, "", 0, 0.05, "TahomaB", "center", true];
+            private _colorR = 1;
+            private _colorG = .2;
+            private _colorB = .2;
+            private _alpha = 0;
+
+            if (!_isBoss) then {
+                _colorR = .2; _colorG = 1;
+            };
+
+            drawIcon3D [getMissionPath "USER\data\flare.paa", [_colorR, _colorG, _colorB, linearConversion [0, HOPPERS_BOSS_MARKING_FADEOUT, CBA_missionTime - _lastPing, 1, 0, true]], [_xPos, _yPos, _zPos + 1] , 2, 2, 0, "", 0, 0.05, "TahomaB", "center", true];
+        };
     } forEach _nearEntities;
-
 }];
+
+player setVariable ["hoppers_3ddrawHandler", _drawEH];
+player setVariable ["hoppers_uidrawHandler", _handle];
