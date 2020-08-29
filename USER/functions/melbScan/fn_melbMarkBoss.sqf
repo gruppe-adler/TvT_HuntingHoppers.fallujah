@@ -8,6 +8,16 @@ private _boss = missionNamespace getVariable ["hoppers_boss", objNull];
 // dont draw if unit is close to boss (nestschutz)
 if (_unit != _boss && _unit distance _boss < HOPPERS_MAX_DISTANCE_BOSS) exitWith {};
 
+lineIntersectsSurfaces [
+    getPosWorld _unit, 
+    getPosWorld _unit vectorAdd [0, 0, 50], 
+    _unit, objNull, true, 1, "GEOM", "NONE"
+] select 0 params ["","","","_house"];
+
+if (_house isKindOf "House") exitWith {
+    // unit is in house and cant be scanned
+};
+
 // add to 3d handler list
 private _nearEntities = player getVariable ["hoppers_drawEntities", []];
 _nearEntities pushBackUnique _unit;
