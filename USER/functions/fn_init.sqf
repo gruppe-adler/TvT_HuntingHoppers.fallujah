@@ -44,6 +44,9 @@ publicVariable "HOPPERS_BOMBS_TIME_TO_EXPLOSION";
 HOPPERS_BOMBS_MIN_PLACED = ["HOPPERS_BOMBS_MIN_PLACED", 0] call BIS_fnc_getParamValue;
 publicVariable "HOPPERS_BOMBS_MIN_PLACED";
 
+HOPPERS_BOMBS_DEFUSE_TIME = ["HOPPERS_BOMBS_DEFUSE_TIME", 0] call BIS_fnc_getParamValue;
+publicVariable "HOPPERS_BOMBS_DEFUSE_TIME";
+
 TIME_OF_DAY = ["TIME_OF_DAY", 10] call BIS_fnc_getParamValue;
 publicVariable "TIME_OF_DAY";
 

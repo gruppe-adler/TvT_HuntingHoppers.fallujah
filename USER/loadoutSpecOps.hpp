@@ -1,41 +1,87 @@
 class specOps: ind_pmc_special {
     class AllUnits: AllUnits {
-        uniform = "SMA_UNIFORMS_TAN";
-        vest = "LOP_V_CarrierRig_TAN";
-        headgear = "SMA_Helmet_Tan";
-        nvgoggles = "";
-        goggles[] = {"G_Bandanna_tan", "rhsusf_shemagh2_grn", "rhsusf_shemagh2_od", "rhsusf_shemagh2_tan"};
-        gps = "itemGPS";
-        addItemsToUniform[] = {
-            LIST_6("ACE_fieldDressing"),
-            LIST_2("ACE_morphine"),
-            LIST_2("ACE_Chemlight_HiWhite"),
-            "ACE_epinephrine",
-            "ACE_Flashlight_MX991",
-            "ACE_MapTools"
-        };
+        uniform = "rhs_uniform_cu_ocp";
+        vest = "rhsusf_spcs_ocp_rifleman";
+        backpack = "";
+        headgear[] = {"rhsusf_opscore_mc_cover_pelt", "rhsusf_opscore_mc_cover_pelt_cam", "rhsusf_opscore_mc_pelt", "rhsusf_opscore_mc_pelt_nsw", "rhsusf_mich_bare_norotos_alt_tan"};
+        primaryWeapon = "rhs_weap_hk416d10_LMT";
+        primaryWeaponMagazine = "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_red"
+        primaryWeaponOptics[] = {"optic_holosight_blk_f", "optic_erco_blk_f", "rhsusf_acc_g33_xps3", "rhsusf_acc_g33_t1", "rhsusf_acc_acog_rmr", "rhsusf_acc_compm4", "rhsusf_acc_eotech_552", ""};
+        primaryWeaponPointer = "";
+        primaryWeaponMuzzle = "";
+        primaryWeaponUnderbarrel = "";
+        primaryWeaponUnderbarrelMagazine = "";
+        secondaryWeapon = "";
+        secondaryWeaponMagazine = "";
+        handgunWeapon = "rhsusf_weap_glock17g4";
+        handgunWeaponMagazine = "rhsusf_mag_17Rnd_9x19_FMJ";
+        binoculars = "Binocular";
+        map = "ItemMap";
+        compass = "ItemCompass";
+        watch = "ItemWatch";
+        gps = "ItemGPS";
+        radio = "TFAR_anprc152";
     };
 
     class Type: Type {
         //rifleman
-        class Soldier_F: Soldier_F {
+        class Soldier_F {
             addItemsToUniform[] = {
-                LIST_6("ACE_fieldDressing"),
-                LIST_2("ACE_morphine"),
-                LIST_2("ACE_Chemlight_HiWhite"),
-                "ACE_epinephrine",
-                "ACE_Flashlight_MX991",
-                "ACE_MapTools"
+              "ACE_MapTools",
+              "ACE_EntrenchingTool",
+              "ACE_epinephrine",
+              "ACE_Flashlight_MX991",
+              LIST_6("ACE_fieldDressing"),
+              LIST_2("ACE_tourniquet"),
+              LIST_2("ACE_splint"),
+              LIST_2("ace_morphine")
+
+            };
+            addItemsToVest[] = {
+              LIST_8("rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_red"),
+              LIST_2("rhsusf_mag_17Rnd_9x19_FMJ"),
+              LIST_2("rhs_mag_an_m8hc"),
+              LIST_2("rhs_mag_m67"),
+              "rhs_mag_m18_green"
+
             };
         };
 
         //autorifleman
-        class Soldier_AR_F: Soldier_AR_F {
+        class soldier_AR_F: Soldier_F {
+          vest = "rhsusf_spcs_ocp_saw";
+          backpack = "rhsusf_assault_eagleaiii_ocp";
+          primaryWeapon = "rhs_weap_m249_pip_S";
+          primaryWeaponMagazine = "rhsusf_200Rnd_556x45_mixed_soft_pouch"
+          primaryWeaponOptics[] = {"optic_holosight_blk_f", "optic_erco_blk_f", "rhsusf_acc_g33_xps3", "rhsusf_acc_g33_t1", "rhsusf_acc_acog_rmr", "rhsusf_acc_compm4", "rhsusf_acc_eotech_552", ""};
+            
+            addItemsToUniform[] = {
+              "ACE_MapTools",
+              "ACE_EntrenchingTool",
+              "ACE_epinephrine",
+              "ACE_Flashlight_MX991",
+              LIST_6("ACE_fieldDressing"),
+              LIST_2("ACE_tourniquet"),
+              LIST_2("ACE_splint"),
+              LIST_2("ace_morphine")
+
+            };
+            addItemsToVest[] = {
+              LIST_2("rhsusf_200Rnd_556x45_mixed_soft_pouch"),
+              LIST_2("rhsusf_mag_17Rnd_9x19_FMJ"),
+              "rhs_mag_an_m8hc"
+
+            };
+            addItemsToBackpack[] = {
+              LIST_5("rhsusf_200Rnd_556x45_mixed_soft_pouch")
+            
+            };
 
         };
 
         //light AT
-        class Soldier_LAT_F: Soldier_LAT_F {
+        class soldier_LAT_F: Soldier_F {
+          secondaryWeapon = "rhs_weap_M136";
 
         };
 
@@ -44,19 +90,48 @@ class specOps: ind_pmc_special {
         };
 
         //assistant autorifleman
-        class Soldier_AAR_F: Soldier_A_F {
+        class soldier_AAR_F: Soldier_F {
+          backpack = "rhsusf_assault_eagleaiii_ocp";
+            
+            addItemsToBackpack[] = {
+              LIST_5("rhsusf_200Rnd_556x45_mixed_soft_pouch")
+            
+            };
+
         };
 
         //medic
-        class Medic_F: Medic_F {
+        class medic_F: Soldier_F {
+          vest = "rhsusf_spcs_ocp_medic";
+          backpack = "grad_kitbag_tan_medic";
+            addItemsToVest[] = {
+              LIST_8("rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_red"),
+              LIST_2("rhsusf_mag_17Rnd_9x19_FMJ"),
+              LIST_2("rhs_mag_an_m8hc"),
+              LIST_2("rhs_mag_m67"),
+              "rhs_mag_m18_green"
+
+            };
+            
+            addItemsToBackpack[] = {
+              LIST_20("ACE_fieldDressing"),
+              LIST_10("ACE_epinephrine"),
+              LIST_10("ace_morphine"),
+              LIST_8("ACE_tourniquet"),
+              LIST_8("ACE_splint"),
+              "ACE_surgicalKit"
+            
+            };
         };
 
         //squad leader
-        class Soldier_SL_F: Soldier_SL_F {
-            primaryWeapon = "rhs_weap_g36kv";
-            addItemsToBackpack[] = {
-                LIST_10("ACE_fieldDressing")
+        class Soldier_SL_F: Soldier_F {
+          backpack = "TFAR_rt1523g_big_rhs";
+          addItemsToBackpack[] = {
+            LIST_8("ACE_fieldDressing")
             };
+
+
         };
 
         //team leader
@@ -65,18 +140,23 @@ class specOps: ind_pmc_special {
 
         // pilot
         class pilot_F: Soldier_TL_F {
-            uniform = "U_I_pilotCoveralls";
-            headgear = "H_PilotHelmetHeli_B";
-            vest = "SMM_Vest_BW_TT";
+            headgear[] = {"rhsusf_hgu56p_visor_mask_black", "rhsusf_hgu56p_visor_black", "rhsusf_hgu56p_visor_mask_Empire_black", "rhsusf_hgu56p_visor_mask_mo"};
+            vest = "rhsusf_spcs_ocp_crewman";
             backpack = "";
-            goggles[] = {"rhsusf_shemagh2_gogg_grn", "rhsusf_shemagh2_gogg_od", "rhsusf_shemagh2_gogg_tan"};
+            addItemsToVest[] = {
+              LIST_4("rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_red"),
+              LIST_2("rhsusf_mag_17Rnd_9x19_FMJ"),
+              LIST_2("rhs_mag_an_m8hc"),
+              LIST_2("rhs_mag_m18_green")
+
+            };
         };
     };
 
     class Rank: Rank {
         class LIEUTENANT: LIEUTENANT {
             headgear = "H_MilCap_gry";
-            backpack = "TFAR_rt1523g_big_bwmod_tropen";
+            backpack = "TFAR_rt1523g_big_rhs";
         };
     };
 };

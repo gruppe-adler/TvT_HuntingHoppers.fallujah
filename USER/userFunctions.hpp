@@ -53,6 +53,7 @@ class hoppers
             file = "USER\functions\melbScan";
 
             class melbScan;
+            class melbScanFX;
             class melbScanMan;
             class melbMarkBoss;
             class melbInit { postInit = 1; };

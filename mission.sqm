@@ -8,7 +8,7 @@ class EditorData
 	toggles=5;
 	class ItemIDProvider
 	{
-		nextID=836;
+		nextID=839;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=227;
+		nextID=232;
 	};
 	class Camera
 	{
-		pos[]={7972.9028,70.464882,1919.1119};
-		dir[]={-0.090339646,-0.4992716,-0.86173928};
-		up[]={-0.052056633,0.86643749,-0.49656212};
-		aside[]={-0.9945628,5.0745439e-007,0.10426214};
+		pos[]={7966.1167,98.872589,1894.8713};
+		dir[]={-0.086138576,-0.67962074,-0.72853291};
+		up[]={-0.07980141,0.73354864,-0.67493433};
+		aside[]={-0.99311346,1.1161319e-007,0.11742005};
 	};
 };
 binarizationWanted=0;
@@ -4327,7 +4327,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=62;
+		items=63;
 		class Item0
 		{
 			dataType="Layer";
@@ -4898,7 +4898,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={7863.355,7.0014391,2008.5531};
-								angles[]={-0,5.816514,0};
+								angles[]={0,5.816514,0};
 							};
 							side="West";
 							flags=4;
@@ -7465,7 +7465,7 @@ class Mission
 					side="West";
 					class Entities
 					{
-						items=5;
+						items=4;
 						class Item0
 						{
 							dataType="Object";
@@ -7549,84 +7549,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={7967,7.0014391,1862.05};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Schütze";
-								isPlayable=1;
-							};
-							id=729;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acex_headless_blacklist";
-									expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="Male03ENG";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=1.02;
-										};
-									};
-								};
-								nAttributes=3;
-							};
-						};
-						class Item2
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={7872.4429,7.0014391,1987.1011};
 							};
 							side="West";
@@ -7700,7 +7622,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item3
+						class Item2
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7778,7 +7700,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item4
+						class Item3
 						{
 							dataType="Object";
 							class PositionInfo
@@ -9331,11 +9253,11 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7958,8.9401751,1858};
+				position[]={7958,63.940174,1858};
 				angles[]={0,0.96876246,0};
 			};
-			side="Empty";
-			flags=4;
+			side="West";
+			flags=2;
 			class Attributes
 			{
 				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhssaf_30rnd_556x45_EPR_G36', 20]; this addMagazineCargoGlobal ['rhs_200rnd_556x45_T_SAW', 20];};}";
@@ -9345,6 +9267,7 @@ class Mission
 			};
 			id=807;
 			type="RHS_MELB_H6M";
+			atlOffset=55;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9736,6 +9659,148 @@ class Mission
 			};
 			id=835;
 			type="EmptyDetector";
+		};
+		class Item62
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7958,62.001438,1858.05};
+						angles[]={0,0.96876246,0};
+					};
+					side="West";
+					flags=3;
+					class Attributes
+					{
+					};
+					id=836;
+					type="B_soldier_AAR_F";
+					atlOffset=55;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7958,62.001438,1858.05};
+						angles[]={0,0.96876246,0};
+					};
+					side="West";
+					class Attributes
+					{
+						description="Schütze";
+						isPlayable=1;
+					};
+					id=729;
+					type="B_Soldier_F";
+					atlOffset=55;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="acex_headless_blacklist";
+							expression="_this setVariable [""acex_headless_blacklist"",_value,true]";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=836;
+						item1=807;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=729;
+						item1=807;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=838;
+			atlOffset=55;
 		};
 	};
 	class Connections

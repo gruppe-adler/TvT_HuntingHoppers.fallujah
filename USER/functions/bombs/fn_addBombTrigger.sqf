@@ -5,19 +5,13 @@ private _layBomb = [
     "Lay Bomb",
     "",
     {
-        // hintSilent "Bomb Trigger Set";
-
-        if (position player inArea "mrk_bombArea") then {
-            player playMoveNow "Acts_carFixingWheel";
-            [10, [], {
-                [player] remoteExec ["hoppers_fnc_bombCountDown", 2];
-            }, {
-                hint "Aborted Bomb Laying!"
-            }, "Wiring Bomb..."] call ace_common_fnc_progressBar
-            
-        } else {
-            hintSilent "must be in bomb area marker";
-        };
+        // hintSilent "Bomb Trigger Set";        
+        player playMoveNow "Acts_carFixingWheel";
+        [10, [], {
+            [player] remoteExec ["hoppers_fnc_bombCountDown", 2];
+        }, {
+            hint "Aborted Bomb Laying!"
+        }, "Wiring Bomb..."] call ace_common_fnc_progressBar
     }, {
           call hoppers_fnc_canLayBomb
     },{},nil,"",3,[false,false,false,false,false]

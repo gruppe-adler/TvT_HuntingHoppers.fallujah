@@ -24,6 +24,14 @@ class HOPPERS_BOMBS_MIN_PLACED
     default = 6;
 };
 
+class HOPPERS_BOMBS_DEFUSE_TIME
+{
+    title = "Time Defusing Takes";
+    values[] = {1,10,30,60,90};
+    texts[] = {"1s", "10s", "30s", "60s", "90s"};
+    default = 1;
+};
+
 class HOPPERS_MAX_DISTANCE_BOSS
 {
     title = "Maximum distance opfor is allowed to boss without independent marker";

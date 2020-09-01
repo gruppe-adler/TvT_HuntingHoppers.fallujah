@@ -7,7 +7,7 @@
 params ["_vehicle"];
 
 HOPPERS_LASERBATTERY_FILL_RATE = 0.01;
-HOPPERS_LASERBATTERY_DRAIN_RATE = 0.02;
+HOPPERS_LASERBATTERY_DRAIN_RATE = 0.1;
 HOPPERS_BOSS_MARKING_FADEOUT = 20; // time 3d marker and map markers are shown
 
 hoppers_fnc_createCoolDownBar = {
@@ -97,21 +97,22 @@ private _handle = [{
 
     private _color = (configfile >> "CfgMarkerColors" >> _armaColor >> "color") call BIS_fnc_colorConfigToRGBA;
 
-    if (isLaserOn _vehicle && !(_vehicle getVariable ["hoppers_laserOverheated", false])) then {
+    if (isLaserOn _vehicle && !(_vehicle getVariable ["hoppers_laserOverheated", false]) && cameraView == "GUNNER") then {
 
         if (_laserBatteryStatus > 0) then {
             _laserBatteryStatus = _laserBatteryStatus - HOPPERS_LASERBATTERY_DRAIN_RATE;
-            [cursorTarget] call hoppers_fnc_melbScanMan;
+            [screenToWorld [0.5,0.5]] call hoppers_fnc_melbScanMan;
             _statusBar ctrlsetText ("SCANNING." + selectRandom ["","."] + selectRandom ["","."]);
         } else {
             playSound "rhs_aps_warning";
             _vehicle setVariable ["hoppers_laserOverheated", true];
-            _statusBar ctrlsetText "COOLDOWN";
+            _statusBar ctrlsetText "OVERHEATED";
         };
     } else {
         if (_laserBatteryStatus < 1) then {
             _laserBatteryStatus = _laserBatteryStatus + HOPPERS_LASERBATTERY_FILL_RATE;
             playSound "zoom_fail";
+            _statusBar ctrlsetText "COOLDOWN";
         } else { 
             _vehicle setVariable ["hoppers_laserOverheated", false];
             _statusBar ctrlsetText "READY";
