@@ -21,7 +21,7 @@ _bomb setVariable ["hoppers_bombBombspot", _bombSpot, true];
 
 [_bombspot, east, "ASSIGNED"] call hoppers_fnc_bombTaskSetState;
 [getPos _bomb, west, _bombspot] remoteExec ["hoppers_fnc_bombTaskDefuse", 2];
-[_bomb] remoteExec ["hoppers_fnc_addBombDefuseAction", east]; // todo
+[_bomb] remoteExec ["hoppers_fnc_addBombDefuseAction", west];
 
 
 private _phase = missionNamespace getVariable ["hoppers_missionPhase", 0];

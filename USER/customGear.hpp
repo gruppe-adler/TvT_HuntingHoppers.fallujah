@@ -10,9 +10,10 @@
 randomizationMode = 1;                                                          // einige Loadouts unterstützen zufällige Ausrüstungsvergabe. randomizationMode legt fest, wie mit diesen Loadouts umgegangen wird.
                                                                                 // 0 - disabled, 1 - enabled, 2 - enabled for players only, 3 - enabled for AI only
 
-customGear = -1;                                                               // Legt fest wann Spieler ihr Loadout anpassen dürfen.
+customGear = 1;                                                               // Legt fest wann Spieler ihr Loadout anpassen dürfen.
                                                                                 // -1 um zu deaktivieren
                                                                                 // Zahl - Zeit in Sekunden nach Spielstart, in der Anpassung erlaubt ist.
 
 customGearAllowedCategories[] = {                                               // Legt fest, welche Ausrüstungs-Kategorien von den Spielern angepasst werden dürfen.
+    "primaryWeaponOptics"
 };
