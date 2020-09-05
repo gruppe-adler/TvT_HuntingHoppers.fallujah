@@ -9,11 +9,11 @@ if (_distance >= HOPPERS_MAX_DISTANCE_BOSS) then {
 	_return = _red;
 };
 
-if (_distance < HOPPERS_MAX_DISTANCE_BOSS/1.5) then {
+if (_distance < HOPPERS_MAX_DISTANCE_BOSS) then {
 	_return = _yellow;
 };
 
-if (_distance < HOPPERS_MAX_DISTANCE_BOSS/2) then {
+if (_distance < HOPPERS_MAX_DISTANCE_BOSS/1.5) then {
 	_return = _green;
 };
 

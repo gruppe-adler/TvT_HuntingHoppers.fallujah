@@ -23,5 +23,15 @@ _progressBar ctrlSetTextColor [0.44,0.66,0.44,1];
 _progressBar progressSetPosition 0;
 _progressBar ctrlCommit 0;
 
+private _text = findDisplay 46 ctrlCreate ["RscText",-1];
+_text ctrlSetPosition [
+    safeZoneX+safeZoneW/40+safeZoneW/40*2,
+    safezoneY + safeZoneH-safeZoneH/20+safeZoneH/50,
+    safeZoneW/40*2,
+    safeZoneH/100
+];
+_text ctrlSetFontHeight 0.035;
+_text ctrlCommit 0;
 
-[_backGroundBar, _progressBar]
+
+[_backGroundBar, _progressBar, _text]
