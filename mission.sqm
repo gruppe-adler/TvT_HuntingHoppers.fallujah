@@ -20,7 +20,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2510.7632,34.274578,4895.0747};
+		pos[]={2522.0403,34.274578,4883.9253};
 		dir[]={-0.48624748,-0.72971648,0.48070776};
 		up[]={-0.51893592,0.68374896,0.51302356};
 		aside[]={0.70304513,-1.6461127e-007,0.71114767};
@@ -162,7 +162,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Scenario";
 		class Attribute0

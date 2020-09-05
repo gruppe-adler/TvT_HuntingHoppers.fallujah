@@ -39,7 +39,10 @@ class ind_me_talis: ind_eastern_nationalists {
                 "ACE_epinephrine",
                 "ACE_Flashlight_MX991",
                 "ACE_MapTools",
-                LIST_10("rhs_30Rnd_762x39mm_bakelite_tracer"),
+                LIST_4("rhs_30Rnd_762x39mm_bakelite_tracer")
+            };
+            addItemsToVest[] = {
+                LIST_4("rhs_30Rnd_762x39mm_bakelite_tracer"),
                 "rhs_mag_rgo",
                 "rhs_mag_rdg2_white",
                 LIST_2("rhsusf_mag_17Rnd_9x19_FMJ")
