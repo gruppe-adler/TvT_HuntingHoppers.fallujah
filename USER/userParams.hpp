@@ -40,6 +40,13 @@ class HOPPERS_MAX_DISTANCE_BOSS
     default = 300;
 };
 
+class HOPPERS_LASERBATTERY_FILL_RATE {
+    title = "CoolDown of Laser Battery";
+    values[] = {0.01,0.005,0.001};
+    texts[] = {"FAST", "MEDIUM", "SLOW"};
+    default = 0.01;
+};
+
 class TIME_OF_DAY
 {
     title = "Time of Day";

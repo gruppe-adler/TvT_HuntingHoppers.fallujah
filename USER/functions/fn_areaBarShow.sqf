@@ -1,12 +1,13 @@
 params ["_boss"];
 
-private _progressBar = call hoppers_fnc_areaBarCreate;
+private _progressBars = call hoppers_fnc_areaBarCreate;
+_progressBars params ["_backGroundBar", "_progressBar"];
 private _minDistance = 0;
-private _maxDistance = ["HOPPERS_MAX_DISTANCE_BOSS", 200] call BIS_fnc_getParamValue;
+private _maxDistance = HOPPERS_MAX_DISTANCE_BOSS;
 
 _handle = [{
 	params ["_args", "_handle"];
-	_args params ["_minDistance", "_maxDistance", "_boss", "_progressBar"];
+	_args params ["_minDistance", "_maxDistance", "_boss", "_backGroundBar", "_progressBar"];
 
 	private _distance = player distance _boss;
 	private _color = [_distance] call hoppers_fnc_areaBarGetColor;
@@ -15,7 +16,10 @@ _handle = [{
 	);
 	_progressBar progressSetPosition _progress;
 	_progressBar ctrlSetTextColor _color;
-	_progressBar ctrlCommit 0;
+	
+  _backGroundBar ctrlCommit 0;
+  _progressBar ctrlCommit 0;
+
 
   /*
   // not relevant if no marker on map
@@ -33,7 +37,8 @@ _handle = [{
   // delete bar when dead
   if (!alive player) exitWith {
       ctrlDelete _progressBar;
+      ctrlDelete _backGroundBar;
       [_handle] call CBA_fnc_removePerFrameHandler;
   };
 
-}, 0.05, [_minDistance, _maxDistance, _boss, _progressBar]] call CBA_fnc_addPerFrameHandler;
+}, 0.05, [_minDistance, _maxDistance, _boss, _backGroundBar, _progressBar]] call CBA_fnc_addPerFrameHandler;
