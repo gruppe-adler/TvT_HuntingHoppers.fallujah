@@ -17,6 +17,8 @@ _handle = [{
 	_progressBar ctrlSetTextColor _color;
 	_progressBar ctrlCommit 0;
 
+  /*
+  // not relevant if no marker on map
   if (_progress > 0.99) then {
       if (!(player getVariable ["hoppers_markerShown", false])) then {
           player setVariable ["hoppers_markerShown", true, true];
@@ -26,6 +28,7 @@ _handle = [{
         player setVariable ["hoppers_markerShown", false, true];
     };
   };
+  */
 
   // delete bar when dead
   if (!alive player) exitWith {

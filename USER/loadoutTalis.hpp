@@ -3,11 +3,22 @@ class ind_me_talis: ind_eastern_nationalists {
         primaryWeapon = "rhs_weap_akm";
         primaryWeaponMagazine = "rhs_30Rnd_762x39mm_bakelite_tracer";
         primaryWeaponMuzzle = "rhs_acc_dtkakm";
+        handgunWeapon = "rhsusf_weap_glock17g4";
+        handgunWeaponMagazine = "rhsusf_mag_17Rnd_9x19_FMJ";
+        primaryWeaponPointer = "";
+        primaryWeaponUnderbarrel = "";
+        primaryWeaponUnderbarrelMagazine = "";
+        secondaryWeapon = "";
+        secondaryWeaponMagazine = "";
         uniform = "LOP_U_AM_Fatigue_01_3";
         nvgoggles = "";
         headgear = "LOP_H_Pakol";
+        binoculars = "Binocular";
+        map = "ItemMap";
+        compass = "ItemCompass";
+        watch = "ItemWatch";
+        gps = "ItemGPS";
         radio = "TFAR_fadak";
-        gps = "itemGPS";
         addItemsToUniform[] = {
             LIST_6("ACE_fieldDressing"),
             LIST_2("ACE_morphine"),
@@ -30,7 +41,8 @@ class ind_me_talis: ind_eastern_nationalists {
                 "ACE_MapTools",
                 LIST_10("rhs_30Rnd_762x39mm_bakelite_tracer"),
                 "rhs_mag_rgo",
-                "rhs_mag_rdg2_white"
+                "rhs_mag_rdg2_white",
+                LIST_2("rhsusf_mag_17Rnd_9x19_FMJ")
             };
         };
 
@@ -52,7 +64,6 @@ class ind_me_talis: ind_eastern_nationalists {
                 "rhs_mag_f1"
             };
             addItemsToBackpack[] = {
-                "rhs_100Rnd_762x54mmR",
                 "rhs_100Rnd_762x54mmR_green"
             };
             backpack = "B_AssaultPack_blk";
@@ -76,6 +87,10 @@ class ind_me_talis: ind_eastern_nationalists {
             uniform = "LOP_U_AM_Fatigue_02_6";
             vest = "LOP_6sh46";
             headgear = "LOP_H_Shemag_BLK";
+            addItemsToBackpack[] = {
+                "rhs_100Rnd_762x54mmR_green"
+            };
+            backpack = "B_AssaultPack_blk";
         };
 
         //medic

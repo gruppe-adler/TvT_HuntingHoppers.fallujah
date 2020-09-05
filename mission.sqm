@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=232;
+		nextID=237;
 	};
 	class Camera
 	{
-		pos[]={7966.1167,98.872589,1894.8713};
-		dir[]={-0.086138576,-0.67962074,-0.72853291};
-		up[]={-0.07980141,0.73354864,-0.67493433};
-		aside[]={-0.99311346,1.1161319e-007,0.11742005};
+		pos[]={2510.7632,34.274578,4895.0747};
+		dir[]={-0.48624748,-0.72971648,0.48070776};
+		up[]={-0.51893592,0.68374896,0.51302356};
+		aside[]={0.70304513,-1.6461127e-007,0.71114767};
 	};
 };
 binarizationWanted=0;
@@ -162,7 +162,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -4327,7 +4327,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=63;
+		items=61;
 		class Item0
 		{
 			dataType="Layer";
@@ -8684,7 +8684,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_762x39mm_bakelite_tracer', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
 			};
 			id=745;
 			type="C_Offroad_01_F";
@@ -8724,7 +8724,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_762x39mm_bakelite_tracer', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
 			};
 			id=747;
 			type="C_Van_01_transport_F";
@@ -8764,7 +8764,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_762x39mm_bakelite_tracer', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
 			};
 			id=748;
 			type="C_Van_01_transport_F";
@@ -8804,7 +8804,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_762x39mm_bakelite_tracer', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
 			};
 			id=749;
 			type="C_Offroad_02_unarmed_F";
@@ -8844,7 +8844,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_762x39mm_bakelite_tracer', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
 			};
 			id=752;
 			type="C_Offroad_01_F";
@@ -8877,14 +8877,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2502.4773,8.5496111,4907.604};
+				position[]={2502.4771,8.5496111,4907.604};
 				angles[]={0,0.88928014,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_762x39mm_bakelite_tracer', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
 			};
 			id=753;
 			type="C_Offroad_02_unarmed_F";
@@ -9219,7 +9219,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_545x39_AK', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_30Rnd_762x39mm_bakelite_tracer', 20]; this addMagazineCargoGlobal ['rhs_100Rnd_762x54mmR_green', 20];};}";
 			};
 			id=804;
 			type="RDS_Ikarus_Civ_01";
@@ -9253,21 +9253,20 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7958,63.940174,1858};
+				position[]={7958,8.9401751,1858};
 				angles[]={0,0.96876246,0};
 			};
 			side="West";
-			flags=2;
+			flags=6;
 			class Attributes
 			{
-				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhssaf_30rnd_556x45_EPR_G36', 20]; this addMagazineCargoGlobal ['rhs_200rnd_556x45_T_SAW', 20];};}";
+				init="call{[this, true, 5] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_red', 20]; this addMagazineCargoGlobal ['rhsusf_200Rnd_556x45_mixed_soft_pouch', 20];};}";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
 			};
 			id=807;
 			type="RHS_MELB_H6M";
-			atlOffset=55;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9323,7 +9322,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5, ""(_this select 0) lockTurret [[0],true];""] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhssaf_30rnd_556x45_EPR_G36', 20]; this addMagazineCargoGlobal ['rhs_200rnd_556x45_T_SAW', 20]; this lockTurret [[0],true]; };}";
+				init="call{[this, true, 5, ""(_this select 0) lockTurret [[0],true];""] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_red', 20]; this addMagazineCargoGlobal ['rhsusf_200Rnd_556x45_mixed_soft_pouch', 20]; this lockTurret [[0],true]; };}";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -9378,14 +9377,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7968.9297,8.9401751,1838.6678};
+				position[]={7968.9302,8.9401751,1838.668};
 				angles[]={0,0.95717347,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5, ""(_this select 0) lockTurret [[0],true];""] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhssaf_30rnd_556x45_EPR_G36', 20]; this addMagazineCargoGlobal ['rhs_200rnd_556x45_T_SAW', 20]; this lockTurret [[0],true]; };}";
+				init="call{[this, true, 5, ""(_this select 0) lockTurret [[0],true];""] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_red', 20]; this addMagazineCargoGlobal ['rhsusf_200Rnd_556x45_mixed_soft_pouch', 20]; this lockTurret [[0],true]; };}";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -9447,7 +9446,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[this, true, 5, ""(_this select 0) lockTurret [[0],true];""] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhssaf_30rnd_556x45_EPR_G36', 20]; this addMagazineCargoGlobal ['rhs_200rnd_556x45_T_SAW', 20]; this lockTurret [[0],true]; };}";
+				init="call{[this, true, 5, ""(_this select 0) lockTurret [[0],true];""] call GRAD_vehiclerespawn_fnc_add; if (isServer) then { this addMagazineCargoGlobal ['rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_red', 20]; this addMagazineCargoGlobal ['rhsusf_200Rnd_556x45_mixed_soft_pouch', 20]; this lockTurret [[0],true]; };}";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -9499,157 +9498,6 @@ class Mission
 		};
 		class Item59
 		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=4;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8011.0884,7.0014391,1810.5223};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=826;
-					type="O_Survivor_F";
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8012,7.0014391,1817.05};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-					};
-					id=822;
-					type="O_Survivor_F";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8016.6685,7.0014391,1814.567};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-					};
-					id=824;
-					type="O_Survivor_F";
-				};
-				class Item3
-				{
-					dataType="Waypoint";
-					position[]={8233.1611,7,1274.3634};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=833;
-					type="Move";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=825;
-		};
-		class Item60
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={8002,7.0014391,1813.05};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="call{missionNamespace setVariable [""hoppers_boss"", this]; this setVariable [""hoppers_isBoss"", true, true];}";
-					};
-					id=828;
-					type="O_Survivor_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male01PER";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.98000002;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item1
-				{
-					dataType="Waypoint";
-					position[]={7289.1826,6.9900022,906.86365};
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=834;
-					type="Move";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=827;
-		};
-		class Item61
-		{
 			dataType="Trigger";
 			position[]={7954.1987,7,1871.005};
 			class Attributes
@@ -9660,7 +9508,7 @@ class Mission
 			id=835;
 			type="EmptyDetector";
 		};
-		class Item62
+		class Item60
 		{
 			dataType="Group";
 			side="West";
@@ -9672,27 +9520,27 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7958,62.001438,1858.05};
+						position[]={7958,7.0014391,1858.05};
 						angles[]={0,0.96876246,0};
 					};
 					side="West";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 					};
 					id=836;
 					type="B_soldier_AAR_F";
-					atlOffset=55;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7958,62.001438,1858.05};
+						position[]={7958,7.0014391,1858.05};
 						angles[]={0,0.96876246,0};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						description="Schütze";
@@ -9700,7 +9548,6 @@ class Mission
 					};
 					id=729;
 					type="B_Soldier_F";
-					atlOffset=55;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9800,7 +9647,6 @@ class Mission
 				};
 			};
 			id=838;
-			atlOffset=55;
 		};
 	};
 	class Connections
