@@ -13,7 +13,7 @@ class HOPPERS_BOMBS_TIME_TO_EXPLOSION {
     title = "Countdown time of bomb";
     values[] = {30,60,120,180,240,300,360,420,480,540,600,900};
     texts[] = {"30s", "60s", "2min", "3min", "4min", "5min", "6min", "7min", "8min", "9min", "10min", "15min"};
-    default = 30; // todo debug
+    default = 300;
 };
 
 class HOPPERS_BOMBS_MIN_PLACED
@@ -29,20 +29,20 @@ class HOPPERS_BOMBS_DEFUSE_TIME
     title = "Time Defusing Takes";
     values[] = {1,10,30,60,90};
     texts[] = {"1s", "10s", "30s", "60s", "90s"};
-    default = 1;
+    default = 30;
 };
 
 class HOPPERS_MAX_DISTANCE_BOSS
 {
     title = "Maximum distance opfor is allowed to boss without independent marker";
-    values[] = {200,300,400,500};
-    texts[] = {"200m", "300m", "400m", "500m"};
-    default = 300;
+    values[] = {50, 100, 150, 200, 300, 400, 500};
+    texts[] = {"50m", "100m", "150m", "200m", "300m", "400m", "500m"};
+    default = 200;
 };
 
 class HOPPERS_LASERBATTERY_FILL_RATE {
     title = "CoolDown of Laser Battery";
-    values[] = {0.01,0.005,0.001};
+    values[] = {0.01, 0.005, 0.001};
     texts[] = {"FAST", "MEDIUM", "SLOW"};
     default = 0.01;
 };

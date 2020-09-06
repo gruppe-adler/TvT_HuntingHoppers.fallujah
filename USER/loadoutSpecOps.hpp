@@ -6,7 +6,7 @@ class specOps: ind_pmc_special {
         headgear[] = {"rhsusf_opscore_mc_cover_pelt", "rhsusf_opscore_mc_cover_pelt_cam", "rhsusf_opscore_mc_pelt", "rhsusf_opscore_mc_pelt_nsw", "rhsusf_mich_bare_norotos_alt_tan"};
         primaryWeapon = "rhs_weap_hk416d10_LMT";
         primaryWeaponMagazine = "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_red"
-        primaryWeaponOptics[] = {"optic_holosight_blk_f", "optic_erco_blk_f", "rhsusf_acc_g33_xps3", "rhsusf_acc_g33_t1", "rhsusf_acc_acog_rmr", "rhsusf_acc_compm4"};
+        primaryWeaponOptics[] = {"optic_holosight_blk_f", "rhsusf_acc_compm4"};
         primaryWeaponPointer = "";
         primaryWeaponMuzzle = "";
         primaryWeaponUnderbarrel = "";
@@ -21,6 +21,7 @@ class specOps: ind_pmc_special {
         watch = "ItemWatch";
         gps = "ItemGPS";
         radio = "TFAR_anprc152";
+        goggles[] = {"G_Bandanna_tan", "rhsusf_shemagh2_grn", "rhsusf_shemagh2_od", "rhsusf_shemagh2_tan"};
     };
 
     class Type: Type {

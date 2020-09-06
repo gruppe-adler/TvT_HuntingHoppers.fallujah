@@ -18,7 +18,9 @@ private _bombTrigger = [
             };
         };
     }, {
-          true
+        params ["_target", "_player", "_params"];
+        _params params ["_bomb"];
+        !isNull _bomb
     },{},[_bomb],"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;
 

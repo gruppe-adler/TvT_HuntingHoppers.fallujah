@@ -112,7 +112,11 @@ private _handle = [{
         if (_laserBatteryStatus < 1) then {
             _laserBatteryStatus = _laserBatteryStatus + HOPPERS_LASERBATTERY_FILL_RATE;
             playSound "zoom_fail";
-            _statusBar ctrlsetText "COOLDOWN";
+            if (isLaserOn _vehicle) then {
+                _statusBar ctrlsetText "OVERHEATED";
+            } else {
+                _statusBar ctrlsetText "COOLDOWN";
+            };
         } else { 
             _vehicle setVariable ["hoppers_laserOverheated", false];
             _statusBar ctrlsetText "READY";

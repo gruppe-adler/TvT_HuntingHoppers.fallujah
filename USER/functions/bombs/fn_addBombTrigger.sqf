@@ -32,7 +32,7 @@ private _extractionStart = [
         
     }, {
           !(player getVariable ["hoppers_countdownStarted", false]) && 
-          missionNamespace getVariable ["hoppers_missionPhase", 0] > HOPPERS_BOMBS_MIN_PLACED && 
+          missionNamespace getVariable ["hoppers_missionPhase", 0] >= HOPPERS_BOMBS_MIN_PLACED && 
           missionNamespace getVariable ["hoppers_missionPhase", 0] < 9999
     },{},nil,"",3,[false,false,false,false,false]
 ] call ace_interact_menu_fnc_createAction;

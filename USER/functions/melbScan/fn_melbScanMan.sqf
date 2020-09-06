@@ -12,7 +12,7 @@ private _targets = nearestObjects [_position, ["Man", "Car"], 200];
 
 if (_locked) then {
     playSound "ace_javelin_locked";
-    [_position] call hoppers_fnc_melbScanFX;
 } else {
     playSound "ace_javelin_locking";
 };
+[_position] call hoppers_fnc_melbScanFX;

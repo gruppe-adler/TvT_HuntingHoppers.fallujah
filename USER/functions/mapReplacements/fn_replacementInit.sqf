@@ -1,5 +1,5 @@
 {
-    [getMarkerPos _x, getMarkerSize _x] call hoppers_fnc_mapreplaceBuildings;
+    // [getMarkerPos _x, getMarkerSize _x] call hoppers_fnc_mapreplaceBuildings;
     [getMarkerPos _x, getMarkerSize _x] call hoppers_fnc_mapreplacePlants;
     _x setMarkerAlpha 0;
 } forEach 

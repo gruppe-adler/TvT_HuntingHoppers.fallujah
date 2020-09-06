@@ -5,9 +5,10 @@ private _markers = _bomb getVariable ["hoppers_bombMarkers", []];
 private _position = getPos _bomb;
 private _boss = _bomb getVariable ["hoppers_countdownBoss", objNull];
 
-_markers params ["_centerMarker", "_bombMarker"];
+_markers params ["_centerMarker", "_bombMarker", "_bombMarkerFill"];
 _centerMarker setMarkerColor "ColorBlack";
 deleteMarker _bombMarker;
+deleteMarker _bombMarkerFill;
 
 [_bombspot, west, "FAILED"] call hoppers_fnc_bombTaskSetState;
 [_bombspot, east, "SUCCEEDED"] call hoppers_fnc_bombTaskSetState;
