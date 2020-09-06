@@ -16,11 +16,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=242;
+		nextID=247;
 	};
 	class Camera
 	{
-		pos[]={2518.4119,31.980015,4882.978};
+		pos[]={2517.2852,66.063797,4860.7402};
 		dir[]={-0.065990873,-0.73477167,0.67509764};
 		up[]={-0.071483314,0.67831445,0.73128647};
 		aside[]={0.99525702,1.2514647e-009,0.097286433};
@@ -210,7 +210,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=77;
+									items=78;
 									class Item0
 									{
 										class data
@@ -1289,6 +1289,20 @@ class CustomAttributes
 											value="tfar_setting_defaultfrequencies_lr_independent";
 										};
 									};
+									class Item77
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="grad_civs_gta_carownershipratio";
+										};
+									};
 								};
 							};
 						};
@@ -1305,7 +1319,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=77;
+									items=78;
 									class Item0
 									{
 										class data
@@ -3761,7 +3775,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -4771,6 +4785,51 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item77
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=0.099001251;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -5429,7 +5488,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={7966,7.0014391,1873.05};
-								angles[]={-0,5.816514,0};
+								angles[]={0,5.816514,0};
 							};
 							side="West";
 							flags=4;
@@ -8315,7 +8374,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={7975,7.0014391,1849.05};
-								angles[]={-0,0.96876246,0};
+								angles[]={0,0.96876246,0};
 							};
 							side="West";
 							flags=4;
@@ -9864,7 +9923,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7958,8.9401751,1858};
-				angles[]={-0,0.96876246,0};
+				angles[]={0,0.96876246,0};
 			};
 			side="Empty";
 			flags=4;
